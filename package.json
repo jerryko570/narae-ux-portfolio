@@ -9,7 +9,17 @@
     "lint": "eslint",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,md,json}": [
+      "prettier --write"
+    ]
+  },
   "dependencies": {
+    "framer-motion": "^12.36.0",
     "next": "16.1.6",
     "postcss": "^8.5.8",
     "react": "19.2.3",
