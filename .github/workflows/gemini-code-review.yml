@@ -16,19 +16,3 @@ jobs:
         uses: google-github-actions/gemini-code-review@v1
         with:
           gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
-```
-
-**3. GitHub Secrets에 API 키 등록**
-```
-GitHub → Settings → Secrets and variables → Actions
-→ New repository secret
-→ Name: GEMINI_API_KEY
-→ Value: 발급받은 키 입력
-```
-
-**4. Gemini API 키 발급**
-```
-aistudio.google.com 접속
-→ Get API Key
-→ Create API Key
-→ 복사
