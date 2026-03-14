@@ -1,7 +1,7 @@
 const commitlintConfig = {
   parserPreset: {
     parserOpts: {
-      headerPattern: /^(⚙️Chore|✨Feature|♻️Refactor|🐛Fix|📝Docs): (.+)$/,
+      headerPattern: /^(⚙️Chore|✨Feature|♻️Refactor|🐛Fix|📝Docs): (.+)$/u,
       headerCorrespondence: ['type', 'subject'],
     },
   },
