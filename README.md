@@ -1,37 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# narae-ux-portfolio
 
-## Getting Started
+> 프론트엔드로 디자이너하는 이나래의 포트폴리오
 
-First, run the development server:
+## 소개
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+UX 디자인과 프론트엔드 개발을 함께하는 이나래의 포트폴리오 사이트입니다.  
+문제를 구조로 이해하고, 설계에서 구현까지 연결하는 작업을 담았습니다.
+
+## 기술 스택
+
+| 분류      | 기술             |
+| --------- | ---------------- |
+| Framework | Next.js 15 (SSG) |
+| Language  | TypeScript       |
+| Styling   | Tailwind CSS v4  |
+| Animation | Framer Motion    |
+| Deploy    | Vercel           |
+
+## 프로젝트 구조
+
+```
+ux-portfolio/
+├── .github/
+│   ├── workflows/
+│   │   └── gemini-code-review.yml
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug.md
+│   │   ├── feature.md
+│   │   └── refactor.md
+│   └── pull_request_template.md
+├── src/
+│   └── app/
+│       ├── styles/
+│       │   └── theme.css
+│       ├── globals.css
+│       ├── layout.tsx
+│       └── page.tsx
+└── public/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 디자인 시스템
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 컬러
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Point** `#FF5E48` — 메인 포인트 컬러
+- **Gray** `gray-50` ~ `gray-950` — 텍스트 및 배경
+- **Orange** `orange-50` / `orange-100` / `orange-500`
 
-## Learn More
+### 폰트
 
-To learn more about Next.js, take a look at the following resources:
+- **Pretendard** — 본문 및 UI 전반
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 커밋 컨벤션
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| 타입       | 설명            |
+| ---------- | --------------- |
+| ⚙️Chore    | 설정, 환경 변경 |
+| ✨Feature  | 새 기능 추가    |
+| ♻️Refactor | 코드 구조 개선  |
+| 🐛Fix      | 버그 수정       |
+| 📝Docs     | 문서 작업       |
 
-## Deploy on Vercel
+## 시작하기
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm install
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# narae-ux-portfolio
+## 링크
+
+- 🌐 [배포 사이트](https://narae-ux-portfolio.vercel.app)
+- 📁 [GitHub](https://github.com/jerryko570/narae-ux-portfolio)
+- ✉️ email.narae@gmail.com
