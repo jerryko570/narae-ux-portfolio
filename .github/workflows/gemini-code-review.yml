@@ -7,28 +7,17 @@ on:
 jobs:
   review:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Gemini Code Review
-        uses: google-github-actions/gemini-code-review@v1
+      - name: Run Gemini PR Review
+        uses: google-github-actions/run-gemini-cli@v0
         with:
           gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
-```
-
-**3. GitHub Secrets에 API 키 등록**
-```
-GitHub → Settings → Secrets and variables → Actions
-→ New repository secret
-→ Name: GEMINI_API_KEY
-→ Value: 발급받은 키 입력
-```
-
-**4. Gemini API 키 발급**
-```
-aistudio.google.com 접속
-→ Get API Key
-→ Create API Key
-→ 복사
