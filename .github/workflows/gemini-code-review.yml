@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
 
       - name: Get diff
-        run: git diff origin/${{ github.base_ref }}...HEAD > diff.txt
+        run: git diff origin/${{ github.base_ref }}...HEAD | head -c 5000 > diff.txt
 
       - name: Run Gemini PR Review
         env:
@@ -26,17 +26,17 @@ jobs:
           DIFF=$(cat diff.txt)
           PAYLOAD=$(jq -n --arg diff "Review this PR diff and write in Korean:\n$DIFF" \
             '{"contents":[{"parts":[{"text":$diff}]}]}')
-          curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$GEMINI_API_KEY" \
+          curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=$GEMINI_API_KEY" \
             -H "Content-Type: application/json" \
             -d "$PAYLOAD" \
             > response.json
-
-      - name: Debug response
-        run: cat response.json
 
       - name: Post comment
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          jq -r '.candidates[0].content.parts[0].text' response.json > comment.txt
-          gh pr comment ${{ github.event.pull_request.number }} --body-file comment.txt
+          COMMENT=$(jq -r '.candidates[0].content.parts[0].text // empty' response.json)
+          if [ -n "$COMMENT" ]; then
+            echo "$COMMENT" > comment.txt
+            gh pr comment ${{ github.event.pull_request.number }} --body-file comment.txt
+          fi
