@@ -10,14 +10,33 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-      issues: write
 
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      - name: Get diff
+        run: git diff origin/${{ github.base_ref }}...HEAD | head -c 5000 > diff.txt
+
       - name: Run Gemini PR Review
-        uses: google-github-actions/run-gemini-cli@v0
-        with:
-          gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          DIFF=$(cat diff.txt)
+          PAYLOAD=$(jq -n --arg diff "Review this PR diff and write in Korean:\n$DIFF" \
+            '{"contents":[{"parts":[{"text":$diff}]}]}')
+          curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=$GEMINI_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD" \
+            > response.json
+
+      - name: Post comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          COMMENT=$(jq -r '.candidates[0].content.parts[0].text // empty' response.json)
+          if [ -n "$COMMENT" ]; then
+            echo "$COMMENT" > comment.txt
+            gh pr comment ${{ github.event.pull_request.number }} --body-file comment.txt
+          fi
