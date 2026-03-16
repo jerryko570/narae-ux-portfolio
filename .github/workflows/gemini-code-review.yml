@@ -24,13 +24,12 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           DIFF=$(cat diff.txt)
+          PAYLOAD=$(jq -n --arg diff "$DIFF" \
+            '{"contents":[{"parts":[{"text":"Review this PR diff and write in Korean:\n"+$diff}]}]}')
           curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$GEMINI_API_KEY" \
             -H "Content-Type: application/json" \
-            -d "{\"contents\":[{\"parts\":[{\"text\":\"Review this PR diff and write in Korean:\n$DIFF\"}]}]}" \
+            -d "$PAYLOAD" \
             > response.json
-
-      - name: Debug response
-        run: cat response.json
 
       - name: Post comment
         env:
