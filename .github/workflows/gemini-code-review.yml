@@ -29,6 +29,9 @@ jobs:
             -d "{\"contents\":[{\"parts\":[{\"text\":\"Review this PR diff and write in Korean:\n$DIFF\"}]}]}" \
             > response.json
 
+      - name: Debug response
+        run: cat response.json
+
       - name: Post comment
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
