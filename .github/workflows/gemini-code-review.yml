@@ -33,4 +33,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          COMMENT=$(jq -r '.candidates[0].content.parts[0].text' response.j
+          jq -r '.candidates[0].content.parts[0].text' response.json > comment.txt
+          gh pr comment ${{ github.event.pull_request.number }} --body-file comment.txt
