@@ -63,7 +63,7 @@ jobs:
             } > comment.txt
 
             gh pr comment ${{ github.event.pull_request.number }} --body-file comment.txt
-            echo "✅ 코멘트 등록 완료"
+            echo "✅ 코멘트 등록 완료 "
           else
             echo "⚠️ COMMENT가 비어있음 - response.json 구조:"
             cat response.json
