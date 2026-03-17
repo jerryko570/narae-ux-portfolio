@@ -24,19 +24,48 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           DIFF=$(cat diff.txt)
-          PAYLOAD=$(jq -n --arg diff "Review this PR diff and write in Korean:\n$DIFF" \
+          PAYLOAD=$(jq -n --arg diff "다음 PR diff를 리뷰해주세요. 한국어로 작성해주세요:\n$DIFF" \
             '{"contents":[{"parts":[{"text":$diff}]}]}')
           curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=$GEMINI_API_KEY" \
             -H "Content-Type: application/json" \
             -d "$PAYLOAD" \
             > response.json
 
+          echo "=== Gemini 응답 확인 ==="
+          cat response.json
+
       - name: Post comment
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          echo "=== response.json 파싱 시도 ==="
+
+          # 에러 응답인지 먼저 확인
+          ERROR=$(jq -r '.error.message // empty' response.json)
+          if [ -n "$ERROR" ]; then
+            echo "Gemini API 에러: $ERROR"
+            exit 1
+          fi
+
+          # 정상 응답 파싱
           COMMENT=$(jq -r '.candidates[0].content.parts[0].text // empty' response.json)
+          echo "=== COMMENT 길이: ${#COMMENT} ==="
+
           if [ -n "$COMMENT" ]; then
-            echo "$COMMENT" > comment.txt
+            # PR 코멘트 본문 작성
+            {
+              echo "## 🤖 Gemini AI 코드 리뷰"
+              echo ""
+              echo "$COMMENT"
+              echo ""
+              echo "---"
+              echo "*Powered by Google Gemini 1.5 Flash*"
+            } > comment.txt
+            
             gh pr comment ${{ github.event.pull_request.number }} --body-file comment.txt
+            echo "✅ 코멘트 등록 완료"
+          else
+            echo "⚠️ COMMENT가 비어있음 - response.json 구조:"
+            cat response.json
+            exit 1
           fi
