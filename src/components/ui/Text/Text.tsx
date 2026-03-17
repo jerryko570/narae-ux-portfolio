@@ -9,14 +9,20 @@ type textProps = {
   children: React.ReactNode
   className?: string
   as?: AsType
-} & Omit<VariantProps<typeof textVariant>, 'as'>
+} & Omit<VariantProps<typeof textVariant>, 'as'> &
+  React.HTMLAttributes<HTMLElement>
 
-export default function Typography({
+export default function Text({
   as = 'p',
   children,
   className,
+  ...rest
 }: textProps) {
   const Tag = as as React.ElementType
 
-  return <Tag className={cn(textVariant({ as }), className)}>{children}</Tag>
+  return (
+    <Tag className={cn(textVariant({ as }), className)} {...rest}>
+      {children}
+    </Tag>
+  )
 }
