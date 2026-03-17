@@ -59,7 +59,7 @@ jobs:
               echo "$COMMENT"
               echo ""
               echo "---"
-              echo "*Powered by Google Gemini 1.5 Flash*"
+              echo "*Powered by Google Gemini 2.0 Flash*"
             } > comment.txt
             
             gh pr comment ${{ github.event.pull_request.number }} --body-file comment.txt
