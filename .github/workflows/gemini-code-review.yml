@@ -26,7 +26,7 @@ jobs:
           DIFF=$(cat diff.txt)
           PAYLOAD=$(jq -n --arg diff "다음 PR diff를 리뷰해주세요. 한국어로 작성해주세요:\n$DIFF" \
             '{"contents":[{"parts":[{"text":$diff}]}]}')
-          curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$GEMINI_API_KEY" \
+          curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=$GEMINI_API_KEY" \
             -H "Content-Type: application/json" \
             -d "$PAYLOAD" \
             > response.json
@@ -59,11 +59,11 @@ jobs:
               echo "$COMMENT"
               echo ""
               echo "---"
-              echo "*Powered by Google Gemini 2.0 Flash*"
+              echo "*Powered by Google Gemini 1.5 Flash*"
             } > comment.txt
-            
+
             gh pr comment ${{ github.event.pull_request.number }} --body-file comment.txt
-            echo "✅ 코멘트 등록 완료됨
+            echo "✅ 코멘트 등록 완료"
           else
             echo "⚠️ COMMENT가 비어있음 - response.json 구조:"
             cat response.json
