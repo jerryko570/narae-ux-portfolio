@@ -6,6 +6,8 @@ type BadgeProps = {
   className?: string
 } & VariantProps<typeof BadgeVariants>
 
-export default function Badge({ label, size, className }: BadgeProps) {
-  return <span className={BadgeVariants({ size, className })}>{label}</span>
+export default function Badge({ label, size, theme, className }: BadgeProps) {
+  return (
+    <span className={BadgeVariants({ size, theme, className })}>{label}</span>
+  )
 }

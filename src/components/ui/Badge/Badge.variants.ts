@@ -1,13 +1,18 @@
 import { cva } from 'class-variance-authority'
 
 export const BadgeVariants = cva(
-  'font-bold inline-flex items-center justify-center rounded-full whitespace-nowrap',
+  'inline-flex min-w-[3rem] items-center justify-center rounded-full font-bold whitespace-nowrap',
   {
     variants: {
       size: {
-        sm: 'h-[30px] px-3 text-sm',
-        md: 'h-[40px] px-4 text-md',
-        lg: 'h-[50px] px-5 text-lg',
+        sm: 'h-8 text-sm',
+        md: 'text-md h-10',
+        lg: 'h-14 text-lg',
+      },
+      theme: {
+        dark: 'bg-gray-800 text-white',
+        white: 'bg-white text-gray-900',
+        orange: 'bg-orange-500 text-white',
       },
     },
     defaultVariants: {
