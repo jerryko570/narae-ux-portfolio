@@ -9,6 +9,11 @@ export const BadgeVariants = cva(
         md: 'text-md h-10',
         lg: 'h-14 text-lg',
       },
+      theme: {
+        dark: 'bg-gray-800 text-white',
+        white: 'bg-white text-gray-900',
+        orange: 'bg-orange-500 text-white',
+      },
     },
     defaultVariants: {
       size: 'md',
