@@ -13,8 +13,8 @@ export default function HeroImage({
 }: HeroImageProps) {
   return (
     <div
-      className='absolute'
-      style={{ top: '200px', right: '50px', width: imageWidth, opacity }}
+      className='absolute top-50 right-12.5'
+      style={{ width: imageWidth, opacity }}
     >
       <Image
         src={src}

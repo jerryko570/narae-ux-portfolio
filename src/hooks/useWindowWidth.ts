@@ -15,7 +15,7 @@ export function useWindowWidth({
   breakpoint = 1200,
   fadeStart = 1280,
 }: UseWindowWidthOptions = {}): WindowWidthResult {
-  const [width, setWidth] = useState(1280)
+  const [width, setWidth] = useState(0)
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth)
