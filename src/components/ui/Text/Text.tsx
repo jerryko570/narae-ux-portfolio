@@ -3,7 +3,7 @@ import { VariantProps } from 'class-variance-authority'
 import { textVariant } from './Text.variants'
 import { cn } from '@/lib/cn'
 
-type AsType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'span'
+type AsType = 'display' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'span'
 
 type textProps = {
   children: React.ReactNode
