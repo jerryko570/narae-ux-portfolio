@@ -9,15 +9,15 @@ type FeatureCardProps = {
   emoji: string
 } & VariantProps<typeof CardVariant>
 
+const emojiStyle =
+  'flex h-24 w-24 items-center justify-center rounded-full border border-orange-100 bg-white text-center text-5xl mx-auto'
+
 export default function FeatureCard({
   title,
   description,
   emoji,
   theme,
 }: FeatureCardProps) {
-  const emojiStyle =
-    'flex h-24 w-24 items-center justify-center rounded-full border border-orange-100 bg-white text-center text-5xl mx-auto'
-
   return (
     <div className={cn(CardVariant({ theme }), 'items-center text-center')}>
       <span className={emojiStyle}>{emoji}</span>
@@ -25,8 +25,8 @@ export default function FeatureCard({
         {title}
       </Text>
       <div className='mt-3'>
-        {description.map((desc) => (
-          <Text as='p' key={desc}>
+        {description.map((desc, index) => (
+          <Text as='p' key={index}>
             {desc}
           </Text>
         ))}
