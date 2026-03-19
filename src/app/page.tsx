@@ -1,21 +1,27 @@
 import FeatureCard from '@/components/ui/Cards/FeatureCard'
+import Section from '@/components/ui/Section'
 import { SmolsFeatureCardData } from '@/data/cards'
+import HeroSection from '@/components/sections/Hero/HeroSection'
+import { smolsProjects } from '@/data/projects'
 
 export default function Home() {
   return (
-    <main className='px-8 py-10'>
-      <section className='mx-auto rounded-xl bg-orange-50 py-5 md:px-10 md:py-10'>
-        <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
-          {SmolsFeatureCardData.map((card) => (
-            <FeatureCard
-              key={card.id}
-              emoji={card.emoji}
-              title={card.title}
-              description={card.description}
-            />
-          ))}
+    <div>
+      <div className='bg-orange-500'>
+        {smolsProjects.map((project) => (
+          <HeroSection key={project.id} {...project} />
+        ))}
+      </div>
+
+      <Section className=''>
+        <div className='rounded-xl bg-orange-50'>
+          <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
+            {SmolsFeatureCardData.map((card) => (
+              <FeatureCard key={card.id} {...card} />
+            ))}
+          </div>
         </div>
-      </section>
-    </main>
+      </Section>
+    </div>
   )
 }
