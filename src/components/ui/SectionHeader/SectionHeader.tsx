@@ -2,6 +2,7 @@ import Badge from '../Badge/Badge'
 import Text from '../Text/Text'
 import type { VariantProps } from 'class-variance-authority'
 import { BadgeVariants } from '../Badge/Badge.variants'
+import { cn } from '@/lib/cn'
 
 type SectionHeaderProps = {
   badge?: string
@@ -30,7 +31,7 @@ export default function SectionHeader({
     align === 'center' ? 'items-center text-center' : 'items-start text-left'
 
   return (
-    <div className={`flex flex-col ${textAlign} ${className ?? ''}`}>
+    <div className={cn('flex flex-col', textAlign, className)}>
       {badge && <Badge label={badge} size='md' theme={badgeTheme} />}
       {title && (
         <Text as={titleSize} className='mt-8 break-keep whitespace-pre-line'>
