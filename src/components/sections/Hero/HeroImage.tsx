@@ -1,20 +1,30 @@
+'use client'
+
 import Image from 'next/image'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 type HeroImageProps = {
   src: string
   imageWidth: string
-  opacity: number
+  right: number
 }
 
-export default function HeroImage({
-  src,
-  imageWidth,
-  opacity,
-}: HeroImageProps) {
+export default function HeroImage({ src, imageWidth, right }: HeroImageProps) {
+  const { scrollY } = useScroll()
+
+  const y = useTransform(scrollY, [0, 800], [0, 150])
+  const scrollOpacity = useTransform(scrollY, [100, 400], [1, 0])
+
   return (
-    <div
-      className='absolute top-50 right-12.5'
-      style={{ width: imageWidth, opacity }}
+    <motion.div
+      className='absolute'
+      style={{
+        top: '340px',
+        right: `${right}px`,
+        width: imageWidth,
+        opacity: scrollOpacity,
+        y,
+      }}
     >
       <Image
         src={src}
@@ -23,6 +33,6 @@ export default function HeroImage({
         height={608}
         className='w-full drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)]'
       />
-    </div>
+    </motion.div>
   )
 }
