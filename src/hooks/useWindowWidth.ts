@@ -9,14 +9,14 @@ type WindowWidthResult = {
   isVisible: boolean
   opacity: number
   imageWidth: string
+  width: number
 }
 
 export function useWindowWidth({
   breakpoint = 1200,
   fadeStart = 1280,
 }: UseWindowWidthOptions = {}): WindowWidthResult {
-  const [width, setWidth] = useState(0)
-
+  const [width, setWidth] = useState(1280)
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth)
     handleResize()
@@ -31,5 +31,5 @@ export function useWindowWidth({
   )
   const imageWidth = `${Math.min(850, Math.max(600, width * 0.4))}px`
 
-  return { isVisible, opacity, imageWidth }
+  return { isVisible, opacity, imageWidth, width }
 }
