@@ -26,7 +26,7 @@ export default function StatCard({
       <Text as='h4' className='text-center text-white'>
         {description}
       </Text>
-      <div className='mt-8 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-1'>
+      <div className='mt-8 grid grid-cols-3 gap-8'>
         {items.map((item) => (
           <div key={item.label} className='text-center'>
             <Text as='h1' className='text-orange-500'>
