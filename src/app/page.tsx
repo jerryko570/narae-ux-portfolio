@@ -3,6 +3,7 @@ import HeroSection from '@/components/sections/Hero/HeroSection'
 import { smolsHeros, smolsSections } from '@/data/projects'
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
 import StatCard from '@/components/ui/Cards/StatCard'
+import UserResearchChatSection from '@/components/sections/UserResearchChatSection'
 
 export default function Home() {
   return (
@@ -28,8 +29,16 @@ export default function Home() {
         <StatCard
           {...smolsSections.problemEvidence.stat}
           theme='dark'
-          className='mt-8 lg:mt-16'
+          className='mt-8'
         />
+
+        <div className='mt-40 flex items-start'>
+          <SectionHeader
+            {...smolsSections.userResearch}
+            className='whitespace-pre-line text-white'
+          />
+          <UserResearchChatSection />
+        </div>
       </Section>
     </div>
   )

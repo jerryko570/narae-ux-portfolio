@@ -9,7 +9,6 @@ type SectionHeaderProps = {
   title?: string
   subtitle?: string
   description?: string
-  subdescription?: string
   align?: 'left' | 'center'
   titleSize?: 'display' | 'h1' | 'h2' | 'h3' | 'h4'
   badgeTheme?: VariantProps<typeof BadgeVariants>['theme']
@@ -21,7 +20,6 @@ export default function SectionHeader({
   title,
   subtitle,
   description,
-  subdescription,
   align = 'center',
   titleSize = 'h1',
   badgeTheme = 'orange',
@@ -34,7 +32,7 @@ export default function SectionHeader({
     <div className={cn('flex flex-col', textAlign, className)}>
       {badge && <Badge label={badge} size='md' theme={badgeTheme} />}
       {title && (
-        <Text as={titleSize} className='mt-8 break-keep whitespace-pre-line'>
+        <Text as={titleSize} className='mt-6 break-keep whitespace-pre-line'>
           {title}
         </Text>
       )}
@@ -44,13 +42,8 @@ export default function SectionHeader({
         </Text>
       )}
       {description && (
-        <Text as='p' className='mt-8 whitespace-pre-line'>
+        <Text as='p' className='mt-14 font-light whitespace-pre-line'>
           {description}
-        </Text>
-      )}
-      {subdescription && (
-        <Text as='p' className='mt-4 whitespace-pre-line'>
-          {subdescription}
         </Text>
       )}
     </div>

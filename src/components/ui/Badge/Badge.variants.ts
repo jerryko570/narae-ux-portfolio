@@ -5,9 +5,9 @@ export const BadgeVariants = cva(
   {
     variants: {
       size: {
-        sm: 'h-[clamp(1.5rem,2vw,1.75rem)] px-3 text-[clamp(0.75rem,1vw,0.875rem)]', // 24 → 28px
-        md: 'h-[clamp(1.75rem,2.5vw,2.25rem)] px-4 text-[clamp(0.875rem,1.5vw,1rem)]', // 28 → 36px
-        lg: 'h-[clamp(2rem,3vw,3rem)] px-5 text-[clamp(1rem,2vw,1.25rem)]', // 32 → 48px
+        sm: 'h-[1.75rem] px-3 text-[0.875rem]', // 28px
+        md: 'h-[2.25rem] px-4 text-[1rem]', // 36px
+        lg: 'h-[3rem] px-5 text-[1.25rem]', // 48px
       },
       theme: {
         dark: 'bg-gray-800 text-white',
