@@ -1,26 +1,35 @@
-import FeatureCard from '@/components/ui/Cards/FeatureCard'
 import Section from '@/components/ui/Section'
-import { SmolsFeatureCardData } from '@/data/cards'
 import HeroSection from '@/components/sections/Hero/HeroSection'
-import { smolsProjects } from '@/data/projects'
+import { smolsHeros, smolsSections } from '@/data/projects'
+import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
+import StatCard from '@/components/ui/Cards/StatCard'
 
 export default function Home() {
   return (
     <div>
+      {/* 히어로 */}
       <div className='bg-orange-500'>
-        {smolsProjects.map((project) => (
-          <HeroSection key={project.id} {...project} />
+        {smolsHeros.map((smolsHero) => (
+          <HeroSection key={smolsHero.id} {...smolsHero} />
         ))}
       </div>
 
-      <Section className=''>
-        <div className='rounded-xl bg-orange-50'>
-          <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
-            {SmolsFeatureCardData.map((card) => (
-              <FeatureCard key={card.id} {...card} />
-            ))}
-          </div>
-        </div>
+      {/* 서비스 소개 */}
+      <Section>
+        <SectionHeader {...smolsSections.overview} />
+      </Section>
+
+      {/* 문제 발견 */}
+      <Section className='bg-black'>
+        <SectionHeader
+          {...smolsSections.problemEvidence}
+          className='text-white'
+        />
+        <StatCard
+          {...smolsSections.problemEvidence.stat}
+          theme='dark'
+          className='mt-8 lg:mt-16'
+        />
       </Section>
     </div>
   )

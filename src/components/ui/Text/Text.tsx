@@ -12,13 +12,24 @@ type textProps = {
 } & Omit<VariantProps<typeof textVariant>, 'as'> &
   React.HTMLAttributes<HTMLElement>
 
+const elementMap: Record<AsType, React.ElementType> = {
+  display: 'h1',
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  h5: 'h5',
+  p: 'p',
+  span: 'span',
+}
+
 export default function Text({
   as = 'p',
   children,
   className,
   ...rest
 }: textProps) {
-  const Tag = as as React.ElementType
+  const Tag = elementMap[as]
 
   return (
     <Tag className={cn(textVariant({ as }), className)} {...rest}>
