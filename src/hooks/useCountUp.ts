@@ -1,5 +1,3 @@
-'use client'
-
 import { useEffect, useState } from 'react'
 
 export function useCountUp(target: number, started: boolean, duration = 1200) {
@@ -7,25 +5,21 @@ export function useCountUp(target: number, started: boolean, duration = 1200) {
 
   useEffect(() => {
     if (!started) return
-
-    const startTime = performance.now()
-
+    let startTime: number
     const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp
       const progress = Math.min((timestamp - startTime) / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 3)
       setCount(Math.floor(eased * target))
       if (progress < 1) requestAnimationFrame(step)
     }
-
-    const id = requestAnimationFrame(step)
-    return () => cancelAnimationFrame(id)
+    requestAnimationFrame(step)
   }, [target, started, duration])
 
   return count
 }
 
 // "15%" → { num: 15, suffix: "%" }
-// "45초" → { num: 45, suffix: "초" }
 export function parseValue(value: string) {
   const match = value.match(/^(\d+)(.*)$/)
   return match

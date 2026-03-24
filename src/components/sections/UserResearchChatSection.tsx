@@ -8,7 +8,7 @@ export default function UserResearchChatSection({
   className,
 }: UserResearchChatSectionProps) {
   return (
-    <section className={`${className} flex flex-1 justify-end`}>
+    <section className={`${className} flex flex-1 justify-end pt-12`}>
       <Image
         src='/images/smols-user-research-chat.png'
         alt='유저 리서치 채팅'
