@@ -1,44 +1,61 @@
 import Section from '@/components/ui/Section'
 import HeroSection from '@/components/sections/Hero/HeroSection'
 import { smolsHeros, smolsSections } from '@/data/projects'
+import type { ProblemEvidenceSection, UserResearchSection } from '@/data/types' // ← 추가
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
-import StatCard from '@/components/ui/Cards/StatCard'
+import StatCardAnimated from '@/components/ui/Cards/StatCardAnimated'
 import UserResearchChatSection from '@/components/sections/UserResearchChatSection'
+import StatCard from '@/components/ui/Cards/StatCard'
+import DonutChartCard from '@/components/ui/Cards/DonutChartCard'
 
 export default function Home() {
+  const problemEvidence =
+    smolsSections.problemEvidence as ProblemEvidenceSection
+  const userResearch = smolsSections.userResearch as UserResearchSection
+  const { researchResult } = userResearch
+
   return (
     <div>
-      {/* 히어로 */}
       <div className='bg-orange-500'>
-        {smolsHeros.map((smolsHero) => (
-          <HeroSection key={smolsHero.id} {...smolsHero} />
+        {smolsHeros.map((hero) => (
+          <HeroSection key={hero.id} {...hero} />
         ))}
       </div>
 
-      {/* 서비스 소개 */}
       <Section>
         <SectionHeader {...smolsSections.overview} />
       </Section>
 
-      {/* 문제 발견 */}
-      <Section className='bg-black'>
-        <SectionHeader
-          {...smolsSections.problemEvidence}
-          className='text-white'
-        />
-        <StatCard
-          {...smolsSections.problemEvidence.stat}
+      <Section className='bg-gray-900'>
+        <SectionHeader {...problemEvidence} className='text-white' />
+        <StatCardAnimated
+          {...problemEvidence.stat}
           theme='dark'
-          className='mt-8'
+          className='mt-16'
         />
 
         <div className='mt-40 flex items-start'>
           <SectionHeader
-            {...smolsSections.userResearch}
+            {...userResearch}
             className='whitespace-pre-line text-white'
           />
           <UserResearchChatSection />
         </div>
+
+        <div className='mt-24 grid grid-cols-3 items-stretch gap-8'>
+          <StatCard {...researchResult.who} theme='dark' />
+          <StatCard {...researchResult.what} theme='dark' />
+          <DonutChartCard
+            {...researchResult.donutChart}
+            theme='dark'
+            className='whitespace-nowrap'
+          />
+        </div>
+
+        <SectionHeader
+          {...smolsSections.appReviewAnalysis}
+          className='pt-40 whitespace-pre-line text-white'
+        />
       </Section>
     </div>
   )

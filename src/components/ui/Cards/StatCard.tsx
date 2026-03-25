@@ -1,46 +1,58 @@
-import { VariantProps } from 'class-variance-authority'
-import { CardVariant } from './Card.variants'
+'use client'
+
+import type { StatCardData } from '@/data/types'
 import Text from '../Text/Text'
+import { CardVariant } from './Card.variants'
+import { VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/cn'
+import CountUp from 'react-countup'
+import { useVisible } from '@/hooks/useVisible'
+import { parseValue } from '@/utils/parseValue'
 
-type StatItem = {
-  value: string
-  label: string
-  goal: string
-}
-
-type StatCardProps = {
-  description: string
-  items: StatItem[]
+type StatCardProps = StatCardData & {
   className?: string
 } & VariantProps<typeof CardVariant>
 
 export default function StatCard({
+  title,
+  data,
+  subtitle,
   description,
-  items,
+  subdescription,
   theme,
   className,
 }: StatCardProps) {
+  const { ref, started } = useVisible(0.3)
+  const { num, suffix } = parseValue(data)
+
   return (
-    <div className={cn(CardVariant({ theme }), className)}>
-      <Text as='h4' className='text-center text-white'>
+    <div
+      ref={ref}
+      className={cn(
+        CardVariant({ theme }),
+        className,
+        'flex h-full flex-col justify-between'
+      )}
+    >
+      <Text as='h6' className='text-center'>
+        {title}
+      </Text>
+      <Text as='h1' className='pt-12 text-center text-orange-500'>
+        {started ? (
+          <CountUp start={0} end={num} duration={1.2} suffix={suffix} />
+        ) : (
+          `0${suffix}`
+        )}
+      </Text>
+      <Text as='h6' className='text-center font-light whitespace-pre-line'>
+        {subtitle}
+      </Text>
+      <Text as='p' className='text-center whitespace-pre-line'>
         {description}
       </Text>
-      <div className='mt-8 grid grid-cols-3 gap-8'>
-        {items.map((item) => (
-          <div key={item.label} className='text-center'>
-            <Text as='h1' className='text-orange-500'>
-              {item.value}
-            </Text>
-            <Text as='h5' className='text-medium mt-2 font-light'>
-              {item.label}
-            </Text>
-            <Text as='p' className='mt-1 text-gray-400'>
-              {item.goal}
-            </Text>
-          </div>
-        ))}
-      </div>
+      <Text as='caption' className='pt-8 text-center text-gray-400'>
+        {subdescription}
+      </Text>
     </div>
   )
 }
