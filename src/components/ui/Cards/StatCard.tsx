@@ -1,34 +1,58 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import type { StatCardData } from '@/data/types'
+import Text from '../Text/Text'
+import { CardVariant } from './Card.variants'
+import { VariantProps } from 'class-variance-authority'
+import { cn } from '@/lib/cn'
+import CountUp from 'react-countup'
+import { useVisible } from '@/hooks/useVisible'
+import { parseValue } from '@/utils/parseValue'
 
-export function useCountUp(target: number, started: boolean, duration = 1200) {
-  const [count, setCount] = useState(0)
+type StatCardProps = StatCardData & {
+  className?: string
+} & VariantProps<typeof CardVariant>
 
-  useEffect(() => {
-    if (!started) return
+export default function StatCard({
+  title,
+  data,
+  subtitle,
+  description,
+  subdescription,
+  theme,
+  className,
+}: StatCardProps) {
+  const { ref, started } = useVisible(0.3)
+  const { num, suffix } = parseValue(data)
 
-    const startTime = performance.now()
-
-    const step = (timestamp: number) => {
-      const progress = Math.min((timestamp - startTime) / duration, 1)
-      const eased = 1 - Math.pow(1 - progress, 3)
-      setCount(Math.floor(eased * target))
-      if (progress < 1) requestAnimationFrame(step)
-    }
-
-    const id = requestAnimationFrame(step)
-    return () => cancelAnimationFrame(id)
-  }, [target, started, duration])
-
-  return count
-}
-
-// "15%" → { num: 15, suffix: "%" }
-// "45초" → { num: 45, suffix: "초" }
-export function parseValue(value: string) {
-  const match = value.match(/^(\d+)(.*)$/)
-  return match
-    ? { num: parseInt(match[1]), suffix: match[2] }
-    : { num: 0, suffix: value }
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        CardVariant({ theme }),
+        className,
+        'flex h-full flex-col justify-between'
+      )}
+    >
+      <Text as='h6' className='text-center'>
+        {title}
+      </Text>
+      <Text as='h1' className='pt-12 text-center text-orange-500'>
+        {started ? (
+          <CountUp start={0} end={num} duration={1.2} suffix={suffix} />
+        ) : (
+          `0${suffix}`
+        )}
+      </Text>
+      <Text as='h6' className='text-center font-light whitespace-pre-line'>
+        {subtitle}
+      </Text>
+      <Text as='p' className='text-center whitespace-pre-line'>
+        {description}
+      </Text>
+      <Text as='caption' className='pt-8 text-center text-gray-400'>
+        {subdescription}
+      </Text>
+    </div>
+  )
 }

@@ -1,13 +1,13 @@
-import type { HeroData, SectionData } from './types'
+import type { HeroData, SectionData, AppReviewData } from './types'
 
 export const smolsHeros: HeroData[] = [
   {
     id: 1,
     badge: 'GOAL',
-    badgeText: '사용자의 기록 참여율을 개선한다.',
-    title: '정보 탐색에서 \n 기록 중심 경험으로',
+    badgeText: '기록 참여를 유도하는 경험 설계',
+    title: '정보 탐색에서 \n 기록 경험으로의 전환',
     description:
-      '3,000명 이상의 사용자 데이터를 기반으로 \n 참여 경험을 재설계한 과정.',
+      '3,000명 이상의 사용자 데이터를 기반으로 \n 기록 참여 경험을 재설계했습니다.',
     image: '/images/smols-hero-mockup.png',
     meta: [
       { label: 'ROLE', values: ['UX Research', 'UI Design'] },
@@ -24,7 +24,7 @@ export const smolsSections: Record<string, SectionData> = {
     badge: 'BACKGROUND',
     title: '정보 탐색 중심 \n 스몰스',
     description:
-      '스몰스는 정보 탐색을 핵심으로 MVP를 출시했지만 \n 사용자 참여율은 기대에 미치지 못했습니다.',
+      '스몰스는 정보 탐색 중심으로 MVP를 출시했으며 \n 기록 기능도 존재했지만, 사용자 참여로 이어지지 않았습니다.',
     align: 'center',
   },
 
@@ -34,16 +34,15 @@ export const smolsSections: Record<string, SectionData> = {
     title: '데이터로 확인된 문제',
     align: 'center',
     stat: {
-      description:
-        '사용자 절반 이상이 1주일 내 이탈했습니다. 참여가 지속되지 않았습니다.',
+      description: '사용자는 탐색에 머물고, 기록으로 전환되지 않았습니다.',
       items: [
         {
           value: '45초',
           label: '정보 탐색시간',
-          goal: '기록 행동으로 이어지지 않음.',
+          insight: '탐색 → 기록 전환 실패',
         },
-        { value: '60%', label: '1주 이탈률', goal: '목표: 30% 이하' },
-        { value: '15%', label: '기록 전환율', goal: '목표: 50% 이상' },
+        { value: '60%', label: '1주 이탈률', goal: '목표 30% ↓' },
+        { value: '15%', label: '기록 전환율', goal: '목표 50% ↑' },
       ],
     },
   },
@@ -51,12 +50,61 @@ export const smolsSections: Record<string, SectionData> = {
   userResearch: {
     type: 'insight',
     badge: 'INSIGHT',
-    title: '정보보다 \n 기록과 교감',
+    title: '정보보다 \n 기록과 소통 경험',
     description:
-      '사용자는 정보를 소비하는 것보다\n자신의 반려동물을 기록하고\n교감하는 경험을 더 중요하게 여겼습니다.\n\n기록과 댓글, 좋아요 등 다양한 행동이\n동일한 UI 레벨에서 제공되어\n사용자가 무엇을 해야 할지 명확하지 않았습니다.\n\n그 결과, 사용자는 콘텐츠를 소비하는 흐름에 머무르게 되었고\n기록과 참여 행동으로의 전환이 발생하지 않았습니다.',
+      '사용자는 정보 탐색보다\n반려동물을 기록하고 교감하는 경험을 더 원했습니다.\n\n하지만 기록, 댓글, 좋아요가 동일한 UI 레벨에 배치되어\n사용자가 무엇을 해야 할지 알 수 없었습니다.\n\n결국 사용자는 탐색에만 머물렀고,\n기록과 참여로 이어지지 않았습니다.',
     align: 'left',
     titleSize: 'h1',
-    highlight:
-      '사용자 인터뷰와 설문 데이터를 통해 반려동물 기록 경험에서의\n핵심 니즈와 주요 Pain Point를 도출했습니다.',
+    researchResult: {
+      who: {
+        title: '조사 대상 (Who)',
+        data: '322명',
+        subtitle: '서비스 참여 경험 \n 기반 사용자',
+        description: '',
+        subdescription: '',
+      },
+      what: {
+        title: '핵심 발견 (What)',
+        data: '55%',
+        subtitle: '정보 탐색보다 \n 기록 · 꾸미기 중심',
+        description: '',
+        subdescription: '',
+      },
+      donutChart: {
+        image: '/images/smols-donut-chart.png',
+        title: '사용 패턴 (Result)',
+        description: '',
+      },
+      highlight: '기록·꾸미기 사용 54.8%',
+    },
+  },
+
+  appReviewAnalysis: {
+    type: 'background',
+    badge: 'APP REVIEW ANALYSIS',
+    title: '기록은 가능했지만,\n신뢰할 수 없었습니다.',
+    align: 'left',
+    description: '',
+  },
+}
+
+export const smolsAppReview: AppReviewData = {
+  left: {
+    icon: '',
+    title: '앱 리뷰 분석',
+    count: '(2,688건 리뷰 데이터 기반)',
+    description:
+      '사용자 리서치와 2,688건의 리뷰 분석 결과,\n문제는 기능이 아닌 기록 경험에서 발생하고 있었습니다.\n특히 기록 안정성과 사용성 영역에서\n사용자의 신뢰를 저해하는 핵심 문제가 확인되었습니다.',
+    link: { label: '리뷰 데이터 샘플 보기', url: '/reviews' },
+  },
+  right: {
+    title: 'UX Pain Points',
+    unit: '단위: %',
+    items: [
+      { label: '기록 안정성 (저장 · 수정 시 데이터 유실)', value: 35.3 },
+      { label: '편집 사용성', value: 19.8 },
+      { label: '피드백 부족 (에러 · 상태 안내)', value: 15.8 },
+      { label: '업로드 불안정 (지연 · 실패)', value: 14.5 },
+    ],
   },
 }

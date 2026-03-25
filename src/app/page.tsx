@@ -5,12 +5,16 @@ import type { ProblemEvidenceSection, UserResearchSection } from '@/data/types' 
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
 import StatCardAnimated from '@/components/ui/Cards/StatCardAnimated'
 import UserResearchChatSection from '@/components/sections/UserResearchChatSection'
-import HighlightCard from '@/components/ui/Cards/HighlightCard'
+import StatCard from '@/components/ui/Cards/StatCard'
+import DonutChartCard from '@/components/ui/Cards/DonutChartCard'
+import AppReviewSection from '@/components/ui/Cards/AppReviewSection'
+import { smolsAppReview } from '@/data/projects'
 
 export default function Home() {
   const problemEvidence =
     smolsSections.problemEvidence as ProblemEvidenceSection
   const userResearch = smolsSections.userResearch as UserResearchSection
+  const { researchResult } = userResearch
 
   return (
     <div>
@@ -40,10 +44,25 @@ export default function Home() {
           <UserResearchChatSection />
         </div>
 
-        <HighlightCard
-          description={userResearch.highlight}
-          theme='orange'
-          className='mt-26 p-10 text-center whitespace-pre-line text-white'
+        <div className='mt-24 grid grid-cols-3 items-stretch gap-8'>
+          <StatCard {...researchResult.who} theme='dark' />
+          <StatCard {...researchResult.what} theme='dark' />
+          <DonutChartCard
+            {...researchResult.donutChart}
+            theme='dark'
+            className='whitespace-nowrap'
+          />
+        </div>
+
+        <SectionHeader
+          {...smolsSections.appReviewAnalysis}
+          className='pt-40 whitespace-pre-line text-white'
+        />
+
+        <AppReviewSection
+          className='mt-16'
+          data={smolsAppReview}
+          theme='dark'
         />
       </Section>
     </div>

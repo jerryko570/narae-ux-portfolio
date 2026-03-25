@@ -15,7 +15,9 @@ export default function HighlightCard({
 }: HightlightCardProps) {
   return (
     <div className={cn(CardVariant({ theme }), className)}>
-      <Text as='h6'>{description}</Text>
+      <Text as='h6' className='text-center'>
+        {description}
+      </Text>
     </div>
   )
 }
