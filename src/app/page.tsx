@@ -7,8 +7,6 @@ import StatCardAnimated from '@/components/ui/Cards/StatCardAnimated'
 import UserResearchChatSection from '@/components/sections/UserResearchChatSection'
 import StatCard from '@/components/ui/Cards/StatCard'
 import DonutChartCard from '@/components/ui/Cards/DonutChartCard'
-import AppReviewSection from '@/components/ui/Cards/AppReviewSection'
-import { smolsAppReview } from '@/data/projects'
 
 export default function Home() {
   const problemEvidence =
@@ -57,12 +55,6 @@ export default function Home() {
         <SectionHeader
           {...smolsSections.appReviewAnalysis}
           className='pt-40 whitespace-pre-line text-white'
-        />
-
-        <AppReviewSection
-          className='mt-16'
-          data={smolsAppReview}
-          theme='dark'
         />
       </Section>
     </div>
