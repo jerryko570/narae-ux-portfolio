@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <body style={{ fontFamily: 'Pretendard, sans-serif' }}>
-        <div className='min-w-[1280px]'>{children}</div>
+        <div className='min-w-7xl'>{children}</div>
       </body>
     </html>
   )

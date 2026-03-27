@@ -20,9 +20,11 @@ export default function NumberedCard({
   return (
     <div className={cn(CardVariant({ theme, ...props }))}>
       <div>
-        <Badge size='md' label={String(number)} theme='orange' />
-        <div className='pt-4 whitespace-pre-line'>
-          <Text as='h2'>{title}</Text>
+        <Badge size='sm' label={String(number)} theme='orange' />
+        <div className='pt-3 whitespace-pre-line'>
+          <Text as='h6' className='font-bold'>
+            {title}
+          </Text>
           <Text as='p' className='pt-4'>
             {description}
           </Text>

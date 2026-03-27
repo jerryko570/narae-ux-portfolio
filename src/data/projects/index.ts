@@ -7,6 +7,8 @@ import {
   smolsReviewCategories,
   smolsReviewCategoryTheme,
   smolsInsightSummary,
+  smolsStrategy,
+  smolsUxStrategy,
 } from './projects'
 
 export const smols = {
@@ -18,4 +20,6 @@ export const smols = {
   reviewCategories: smolsReviewCategories,
   reviewCategoryTheme: smolsReviewCategoryTheme,
   insightSummary: smolsInsightSummary,
+  strategy: smolsStrategy,
+  uxStratage: smolsUxStrategy,
 }

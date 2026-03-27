@@ -117,8 +117,3 @@ export type ReviewItem = {
   review: string
   ux_category: string
 }
-
-export type SmolsStrategy = {
-  badge: string
-  title: string
-}

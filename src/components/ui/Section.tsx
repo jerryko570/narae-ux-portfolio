@@ -7,7 +7,7 @@ export default function Section({
 }) {
   return (
     <section className={className}>
-      <div className='mx-auto max-w-7xl px-16 py-24'>{children}</div>
+      <div className='mx-auto max-w-7xl px-16 py-32'>{children}</div>
     </section>
   )
 }
