@@ -17,7 +17,7 @@ export default function HeroImage({
     <div
       className='absolute'
       style={{
-        top: '200px',
+        top: '240px',
         right: `${right}px`,
         width: imageWidth,
       }}
