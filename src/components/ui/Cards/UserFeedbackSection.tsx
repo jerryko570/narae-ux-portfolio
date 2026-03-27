@@ -29,13 +29,7 @@ export default function AppReviewSection({
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-4'>
             {left.icon && (
-              <Image
-                src={left.icon}
-                alt='app icon'
-                width={40}
-                height={40}
-                className=''
-              />
+              <Image src={left.icon} alt='app icon' width={40} height={40} />
             )}
             <Text as='h6' className='text-white'>
               {left.title}

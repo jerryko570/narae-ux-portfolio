@@ -107,6 +107,12 @@ export type ReviewSummaryData = {
   items: ReviewSummaryItem[]
 }
 
-export type smolsInsightSummary = {
+export type SmolsInsightSummary = {
   description: string
+}
+
+export type ReviewItem = {
+  id: string
+  review: string
+  ux_category: string
 }

@@ -1,7 +1,8 @@
 import { useEffect, useState, useMemo } from 'react'
-import Papa from 'papaparse' // 텍스트를 객체 배열로 변환하는 라이브러리
+import Papa from 'papaparse'
 
 type ReviewRow = {
+  id: string
   review: string
   ux_category: string
   date?: string
@@ -9,23 +10,23 @@ type ReviewRow = {
 }
 
 export function useReviewsData() {
-  const [data, setData] = useState<ReviewRow[]>([]) // 데이터 상태 (CSV 불러오면 바뀜)
-  const [category, setCategory] = useState('전체') // UI 상태 (버튼 클릭 시 바뀜)
-  const [loading, setLoading] = useState(true) // 로딩 상태 (데이터 다 불러오면 바뀜)
+  const [data, setData] = useState<ReviewRow[]>([])
+  const [category, setCategory] = useState('전체')
+  const [loading, setLoading] = useState(true)
 
-  // 이 코드는 렌더링이랑 분리해서 실행함 (언제 실행할지 조건 설정)
   useEffect(() => {
-    fetch('/review_ux_full.csv') // Promise 반환
-      .then((res) => res.text()) // fetch가 완료되면 res(응답)를 문자열로 변환
-
+    fetch('/review_ux_full.csv')
+      .then((res) => res.text())
       .then((csv) => {
-        const parsed = Papa.parse<ReviewRow>(csv, { header: true }) // 객체 배열로 파싱
-        const rows = parsed.data.filter(
-          (item) => item.review?.trim() && item.ux_category?.trim()
-        )
-        setData(rows) // 정제된 데이터 저장
-        setLoading(false) // 로딩 끝
+        const parsed = Papa.parse<ReviewRow>(csv, { header: true })
+        const rows = parsed.data
+          .filter((item) => item.review?.trim() && item.ux_category?.trim())
+          .map((item, i) => ({ ...item, id: `review-${i}` }))
+        setData(rows)
+        setLoading(false)
       })
+      .catch((error) => console.error('리뷰 데이터 로딩 실패:', error))
+      .finally(() => setLoading(false))
   }, [])
 
   const filtered = useMemo(() => {
