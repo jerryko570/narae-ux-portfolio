@@ -13,10 +13,14 @@ export default function Button({
   className,
   size,
   variant,
+  onClick,
 }: ButtonProps) {
   return (
-    <div className={cn(buttonVariants({ size, variant }), className)}>
+    <button
+      onClick={onClick}
+      className={cn(buttonVariants({ size, variant }), className)}
+    >
       {label}
-    </div>
+    </button>
   )
 }
