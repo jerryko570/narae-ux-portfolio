@@ -82,13 +82,14 @@ export default function Home() {
           ))}
         </div>
       </Section>
+
       <div className='bg-white'>
         <Section>
-          <div className='flex items-center justify-center'>
+          <div className='relative flex items-start justify-between'>
             <SectionHeader
               {...smols.sections.uxStrategy}
               className='whitespace-pre-line text-black'
-              align='center'
+              align='left'
             />
           </div>
 
