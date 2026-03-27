@@ -1,59 +1,71 @@
 import Section from '@/components/ui/Section'
 import HeroSection from '@/components/sections/Hero/HeroSection'
-import { smolsHeros, smolsSections } from '@/data/projects'
-import type { ProblemEvidenceSection, UserResearchSection } from '@/data/types' // ← 추가
+import { smols } from '@/data/projects'
+import type { MetricsSection, InsightSection } from '@/data/types'
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
-import StatCardAnimated from '@/components/ui/Cards/StatCardAnimated'
+import StatSection from '@/components/ui/Cards/StatSection'
 import UserResearchChatSection from '@/components/sections/UserResearchChatSection'
 import StatCard from '@/components/ui/Cards/StatCard'
-import DonutChartCard from '@/components/ui/Cards/DonutChartCard'
+import HighlightCard from '@/components/ui/Cards/HighlightCard'
+import AppReviewSection from '@/components/ui/Cards/UserFeedbackSection'
 
 export default function Home() {
-  const problemEvidence =
-    smolsSections.problemEvidence as ProblemEvidenceSection
-  const userResearch = smolsSections.userResearch as UserResearchSection
-  const { researchResult } = userResearch
+  const problemMetrics = smols.sections.problemMetrics as MetricsSection
+  const userInsight = smols.sections.userInsight as InsightSection
+  const { researchSummary } = userInsight
 
   return (
     <div>
       <div className='bg-orange-500'>
-        {smolsHeros.map((hero) => (
+        {smols.heros.map((hero) => (
           <HeroSection key={hero.id} {...hero} />
         ))}
       </div>
 
       <Section>
-        <SectionHeader {...smolsSections.overview} />
+        <SectionHeader {...smols.sections.overview} />
       </Section>
 
       <Section className='bg-gray-900'>
-        <SectionHeader {...problemEvidence} className='text-white' />
-        <StatCardAnimated
-          {...problemEvidence.stat}
+        <SectionHeader {...problemMetrics} className='text-white' />
+        <StatSection
+          {...problemMetrics.metrics}
           theme='dark'
           className='mt-16'
         />
 
         <div className='mt-40 flex items-start'>
           <SectionHeader
-            {...userResearch}
+            {...userInsight}
             className='whitespace-pre-line text-white'
           />
           <UserResearchChatSection />
         </div>
 
-        <div className='mt-24 grid grid-cols-3 items-stretch gap-8'>
-          <StatCard {...researchResult.who} theme='dark' />
-          <StatCard {...researchResult.what} theme='dark' />
-          <DonutChartCard
-            {...researchResult.donutChart}
-            theme='dark'
-            className='whitespace-nowrap'
-          />
+        <SectionHeader
+          {...smols.sections.feedbackAnalysis}
+          className='pt-40 whitespace-pre-line text-white'
+        />
+
+        <div className='mt-16 grid grid-cols-2 items-stretch gap-8'>
+          <StatCard {...researchSummary.who} theme='dark' />
+          <StatCard {...researchSummary.what} theme='dark' />
         </div>
 
+        <AppReviewSection
+          className='mt-8'
+          data={smols.feedbackData}
+          theme='dark'
+        />
+
+        <HighlightCard
+          className='mt-8'
+          description={smols.insightSummary.description}
+          theme='orange'
+        />
+
         <SectionHeader
-          {...smolsSections.appReviewAnalysis}
+          {...smols.sections.feedbackAnalysis}
           className='pt-40 whitespace-pre-line text-white'
         />
       </Section>
