@@ -8,7 +8,7 @@ export const smolsHeros: HeroData[] = [
     title: '정보 탐색에서 \n 기록으로',
     description:
       '964건의 사용자 리뷰를 분석해 \n 기록 경험의 문제를 재정의했습니다.',
-    image: '/images/smols-hero-mockup.png',
+    image: '/images/smols/mockups/hero-mockup.png',
     meta: [
       { label: 'ROLE', values: ['UX Research', 'UI Design'] },
       { label: 'DURATION', values: ['2023.03~', '2024.01'] },
@@ -63,6 +63,7 @@ export const smolsSections: Record<string, SectionData> = {
       '사용자는 정보를 소비하기보다\n반려동물을 기록하고 꾸미는 경험을 기대했습니다.\n\n그러나 기록 과정은 번거롭고,\n꾸미기 기능은 충분히 제공되지 않았습니다.\n\n이로 인해 기록은 반복되지 않았고,\n서비스는 탐색 중심으로 머물렀습니다.',
     align: 'left',
     titleSize: 'h1',
+    image: '/images/smols/research/user-research-chat.png',
     researchSummary: {
       who: {
         title: '조사 대상 (Who)',
@@ -162,7 +163,11 @@ export const smolsReviewCategoryTheme = {
 } as const
 
 export const smolsInsightSummary = {
-  title: '',
   description:
     '기록 기능이 아니라, 기록을 지속하게 만드는 경험이 필요했습니다.',
+}
+
+export const smolsStrategy = {
+  badge: 'PRODUCT STRATEGY',
+  title: '기록을 중심으로 서비스 구조를 재설계했습니다.',
 }
