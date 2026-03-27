@@ -21,5 +21,5 @@ export const smols = {
   reviewCategoryTheme: smolsReviewCategoryTheme,
   insightSummary: smolsInsightSummary,
   strategy: smolsStrategy,
-  uxStratage: smolsUxStrategy,
+  uxStrategy: smolsUxStrategy,
 }

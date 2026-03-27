@@ -93,7 +93,7 @@ export default function Home() {
           </div>
 
           <div className='flex gap-8 pt-16'>
-            {smols.uxStratage.items.map((item) => (
+            {smols.uxStrategy.items.map((item) => (
               <NumberedCard
                 key={item.number}
                 number={item.number}
