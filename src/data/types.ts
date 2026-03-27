@@ -4,49 +4,59 @@ type BaseSectionData = {
   align: 'left' | 'center' | 'right'
 }
 
-export type OverviewSection = BaseSectionData & {
+export type BackgroundSection = BaseSectionData & {
   type: 'background'
   description?: string
 }
 
-export type ProblemEvidenceSection = BaseSectionData & {
-  type: 'keyMetric'
-  stat: {
+export type MetricItem = {
+  value: string
+  label: string
+  insight?: string
+}
+
+export type MetricsSection = BaseSectionData & {
+  type: 'metrics'
+  metrics: {
     description: string
-    items: { value: string; label: string; insight?: string; goal?: string }[]
+    items: MetricItem[]
   }
 }
 
 export type StatCardData = {
   title: string
-  data: string
+  data?: string
   subtitle: string
   description: string
   subdescription: string
 }
 
-export type UserResearchSection = BaseSectionData & {
+export type InsightSection = BaseSectionData & {
   type: 'insight'
   description: string
   titleSize: 'h1' | 'h2'
-  researchResult: {
+  researchSummary: {
     who: StatCardData
     what: StatCardData
-    donutChart: {
-      title: string
-      image: string
-      description: string
-    }
     highlight: string
   }
 }
 
-export type SectionData =
-  | OverviewSection
-  | ProblemEvidenceSection
-  | UserResearchSection
+export type ResearchSection = BaseSectionData & {
+  type: 'research'
+  description?: string
+}
 
-export type HeroMeta = { label: string; values: string[] }
+export type SectionData =
+  | BackgroundSection
+  | MetricsSection
+  | InsightSection
+  | ResearchSection
+
+export type HeroMeta = {
+  label: string
+  values: string[]
+}
 
 export type HeroData = {
   id: number
@@ -58,24 +68,51 @@ export type HeroData = {
   meta: HeroMeta[]
 }
 
-export type AppReviewItem = {
+export type FeedbackItem = {
   label: string
   value: number
 }
 
-export type AppReviewCardData = {
+export type FeedbackLink = {
+  label: string
+  url: string
+}
+
+export type FeedbackCardData = {
   icon: string
   title: string
   count: string
   description: string
-  link: { label: string; url: string }
+  link: FeedbackLink
 }
 
-export type AppReviewData = {
-  left: AppReviewCardData
+export type FeedbackData = {
+  left: FeedbackCardData
   right: {
     title: string
     unit: string
-    items: AppReviewItem[]
+    items: FeedbackItem[]
   }
+}
+
+export type ReviewSummaryItem = {
+  title: string
+  value: string
+  label: string
+}
+
+export type ReviewSummaryData = {
+  title: string
+  description: string
+  items: ReviewSummaryItem[]
+}
+
+export type SmolsInsightSummary = {
+  description: string
+}
+
+export type ReviewItem = {
+  id: string
+  review: string
+  ux_category: string
 }

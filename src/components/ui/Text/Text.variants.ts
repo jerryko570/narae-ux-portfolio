@@ -10,7 +10,7 @@ export const textVariant = cva('', {
       h4: 'text-[2rem] leading-[1.4] font-semibold', // 32px  (×4)
       h5: 'text-[1.75rem] leading-[1.5] font-medium', // 28px  (×3.5)
       h6: 'text-[1.5rem] leading-[1.5] font-medium', // 24px  (×3)
-      p: 'text-[1rem] leading-[1.7] font-normal', // 16px  (×2)
+      p: 'text-[1rem] leading-[1.8] font-normal', // 16px  (×2)
       caption: 'text-[0.875rem] leading-[1.4] font-normal', // 14px
     },
   },
