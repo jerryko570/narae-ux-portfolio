@@ -19,6 +19,7 @@
 
   /* Blue */
   --blue-500: #00c8ff;
+  --blue-600: #00afdf;
 
   /* Radius */
   --radius-sm: 1.125rem;
@@ -67,6 +68,7 @@
 
   /* Blue */
   --color-blue-500: var(--blue-500);
+  --color-blue-600: var(--blue-600);
 
   /* Radius */
   --radius-sm: var(--radius-sm);
