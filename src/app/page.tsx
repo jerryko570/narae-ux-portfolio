@@ -9,6 +9,7 @@ import StatCard from '@/components/ui/Cards/StatCard'
 import HighlightCard from '@/components/ui/Cards/HighlightCard'
 import AppReviewSection from '@/components/ui/Cards/UserFeedbackSection'
 import NumberedCard from '@/components/ui/Cards/NumberedCard'
+import Image from 'next/image'
 
 export default function Home() {
   const problemMetrics = smols.sections.problemMetrics as MetricsSection
@@ -82,13 +83,21 @@ export default function Home() {
           ))}
         </div>
       </Section>
+
       <div className='bg-white'>
         <Section>
-          <div className='flex items-center justify-center'>
+          <div className='relative flex items-start justify-between'>
             <SectionHeader
               {...smols.sections.uxStrategy}
               className='whitespace-pre-line text-black'
-              align='center'
+              align='left'
+            />
+            <Image
+              src='/images/smols/mockups/ux-strategy-character.svg'
+              alt='ux strategy character'
+              width={300}
+              height={300}
+              className='absolute top-0 right-0'
             />
           </div>
 

@@ -64,7 +64,7 @@ export default function ReviewsPage() {
         </div>
 
         <div className='space-y-2'>
-          {filtered.map((item, i) => (
+          {filtered.map((item) => (
             <div
               key={item.id}
               className='flex justify-between gap-4 border-b border-gray-200 py-5 text-black'

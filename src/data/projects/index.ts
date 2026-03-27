@@ -9,7 +9,7 @@ import {
   smolsInsightSummary,
   smolsStrategy,
   smolsUxStrategy,
-} from './projects'
+} from './smols'
 
 export const smols = {
   heros: smolsHeros,

@@ -2,11 +2,11 @@ import Text from '../Text/Text'
 import { CardVariant } from './Card.variants'
 import { VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/cn'
-import { smols } from '@/data/projects'
+import type { FeedbackData } from '@/data/types'
 import Image from 'next/image'
 
 type UserFeedbackSectionProps = {
-  data: typeof smols.feedbackData
+  data: FeedbackData
   className?: string
 } & VariantProps<typeof CardVariant>
 
