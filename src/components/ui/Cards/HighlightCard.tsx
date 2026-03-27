@@ -12,9 +12,9 @@ export default function HighlightCard({
   description,
   theme,
   className,
-}: HightlightCardProps) {
+}: Partial<HightlightCardProps>) {
   return (
-    <div className={cn(CardVariant({ theme }), className)}>
+    <div className={cn(CardVariant({ theme }), className, 'block')}>
       <Text as='h6' className='text-center'>
         {description}
       </Text>

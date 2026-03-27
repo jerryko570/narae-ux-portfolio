@@ -13,6 +13,7 @@ export const BadgeVariants = cva(
         dark: 'bg-gray-800 text-white',
         white: 'bg-white text-orange-500',
         orange: 'bg-orange-500 text-white',
+        blue: 'bg-blue-500 text-white',
       },
     },
     defaultVariants: {
