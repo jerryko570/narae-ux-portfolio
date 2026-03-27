@@ -36,21 +36,9 @@ export const smolsSections: Record<string, SectionData> = {
     metrics: {
       description: '사용자는 정보를 탐색했지만, 기록으로 이어지지 않았습니다.',
       items: [
-        {
-          value: '45초',
-          label: '정보 탐색시간',
-          insight: '탐색에 머무름',
-        },
-        {
-          value: '60%',
-          label: '1주 이탈률',
-          insight: '초기 사용 이후 이탈',
-        },
-        {
-          value: '15%',
-          label: '기록 전환율',
-          insight: '핵심 기능 사용 낮음',
-        },
+        { value: '45초', label: '정보 탐색시간', insight: '탐색에 머무름' },
+        { value: '60%', label: '1주 이탈률', insight: '초기 사용 이후 이탈' },
+        { value: '15%', label: '기록 전환율', insight: '핵심 기능 사용 낮음' },
       ],
     },
   },
@@ -90,6 +78,13 @@ export const smolsSections: Record<string, SectionData> = {
     align: 'left',
     description: '',
   },
+
+  strategy: {
+    type: 'background',
+    badge: 'PRODUCT STRATEGY',
+    title: '기록을 중심으로 서비스 구조를 재설계했습니다.',
+    align: 'left',
+  },
 }
 
 export const smolsFeedbackData: FeedbackData = {
@@ -127,21 +122,9 @@ export const smolsReviewSummary = {
   description:
     '사용자 피드백을 종합해보면, 기록 자체보다 꾸미기 경험의 부족이 주요 문제로 나타났습니다.',
   items: [
-    {
-      title: '가장 큰 문제',
-      value: '44.5%',
-      label: '꾸미기 기능 부족',
-    },
-    {
-      title: '두 번째 문제',
-      value: '39.2%',
-      label: '앱 성능/안정성',
-    },
-    {
-      title: '핵심 인사이트',
-      value: '기록은 OK',
-      label: '문제는 꾸미기 경험',
-    },
+    { title: '가장 큰 문제', value: '44.5%', label: '꾸미기 기능 부족' },
+    { title: '두 번째 문제', value: '39.2%', label: '앱 성능/안정성' },
+    { title: '핵심 인사이트', value: '기록은 OK', label: '문제는 꾸미기 경험' },
   ],
 }
 
@@ -165,9 +148,4 @@ export const smolsReviewCategoryTheme = {
 export const smolsInsightSummary = {
   description:
     '기록 기능이 아니라, 기록을 지속하게 만드는 경험이 필요했습니다.',
-}
-
-export const smolsStrategy = {
-  badge: 'PRODUCT STRATEGY',
-  title: '기록을 중심으로 서비스 구조를 재설계했습니다.',
 }
