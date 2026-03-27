@@ -8,7 +8,7 @@ export const smolsHeros: HeroData[] = [
     title: '정보 탐색에서 \n 기록으로',
     description:
       '964건의 사용자 리뷰를 분석해 \n 기록 경험의 문제를 재정의했습니다.',
-    image: '/images/smols-hero-mockup.png',
+    image: '/images/smols/mockups/hero-mockup.png',
     meta: [
       { label: 'ROLE', values: ['UX Research', 'UI Design'] },
       { label: 'DURATION', values: ['2023.03~', '2024.01'] },
@@ -36,21 +36,9 @@ export const smolsSections: Record<string, SectionData> = {
     metrics: {
       description: '사용자는 정보를 탐색했지만, 기록으로 이어지지 않았습니다.',
       items: [
-        {
-          value: '45초',
-          label: '정보 탐색시간',
-          insight: '탐색에 머무름',
-        },
-        {
-          value: '60%',
-          label: '1주 이탈률',
-          insight: '초기 사용 이후 이탈',
-        },
-        {
-          value: '15%',
-          label: '기록 전환율',
-          insight: '핵심 기능 사용 낮음',
-        },
+        { value: '45초', label: '정보 탐색시간', insight: '탐색에 머무름' },
+        { value: '60%', label: '1주 이탈률', insight: '초기 사용 이후 이탈' },
+        { value: '15%', label: '기록 전환율', insight: '핵심 기능 사용 낮음' },
       ],
     },
   },
@@ -63,6 +51,7 @@ export const smolsSections: Record<string, SectionData> = {
       '사용자는 정보를 소비하기보다\n반려동물을 기록하고 꾸미는 경험을 기대했습니다.\n\n그러나 기록 과정은 번거롭고,\n꾸미기 기능은 충분히 제공되지 않았습니다.\n\n이로 인해 기록은 반복되지 않았고,\n서비스는 탐색 중심으로 머물렀습니다.',
     align: 'left',
     titleSize: 'h1',
+    image: '/images/smols/research/user-research-chat.png',
     researchSummary: {
       who: {
         title: '조사 대상 (Who)',
@@ -88,6 +77,13 @@ export const smolsSections: Record<string, SectionData> = {
     title: '기록하고 싶었지만,\n꾸미기가 부족했습니다',
     align: 'left',
     description: '',
+  },
+
+  strategy: {
+    type: 'background',
+    badge: 'PRODUCT STRATEGY',
+    title: '기록을 중심으로 서비스 구조를 재설계했습니다.',
+    align: 'left',
   },
 }
 
@@ -126,21 +122,9 @@ export const smolsReviewSummary = {
   description:
     '사용자 피드백을 종합해보면, 기록 자체보다 꾸미기 경험의 부족이 주요 문제로 나타났습니다.',
   items: [
-    {
-      title: '가장 큰 문제',
-      value: '44.5%',
-      label: '꾸미기 기능 부족',
-    },
-    {
-      title: '두 번째 문제',
-      value: '39.2%',
-      label: '앱 성능/안정성',
-    },
-    {
-      title: '핵심 인사이트',
-      value: '기록은 OK',
-      label: '문제는 꾸미기 경험',
-    },
+    { title: '가장 큰 문제', value: '44.5%', label: '꾸미기 기능 부족' },
+    { title: '두 번째 문제', value: '39.2%', label: '앱 성능/안정성' },
+    { title: '핵심 인사이트', value: '기록은 OK', label: '문제는 꾸미기 경험' },
   ],
 }
 
@@ -162,7 +146,6 @@ export const smolsReviewCategoryTheme = {
 } as const
 
 export const smolsInsightSummary = {
-  title: '',
   description:
     '기록 기능이 아니라, 기록을 지속하게 만드는 경험이 필요했습니다.',
 }

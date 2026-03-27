@@ -39,7 +39,7 @@ export default function Home() {
             {...userInsight}
             className='whitespace-pre-line text-white'
           />
-          <UserResearchChatSection />
+          <UserResearchChatSection image={userInsight.image} />
         </div>
 
         <SectionHeader
@@ -65,7 +65,7 @@ export default function Home() {
         />
 
         <SectionHeader
-          {...smols.sections.feedbackAnalysis}
+          {...smols.sections.strategy}
           className='pt-40 whitespace-pre-line text-white'
         />
       </Section>

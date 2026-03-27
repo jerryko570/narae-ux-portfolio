@@ -35,6 +35,7 @@ export type InsightSection = BaseSectionData & {
   type: 'insight'
   description: string
   titleSize: 'h1' | 'h2'
+  image: string
   researchSummary: {
     who: StatCardData
     what: StatCardData
@@ -115,4 +116,9 @@ export type ReviewItem = {
   id: string
   review: string
   ux_category: string
+}
+
+export type SmolsStrategy = {
+  badge: string
+  title: string
 }
