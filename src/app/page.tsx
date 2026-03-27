@@ -8,6 +8,7 @@ import UserResearchChatSection from '@/components/sections/UserResearchChatSecti
 import StatCard from '@/components/ui/Cards/StatCard'
 import HighlightCard from '@/components/ui/Cards/HighlightCard'
 import AppReviewSection from '@/components/ui/Cards/UserFeedbackSection'
+import NumberedCard from '@/components/ui/Cards/NumberedCard'
 
 export default function Home() {
   const problemMetrics = smols.sections.problemMetrics as MetricsSection
@@ -61,14 +62,49 @@ export default function Home() {
         <HighlightCard
           className='mt-8'
           description={smols.insightSummary.description}
-          theme='orange'
+          theme='dark'
         />
 
         <SectionHeader
           {...smols.sections.strategy}
           className='pt-40 whitespace-pre-line text-white'
+          align='center'
         />
+
+        <div className='flex gap-8'>
+          {smols.strategy.map((item) => (
+            <HighlightCard
+              key={item.title}
+              className='mt-16'
+              {...item}
+              theme='dark'
+            />
+          ))}
+        </div>
       </Section>
+      <div className='bg-white'>
+        <Section>
+          <div className='flex items-center justify-center'>
+            <SectionHeader
+              {...smols.sections.uxStrategy}
+              className='whitespace-pre-line text-black'
+              align='center'
+            />
+          </div>
+
+          <div className='flex gap-8 pt-16'>
+            {smols.uxStrategy.items.map((item) => (
+              <NumberedCard
+                key={item.number}
+                number={item.number}
+                title={item.title}
+                description={item.description}
+                theme='lightOrange'
+              />
+            ))}
+          </div>
+        </Section>
+      </div>
     </div>
   )
 }
