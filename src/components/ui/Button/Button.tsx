@@ -17,6 +17,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
+      type='button'
       onClick={onClick}
       className={cn(buttonVariants({ size, variant }), className)}
     >
