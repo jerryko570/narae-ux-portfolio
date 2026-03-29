@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority'
 
-export const CardVariant = cva('flex w-full rounded-lg p-16', {
+export const CardVariant = cva('flex w-full rounded-lg p-12', {
   variants: {
     theme: {
       dark: 'bg-gray-800 text-white',
