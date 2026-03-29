@@ -1,5 +1,5 @@
 type BaseSectionData = {
-  badge: string
+  badge?: string
   title: string
   align: 'left' | 'center' | 'right'
 }
@@ -17,9 +17,6 @@ export type MetricsSection = BaseSectionData & {
 export type StatCardData = {
   title: string
   data?: string
-  subtitle: string
-  description: string
-  subdescription: string
 }
 
 export type InsightSection = BaseSectionData & {
@@ -35,8 +32,15 @@ export type ResearchSection = BaseSectionData & {
   description?: string
 }
 
+export type SolutionSection = BaseSectionData & {
+  type: 'solution'
+  badge: string
+  description?: string
+}
+
 export type SectionData =
   | BackgroundSection
   | MetricsSection
   | InsightSection
   | ResearchSection
+  | SolutionSection

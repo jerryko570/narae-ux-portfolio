@@ -9,6 +9,8 @@ import {
   smolsInsightSummary,
   smolsStrategy,
   smolsUxStrategy,
+  smolsUxPrinciple,
+  smolsTransformation,
 } from './smols'
 
 export const smols = {
@@ -22,4 +24,6 @@ export const smols = {
   insightSummary: smolsInsightSummary,
   strategy: smolsStrategy,
   uxStrategy: smolsUxStrategy,
+  uxPrinciple: smolsUxPrinciple,
+  smolsTransformation: smolsTransformation,
 }
