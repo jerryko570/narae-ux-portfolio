@@ -3,6 +3,7 @@ import { VariantProps } from 'class-variance-authority'
 import Text from '../Text/Text'
 import { cn } from '@/lib/cn'
 import Image from 'next/image'
+
 type HighlightCardProps = {
   title?: string
   description?: string
@@ -10,6 +11,7 @@ type HighlightCardProps = {
   imageWidth?: number
   imageHeight?: number
   className?: string
+  imageClassName?: string
   gap?: string
 } & VariantProps<typeof CardVariant>
 
@@ -18,8 +20,9 @@ export default function HighlightCard({
   description,
   image,
   theme,
-  imageWidth = 400,
-  imageHeight = 500,
+  imageWidth = 300,
+  imageHeight = 400,
+  imageClassName,
   className,
   gap = 'mt-2',
 }: Partial<HighlightCardProps>) {
@@ -41,7 +44,7 @@ export default function HighlightCard({
           alt={title ?? ''}
           width={imageWidth}
           height={imageHeight}
-          className='mx-auto max-w-75 pt-4'
+          className={cn('mx-auto pt-2', imageClassName)}
         />
       )}
     </div>

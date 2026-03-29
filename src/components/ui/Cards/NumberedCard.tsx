@@ -21,7 +21,7 @@ export default function NumberedCard({
     <div className={cn(CardVariant({ theme, ...props }))}>
       <div>
         <Badge size='sm' label={String(number)} theme='orange' />
-        <div className='pt-3 whitespace-pre-line'>
+        <div className='pt-2 whitespace-pre-line'>
           <Text as='h6' className='font-bold'>
             {title}
           </Text>

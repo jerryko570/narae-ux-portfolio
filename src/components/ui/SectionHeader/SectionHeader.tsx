@@ -37,12 +37,12 @@ export default function SectionHeader({
         </Text>
       )}
       {subtitle && (
-        <Text as='h4' className='mt-6 break-keep whitespace-pre-line'>
+        <Text as='h3' className='mt-6 break-keep whitespace-pre-line'>
           {subtitle}
         </Text>
       )}
       {description && (
-        <Text as='p' className='mt-12 font-light whitespace-pre-line'>
+        <Text as='p' className='mt-5 whitespace-pre-line'>
           {description}
         </Text>
       )}
