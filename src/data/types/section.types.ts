@@ -32,10 +32,9 @@ export type ResearchSection = BaseSectionData & {
   description?: string
 }
 
-export type SolutionSerction = BaseSectionData & {
+export type SolutionSection = BaseSectionData & {
   type: 'solution'
   badge: string
-  title: string
   description?: string
 }
 
@@ -44,4 +43,4 @@ export type SectionData =
   | MetricsSection
   | InsightSection
   | ResearchSection
-  | SolutionSerction
+  | SolutionSection

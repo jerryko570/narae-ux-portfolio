@@ -19,5 +19,5 @@ export type UxStrategyItem = {
 
 export type UxStrategy = {
   items: UxStrategyItem[]
-  video: VideoConfig
+  video?: VideoConfig
 }

@@ -25,5 +25,5 @@ export const smols = {
   strategy: smolsStrategy,
   uxStrategy: smolsUxStrategy,
   uxPrinciple: smolsUxPrinciple,
-  uxTransfomation: smolsTransformation,
+  smolsTransformation: smolsTransformation,
 }
