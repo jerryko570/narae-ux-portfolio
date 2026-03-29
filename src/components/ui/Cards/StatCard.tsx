@@ -12,16 +12,23 @@ import { parseValue } from '@/utils/parseValue'
 type StatCardProps = Partial<StatCardData> & {
   className?: string
   animated?: boolean
+  subtitle?: string
+  titleClassName?: string
+  dataClassName?: string
+  titleSize?: 'h4' | 'h5' | 'h6'
+  dataSize?: 'h1' | 'h2' | 'h3'
 } & VariantProps<typeof CardVariant>
 
 export default function StatCard({
   title,
   data = '',
-  subtitle,
-  description,
   theme,
   className,
   animated = true,
+  titleClassName,
+  dataClassName,
+  titleSize = 'h6',
+  dataSize = 'h1',
 }: StatCardProps) {
   const { ref, started } = useVisible(0.3)
   const { num, suffix } = parseValue(data)
@@ -32,10 +39,13 @@ export default function StatCard({
       ref={animated ? ref : undefined}
       className={cn(CardVariant({ theme }), className, 'flex flex-col')}
     >
-      <Text as='h6' className='text-center'>
+      <Text as={titleSize} className={cn('text-center', titleClassName)}>
         {title}
       </Text>
-      <Text as='h1' className='pt-4 text-center text-orange-500'>
+      <Text
+        as={dataSize}
+        className={cn('pt-2 text-center text-orange-500', dataClassName)}
+      >
         {hasNumber ? (
           animated && started ? (
             <CountUp start={0} end={num} duration={1.2} suffix={suffix} />
@@ -45,12 +55,6 @@ export default function StatCard({
         ) : (
           data
         )}
-      </Text>
-      <Text as='h6' className='pt-8 text-center font-light whitespace-pre-line'>
-        {subtitle}
-      </Text>
-      <Text as='p' className='text-center whitespace-pre-line'>
-        {description}
       </Text>
     </div>
   )
