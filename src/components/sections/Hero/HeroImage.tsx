@@ -5,6 +5,7 @@ import Image from 'next/image'
 type HeroImageProps = {
   src: string
   imageWidth?: string
+  top?: number
   right?: number
 }
 
@@ -12,12 +13,13 @@ export default function HeroImage({
   src,
   imageWidth = '750px',
   right = 40,
+  top = 160,
 }: HeroImageProps) {
   return (
     <div
       className='absolute'
       style={{
-        top: '160px',
+        top: `${top}px`,
         right: `${right}px`,
         width: imageWidth,
       }}
