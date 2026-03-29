@@ -28,7 +28,7 @@ export default function HeroSection({
   image,
 }: HeroSectionProps) {
   return (
-    <div className='relative'>
+    <div className='relative min-w-400'>
       <Section className='w-full bg-orange-500'>
         {/* 배지 */}
         <div className='inline-flex items-center'>
@@ -43,7 +43,7 @@ export default function HeroSection({
           <Text as='display' className='break-keep'>
             {title}
           </Text>
-          <Text as='h6' className='pt-12 font-light'>
+          <Text as='h6' className='pt-12'>
             {description}
           </Text>
         </div>
