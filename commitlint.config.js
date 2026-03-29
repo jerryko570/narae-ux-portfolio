@@ -1,7 +1,7 @@
 const commitlintConfig = {
   parserPreset: {
     parserOpts: {
-      headerPattern: /^(⚙️Chore|✨Feature|♻️Refactor|🐛Fix|📝Docs): (.+)$/u,
+      headerPattern: /^(.+?):\s(.+)$/,
       headerCorrespondence: ['type', 'subject'],
     },
   },
@@ -9,7 +9,15 @@ const commitlintConfig = {
     'type-enum': [
       2,
       'always',
-      ['⚙️Chore', '✨Feature', '♻️Refactor', '🐛Fix', '📝Docs'],
+      [
+        '⚙️Chore',
+        '✨Feature',
+        '♻️Refactor',
+        '🐛Fix',
+        '📝Docs',
+        '🖼️Assets',
+        '🎨Style',
+      ],
     ],
     'type-empty': [2, 'never'],
     'subject-empty': [2, 'never'],
