@@ -20,7 +20,7 @@ export default function AppReviewSection({
   return (
     <section
       className={cn(
-        'grid grid-cols-[3fr_1px_7fr] gap-18',
+        'grid grid-cols-[3fr_1px_7fr] gap-16',
         CardVariant({ theme }),
         className
       )}
@@ -47,8 +47,8 @@ export default function AppReviewSection({
         {left.link && (
           <a href={left.link.url} target='_blank' rel='noopener noreferrer'>
             <Text
-              as='caption'
-              className='mt-10 inline-block font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-600'
+              as='p'
+              className='mt-16 inline-block font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-600'
             >
               {left.link.label}
             </Text>

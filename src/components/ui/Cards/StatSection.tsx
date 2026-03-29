@@ -47,7 +47,7 @@ function StatItem({
         )}
       </Text>
       {label && (
-        <Text as='h6' className='mt-4 font-light'>
+        <Text as='p' className='mt-2 font-light text-gray-400'>
           {label}
         </Text>
       )}
@@ -88,7 +88,7 @@ export default function StatSection({
           {description}
         </Text>
       )}
-      <div className='mt-12 grid grid-cols-3 gap-40'>
+      <div className='mt-8 grid grid-cols-3 gap-40'>
         {items.map((item) => (
           <StatItem
             key={item.label}
