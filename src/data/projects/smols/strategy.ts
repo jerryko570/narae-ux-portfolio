@@ -71,16 +71,16 @@ export const smolsTransformation: Transformation = {
     label: 'AS-IS',
     title: '탐색 → 기록 전환이 단절된 구조',
     description:
-      '탐색은 이루어지지만, \n 기록으로의 전환은 발생하지 않는 구조였습니다.',
+      '탐색은 이루어지지만, \n기록으로의 전환은 발생하지 않는 구조였습니다.',
   },
   after: {
     label: 'TO-BE',
     title: '기록 전환 구조',
     description:
-      '상단 CTA는 진입 시 기록 의도를 형성하고, \n 하단 CTA는 탐색 중 행동 전환을 유도합니다. \n\n 사용자의 탐색 흐름 안에서 기록 행동이  \n 자연스럽게 이어지도록 설계했습니다.  ',
+      '상단 CTA는 진입 시 기록 의도를 형성하고, \n하단 CTA는 탐색 중 행동 전환을 유도합니다. \n\n사용자의 탐색 흐름 안에서 기록 행동이  \n자연스럽게 이어지도록 설계했습니다.  ',
   },
   insights: [
-    { text: '기록 전환 \n 트리거', position: 'top' },
-    { text: '#첫화면에 \n 기록 시작', position: 'bottom' },
+    { text: '기록 전환 \n트리거', position: 'top' },
+    { text: '#첫화면에 \n기록 시작', position: 'bottom' },
   ],
 }
