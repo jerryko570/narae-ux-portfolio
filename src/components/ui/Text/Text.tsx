@@ -20,6 +20,7 @@ const elementMap: Record<AsType, React.ElementType> = {
   h4: 'h4',
   h5: 'h5',
   h6: 'h6',
+  body: 'p',
   p: 'p',
   caption: 'span',
 }
