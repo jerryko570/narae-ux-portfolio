@@ -21,3 +21,22 @@ export type UxStrategy = {
   items: UxStrategyItem[]
   video?: VideoConfig
 }
+
+// UX PRINCIPLES
+export type TransformationItem = {
+  label: string
+  title: string
+  description: string
+}
+
+export type InsightItem = {
+  text: string
+  position: 'top' | 'bottom'
+}
+
+export type Transformation = {
+  center: string
+  before: TransformationItem
+  after: TransformationItem
+  insights: InsightItem[]
+}

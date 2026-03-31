@@ -1,9 +1,11 @@
-export const smolsInsightSummary = {
+import type { StrategyItem, UxStrategy, Transformation } from '../../types'
+
+export const smolsInsightSummary: { description: string } = {
   description:
     '기록 기능이 아니라, 기록을 지속하게 만드는 경험이 필요했습니다.',
 }
 
-export const smolsStrategy = [
+export const smolsStrategy: StrategyItem[] = [
   {
     title: '기존 경험',
     description: '탐색은 했지만, 기록은 남지 않았습니다.',
@@ -20,7 +22,7 @@ export const smolsStrategy = [
   },
 ]
 
-export const smolsUxStrategy = {
+export const smolsUxStrategy: UxStrategy = {
   items: [
     {
       number: 1,
@@ -63,15 +65,22 @@ export const smolsUxPrinciple = {
   },
 }
 
-export const smolsTransformation = {
+export const smolsTransformation: Transformation = {
   center: '탐색 → 기록',
   before: {
     label: 'AS-IS',
-    items: ['이미지 중심 피드', '→ 정보 파악 어려움', '→ 행동 우선순위 모호'],
+    title: '탐색 → 기록 전환이 단절된 구조',
+    description:
+      '탐색은 이루어지지만, \n 기록으로의 전환은 발생하지 않는 구조였습니다.',
   },
   after: {
     label: 'TO-BE',
-    items: ['상단 기록 CTA 배치', '→ 즉시 작성 진입', '→ 탐색 → 기록 전환'],
+    title: '기록 전환 구조',
+    description:
+      '상단 CTA는 진입 시 기록 의도를 형성하고, \n 하단 CTA는 탐색 중 행동 전환을 유도합니다. \n\n 사용자의 탐색 흐름 안에서 기록 행동이  \n 자연스럽게 이어지도록 설계했습니다.  ',
   },
-  insight: '#짧은 스크롤로 정보 탐색',
+  insights: [
+    { text: '기록 전환 \n 트리거', position: 'top' },
+    { text: '#첫화면에 \n 기록 시작', position: 'bottom' },
+  ],
 }
