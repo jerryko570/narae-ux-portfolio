@@ -21,7 +21,7 @@ export default function SmolsSolutionSection() {
       <div className='pt-16'>
         {/* 뱃지 + 라인 */}
         <div className='relative flex items-center'>
-          <div className='-translateㄹㄹㄹㄹㄹㄹㄹㅎ-y-1/2 absolute top-1/2 left-0 h-px w-full bg-white' />
+          <div className='absolute top-1/2 left-0 h-px w-full -translate-y-1/2 bg-white' />
           <div className='z-10 w-[45%]'>
             <Badge
               label={smolsTransformation.before.label}

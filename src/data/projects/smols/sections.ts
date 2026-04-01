@@ -65,7 +65,7 @@ export const smolsSections: Record<string, SectionData> = {
     badge: 'UX STRATEGY',
     title: '기록 경험 중심  \n UX 설계',
     description:
-      '기록은 기능이 아니라 경험입니다. \n 반복되는 기록 흐름을 설계했습니다.',
+      '기록은 기능이 아니라 경험입니다. \n 반복되는 기록 흐름을 만들었습니다.',
     align: 'left',
   },
   solution: {
@@ -73,7 +73,7 @@ export const smolsSections: Record<string, SectionData> = {
     badge: 'UX PRINCIPLES',
     title: '기록 경험 중심 UX 설계',
     description:
-      '기록 기능을 추가하는 것이 아니라,\n탐색 흐름 안에서 기록이 자연스럽게 발생하도록 설계했습니다.',
+      '기록 기능을 추가하는 것이 아니라,\n탐색 흐름 안에서 기록이 자연스럽게 발생하도록 만들었습니다.',
     align: 'center',
   },
 }
