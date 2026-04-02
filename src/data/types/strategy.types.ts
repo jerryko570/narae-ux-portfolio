@@ -40,3 +40,18 @@ export type Transformation = {
   after: TransformationItem
   insights: InsightItem[]
 }
+
+export type ImageConfig = {
+  src: string
+  imageWidth: number
+  imageHeight: number
+}
+
+export type UxPrincipleType = {
+  video: {
+    before: VideoConfig
+    after: VideoConfig
+  }
+  asIsImage: ImageConfig
+  toBeImage: ImageConfig
+}
