@@ -28,7 +28,7 @@ export const smolsSections: Record<string, SectionData> = {
   userInsight: {
     type: 'insight',
     badge: 'INSIGHT',
-    title: '정보보다 기록과 표현',
+    title: '정보보다 기록과 꾸미기',
     description: '',
     align: 'left',
     titleSize: 'h1',
@@ -42,14 +42,14 @@ export const smolsSections: Record<string, SectionData> = {
         title: '기록 목적 사용',
         data: '80%',
       },
-      highlight: '기록·표현 사용 54.8%',
+      highlight: '기록·꾸미기 사용 54.8%',
     },
   },
 
   feedbackAnalysis: {
     type: 'research',
     badge: 'USER FEEDBACK',
-    title: '기록하고 싶었지만,\n표현이 부족했습니다',
+    title: '기록하고 싶었지만,\n꾸미기가 부족했습니다',
     align: 'left',
     description: '',
   },
@@ -82,8 +82,8 @@ export const smolsSections: Record<string, SectionData> = {
   sticker: {
     type: 'solution',
     badge: '',
-    title: '표현 경험 확장',
-    description: '기록은 남기는 것을 넘어,\n자유롭게 표현할 수 있어야 합니다.',
+    title: '꾸미기 경험 확장',
+    description: '기록은 남기는 것을 넘어,\n자유롭게 꾸밀 수 있어야 합니다.',
     align: 'center',
   },
 }

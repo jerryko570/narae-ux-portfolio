@@ -45,7 +45,7 @@ export default function SmolsProblemSection() {
         className='pt-32 whitespace-pre-line text-white'
         align='center'
       />
-      <div className='flex gap-8'>
+      <div className='flex gap-8 whitespace-pre-line'>
         {smols.strategy.map((item) => (
           <HighlightCard
             key={item.title}
