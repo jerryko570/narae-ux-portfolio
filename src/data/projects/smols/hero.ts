@@ -5,9 +5,9 @@ export const smolsHeros: HeroData[] = [
     id: 1,
     badge: 'GOAL',
     badgeText: '기록이 이어지는 경험 설계',
-    title: '정보 탐색을 \n 기록 경험으로',
+    title: '탐색을 기록으로 \n 전환하는 경험 설계',
     description:
-      '964건의 리뷰 분석 결과, \n 사용자는 탐색보다 기록과 꾸미기를 원했습니다.',
+      '964건의 사용자 리뷰 분석 결과,\n사용자는 정보 소비보다 기록과 표현을 원했습니다.',
     image: '/images/smols/mockups/hero-mockup.png',
     meta: [
       { label: 'ROLE', values: ['UX Research', 'UI Design'] },
