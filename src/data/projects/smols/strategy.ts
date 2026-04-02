@@ -8,14 +8,14 @@ export const smolsInsightSummary: { description: string } = {
 export const smolsStrategy: StrategyItem[] = [
   {
     title: '기존 경험',
-    description: '탐색은 있었지만, 기록은 남지 않았습니다.',
+    description: '탐색은 있었지만, \n기록은 남지 않았습니다.',
     image: '/images/smols/strategy-charts/smols-strategy-before-flow.png',
     imageWidth: 400,
     imageHeight: 500,
   },
   {
     title: '개선된 경험',
-    description: '기록이 다시 피드로 이어지는 반복 경험을 만들었습니다.',
+    description: '기록이 다시 피드로 \n이어지는 반복 경험을 만들었습니다.',
     image: '/images/smols/strategy-charts/smols-strategy-after-flow.png',
     imageWidth: 400,
     imageHeight: 500,
@@ -36,8 +36,8 @@ export const smolsUxStrategy: UxStrategy = {
     },
     {
       number: 3,
-      title: '표현으로 반복 유도',
-      description: '표현 과정 단순화\n편집 요소로 기록의 재미 강화',
+      title: '꾸미기로 반복 유도',
+      description: '꾸미기 과정 단순화\n편집 요소로 기록의 재미 강화',
     },
   ],
 }
@@ -66,7 +66,7 @@ export const smolsUxPrinciple = {
 }
 
 export const smolsTransformation: Transformation = {
-  center: '탐색 중 전환',
+  center: '탐색에서 기록으로',
   before: {
     label: 'AS-IS',
     title: '탐색 → 기록 전환 단절 구조',
@@ -85,7 +85,7 @@ export const smolsTransformation: Transformation = {
 }
 
 export const smolsSticker: Transformation = {
-  center: '표현 자유도 확장',
+  center: '자유로운 꾸미기',
   before: {
     label: 'AS-IS',
     title: '표현이 제한된 구조',
