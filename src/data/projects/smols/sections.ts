@@ -81,7 +81,6 @@ export const smolsSections: Record<string, SectionData> = {
 
   sticker: {
     type: 'solution',
-    badge: '',
     title: '꾸미기 경험 확장',
     description: '기록은 남기는 것을 넘어,\n자유롭게 꾸밀 수 있어야 합니다.',
     align: 'center',
