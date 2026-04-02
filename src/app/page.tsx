@@ -1,7 +1,7 @@
 import HeroSection from '@/components/sections/Hero/HeroSection'
 import SmolsOverviewSection from '@/components/sections/Smols/SmolsOverviewSection'
 import SmolsProblemSection from '@/components/sections/Smols/SmolsProblemSection'
-
+import SmolsStickerSection from '@/components/sections/Smols/SmolsStickerSection'
 import SmolsUxStrategySection from '@/components/sections/Smols/SmolsUxStrategySection'
 import SmolsSolutionSection from '@/components/sections/Smols/SmolsSolutionSection'
 import { smols } from '@/data/projects'
@@ -16,6 +16,7 @@ export default function Home() {
       <SmolsProblemSection />
       <SmolsUxStrategySection />
       <SmolsSolutionSection />
+      <SmolsStickerSection />
     </div>
   )
 }
