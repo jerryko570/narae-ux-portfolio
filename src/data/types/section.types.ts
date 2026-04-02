@@ -34,7 +34,7 @@ export type ResearchSection = BaseSectionData & {
 
 export type SolutionSection = BaseSectionData & {
   type: 'solution'
-  badge: string
+  badge?: string
   description?: string
 }
 
