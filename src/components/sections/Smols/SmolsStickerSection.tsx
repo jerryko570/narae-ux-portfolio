@@ -4,7 +4,7 @@ import UxPrincipleLayout from '@/components/common/UxPrincipleLayout'
 import { smols } from '@/data/projects'
 import { smolsSticker, smolsUxPrinciple } from '@/data/projects/smols'
 
-export default function SmolsSolutionSection() {
+export default function SmolsStickerSection() {
   return (
     <Section className='bg-orange-500' inner='py-16'>
       <SectionHeader
