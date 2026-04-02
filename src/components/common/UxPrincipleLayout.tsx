@@ -1,5 +1,3 @@
-'use client'
-
 import Badge from '@/components/ui/Badge/Badge'
 import Image from 'next/image'
 import Text from '@/components/ui/Text/Text'
@@ -61,7 +59,7 @@ export default function UxPrincipleLayout({
               as='h6'
               className='font-bold whitespace-pre-line text-gray-900'
             >
-              {transformation.insights[0].text}
+              {transformation.insights[0]?.text}
             </Text>
           </div>
         </div>
