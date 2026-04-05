@@ -59,7 +59,7 @@ export default function UxPrincipleLayout({
               as='h6'
               className='font-bold whitespace-pre-line text-gray-900'
             >
-              {transformation.insights[0]?.text}
+              {transformation.insights?.text}
             </Text>
           </div>
         </div>
