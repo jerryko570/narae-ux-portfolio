@@ -2,7 +2,6 @@ import Section from '@/components/ui/Section'
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
 import NumberedCard from '@/components/ui/Cards/NumberedCard'
 import { smols } from '@/data/projects'
-import type { UxStrategyItem } from '@/data/types'
 
 export default function SmolsUxStrategySection() {
   return (
@@ -16,7 +15,7 @@ export default function SmolsUxStrategySection() {
           />
         </div>
         <div className='flex gap-8 pt-16'>
-          {smols.uxStrategy.items.map((item: UxStrategyItem) => (
+          {smols.uxStrategy.items.map((item) => (
             <NumberedCard
               key={item.number}
               number={item.number}
