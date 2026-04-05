@@ -14,8 +14,8 @@ export default function SmolsStickerSection() {
       />
 
       <UxPrincipleLayout
-        transformation={smols.transformations[1]}
-        uxPrinciple={smols.uxPrinciples[1]}
+        transformation={smols.transformation[1]}
+        uxPrinciple={smols.uxPrinciple[1]}
       />
     </Section>
   )

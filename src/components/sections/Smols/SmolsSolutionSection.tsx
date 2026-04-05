@@ -14,8 +14,8 @@ export default function SmolsSolutionSection() {
       />
 
       <UxPrincipleLayout
-        transformation={smols.transformations[0]}
-        uxPrinciple={smols.uxPrinciples[0]}
+        transformation={smols.transformation[0]}
+        uxPrinciple={smols.uxPrinciple[0]}
       />
     </Section>
   )

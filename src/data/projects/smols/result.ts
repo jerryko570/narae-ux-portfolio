@@ -8,7 +8,7 @@ export const smolsResult: ProductResult = {
       description: ['상단 CTA로 기록 진입 전환 가속'],
     },
     {
-      emoji: '↓38%',
+      emoji: '↑38%',
       title: '탐색 체류시간 증가',
       description: ['콘텐츠 구조 개선으로 탐색 몰입도 향상'],
     },
