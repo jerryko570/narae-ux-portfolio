@@ -73,16 +73,33 @@ export const smolsSections: Record<string, SectionData> = {
   solution: {
     type: 'solution',
     badge: 'UX PRINCIPLES',
-    title: '기록 경험 중심 UX 설계',
+    title: '탐색 → 기록 전환 UX',
     description:
-      '기록 기능을 추가하는 것이 아니라,\n탐색 흐름 안에서 기록이 자연스럽게 발생하도록 만들었습니다.',
+      '탐색 흐름 속에서 자연스럽게 기록으로 전환되도록 설계했습니다.',
     align: 'center',
   },
 
   sticker: {
     type: 'solution',
-    title: '꾸미기 경험 확장',
-    description: '기록은 남기는 것을 넘어,\n자유롭게 꾸밀 수 있어야 합니다.',
+    title: '표현 자유도 확장 구조',
+    description:
+      '제한된 편집 구조를 개선해 자유로운 표현이 가능하도록 확장했습니다.',
     align: 'center',
+  },
+
+  resultSection: {
+    type: 'result',
+    badge: 'RESULT',
+    title: 'UX 개선 결과 요약',
+    description: '사용자 행동 변화를 통해 검증된 UX 개선 효과',
+    align: 'center',
+  },
+
+  retrospectiveSection: {
+    type: 'retrospective',
+    badge: 'Insight',
+    title: 'UX는 기능이 아니라, \n사용자 행동 흐름이다',
+    description: '데이터 기반으로 행동을 설계할 때 비로소 전환이 만들어진다.',
+    align: 'left',
   },
 }

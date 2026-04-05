@@ -31,14 +31,13 @@ export type TransformationItem = {
 
 export type InsightItem = {
   text: string
-  position: 'top' | 'bottom'
 }
 
 export type Transformation = {
   center: string
   before: TransformationItem
   after: TransformationItem
-  insights: InsightItem[]
+  insights: InsightItem
 }
 
 export type ImageConfig = {

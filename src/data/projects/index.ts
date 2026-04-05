@@ -9,8 +9,9 @@ import {
   smolsInsightSummary,
   smolsStrategy,
   smolsUxStrategy,
-  smolsUxPrinciple,
-  smolsTransformation,
+  smolsUxPrinciples,
+  smolsTransformations,
+  smolsResult,
 } from './smols'
 
 export const smols = {
@@ -24,6 +25,7 @@ export const smols = {
   insightSummary: smolsInsightSummary,
   strategy: smolsStrategy,
   uxStrategy: smolsUxStrategy,
-  uxPrinciple: smolsUxPrinciple,
-  transformation: smolsTransformation,
+  uxPrinciple: smolsUxPrinciples,
+  transformation: smolsTransformations,
+  productResult: smolsResult,
 }
