@@ -5,7 +5,7 @@ import { cn } from '@/lib/cn'
 
 type FeatureCardProps = {
   title: string
-  description: string[]
+  description: string | string[]
   emoji: string
 } & VariantProps<typeof CardVariant>
 
@@ -18,14 +18,23 @@ export default function FeatureCard({
   emoji,
   theme,
 }: FeatureCardProps) {
+  const descriptions = Array.isArray(description) ? description : [description]
+
   return (
-    <div className={cn(CardVariant({ theme }), 'items-center text-center')}>
-      <span className={emojiStyle}>{emoji}</span>
-      <Text as='h3' className='mt-5'>
+    <div
+      className={cn(
+        CardVariant({ theme }),
+        'flex flex-col items-center text-center'
+      )}
+    >
+      <span className={cn(emojiStyle, 'text-2xl font-bold text-orange-500')}>
+        {emoji}
+      </span>
+      <Text as='h6' className='mt-5 font-bold'>
         {title}
       </Text>
       <div className='mt-3'>
-        {description.map((desc, index) => (
+        {descriptions.map((desc, index) => (
           <Text as='p' key={index}>
             {desc}
           </Text>
