@@ -38,9 +38,25 @@ export type SolutionSection = BaseSectionData & {
   description?: string
 }
 
+export type ResultSection = BaseSectionData & {
+  type: 'result'
+  badge?: string
+  title: string
+  description?: string
+}
+
+export type RetrospectiveSection = BaseSectionData & {
+  type: 'retrospective'
+  badge?: string
+  title: string
+  description?: string
+}
+
 export type SectionData =
   | BackgroundSection
   | MetricsSection
   | InsightSection
   | ResearchSection
   | SolutionSection
+  | ResultSection
+  | RetrospectiveSection

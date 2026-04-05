@@ -2,7 +2,6 @@ import Section from '@/components/ui/Section'
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
 import UxPrincipleLayout from '@/components/common/UxPrincipleLayout'
 import { smols } from '@/data/projects'
-import { smolsTransformation, smolsUxPrinciple } from '@/data/projects/smols'
 
 export default function SmolsSolutionSection() {
   return (
@@ -13,9 +12,10 @@ export default function SmolsSolutionSection() {
         badgeTheme='white'
         align='center'
       />
+
       <UxPrincipleLayout
-        transformation={smolsTransformation}
-        uxPrinciple={smolsUxPrinciple}
+        transformation={smols.transformation[0]}
+        uxPrinciple={smols.uxPrinciple[0]}
       />
     </Section>
   )
