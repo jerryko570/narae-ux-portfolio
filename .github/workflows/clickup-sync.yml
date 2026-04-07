@@ -13,10 +13,12 @@ jobs:
       - name: Extract ClickUp Task ID
         id: extract
         run: |
+          set +e
           BODY="${{ github.event.pull_request.body }}"
           URL=$(echo "$BODY" | grep -oP 'CLICKUP: \K[^\s]+')
           TASK_ID=$(echo "$URL" | grep -oP '[^/]+$')
           echo "task_id=$TASK_ID" >> $GITHUB_OUTPUT
+          exit 0
 
       - name: Update ClickUp Task to Complete
         if: steps.extract.outputs.task_id != ''
