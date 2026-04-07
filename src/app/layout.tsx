@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { NavigationProvider } from '@/context/navigation'
 
 export const metadata: Metadata = {
   title: '⭐️이나래 포트폴리오',
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <body style={{ fontFamily: 'Pretendard, sans-serif' }}>
-        <div className='min-w-7xl'>{children}</div>
+        <NavigationProvider>
+          <div className='max-w-7xl'>{children}</div>
+        </NavigationProvider>
       </body>
     </html>
   )

@@ -1,7 +1,7 @@
 ---
 name: 🐛 Bug
 about: 버그 수정
-labels: "🐛 bug"
+labels: '🐛 bug'
 ---
 
 ## 버그 내용
@@ -20,3 +20,7 @@ labels: "🐛 bug"
 ## 참고
 
 <!-- 스크린샷, 에러 로그 등 -->
+
+## ClickUp 태스크
+
+<!-- CLICKUP: https://app.clickup.com/t/태스크ID -->

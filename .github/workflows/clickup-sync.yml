@@ -1,0 +1,28 @@
+name: ClickUp Sync
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  sync-clickup:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Extract ClickUp Task ID
+        id: extract
+        run: |
+          BODY="${{ github.event.pull_request.body }}"
+          URL=$(echo "$BODY" | grep -oP 'CLICKUP: \K[^\s]+')
+          TASK_ID=$(echo "$URL" | grep -oP '[^/]+$')
+          echo "task_id=$TASK_ID" >> $GITHUB_OUTPUT
+
+      - name: Update ClickUp Task to Complete
+        if: steps.extract.outputs.task_id != ''
+        run: |
+          curl -X PUT \
+            "https://api.clickup.com/api/v2/task/${{ steps.extract.outputs.task_id }}" \
+            -H "Authorization: ${{ secrets.CLICKUP_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{"status": "complete"}'
