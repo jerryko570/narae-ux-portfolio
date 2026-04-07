@@ -14,8 +14,8 @@ jobs:
         id: extract
         run: |
           BODY="${{ github.event.pull_request.body }}"
-          URL=$(echo "$BODY" | grep -oP 'CLICKUP: \K[^\s]+')
-          TASK_ID=$(echo "$URL" | grep -oP '[^/]+$')
+          URL=$(echo "$BODY" | grep -oP 'CLICKUP: \K[^\s]+' || echo "")
+          TASK_ID=$(echo "$URL" | grep -oP '[^/]+$' || echo "")
           echo "task_id=$TASK_ID" >> $GITHUB_OUTPUT
 
       - name: Update ClickUp Task to Complete
