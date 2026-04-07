@@ -9,15 +9,7 @@ const commitlintConfig = {
     'type-enum': [
       2,
       'always',
-      [
-        '⚙️Chore',
-        '✨Feature',
-        '♻️Refactor',
-        '🐛Fix',
-        '📝Docs',
-        '🖼️Assets',
-        '🎨Style',
-      ],
+      ['⚙️Chore', '✨Feature', '♻️Refactor', '🐛Fix', '🖼️Assets', '🎨Style'],
     ],
     'type-empty': [2, 'never'],
     'subject-empty': [2, 'never'],

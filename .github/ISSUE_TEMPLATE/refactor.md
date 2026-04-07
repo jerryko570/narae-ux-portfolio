@@ -1,7 +1,7 @@
 ---
 name: ♻️ Refactor
 about: 코드 개선
-labels: "♻️ refactor"
+labels: '♻️ refactor'
 ---
 
 ## 개선 내용
@@ -16,3 +16,7 @@ labels: "♻️ refactor"
 ## 참고
 
 <!-- 관련 링크 등 -->
+
+## ClickUp 태스크
+
+<!-- CLICKUP: https://app.clickup.com/t/태스크ID -->

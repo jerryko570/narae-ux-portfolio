@@ -1,7 +1,7 @@
 ---
 name: ✨ Feature
 about: 새 기능 추가
-labels: "✨ feature"
+labels: '✨ feature'
 ---
 
 ## 작업 내용
@@ -16,3 +16,7 @@ labels: "✨ feature"
 ## 참고
 
 <!-- 관련 링크, 피그마, 스크린샷 등 -->
+
+## ClickUp 태스크
+
+<!-- CLICKUP: https://app.clickup.com/t/태스크ID -->
