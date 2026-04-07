@@ -5,7 +5,7 @@ export type SectionId = 'home' | 'smols' | 'curi' | 'about'
 
 // 사용자가 클릭하면 setActiveMenu, setIsChatOpen 호출이 됨
 // 창고 안 값이 변경되어 헤더가 그 변화를 감지하여 UI 업데이트
-export type NavigationContenxtType = {
+export type NavigationContextType = {
   activeMenu: SectionId
   setActiveMenu: (section: SectionId) => void
   isChatOpen: boolean

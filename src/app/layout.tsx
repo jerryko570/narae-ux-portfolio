@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang='ko'>
       <body style={{ fontFamily: 'Pretendard, sans-serif' }}>
         <NavigationProvider>
-          <div className='min-w-7xl'>{children}</div>
+          <div className='max-w-7xl'>{children}</div>
         </NavigationProvider>
       </body>
     </html>
