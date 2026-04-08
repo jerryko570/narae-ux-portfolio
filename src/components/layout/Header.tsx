@@ -9,9 +9,9 @@ import Button from '../ui/Button/Button'
 import Image from 'next/image'
 import { useNavigation } from '@/context/navigation'
 
-type HeaderType = VariantProps<typeof HeaderVariant>
+type HeaderProps = VariantProps<typeof HeaderVariant>
 
-export default function Header({ variant, sticky }: HeaderType) {
+export default function Header({ variant, sticky }: HeaderProps) {
   const { setIsChatOpen } = useNavigation()
 
   return (
@@ -31,12 +31,12 @@ export default function Header({ variant, sticky }: HeaderType) {
 
         <div className='flex items-center gap-8'>
           <Link href='/smols'>
-            <Text as='p' className='hover hover:text-gray-500'>
+            <Text as='p' className='hover:text-gray-500'>
               PROJECT
             </Text>
           </Link>
           <Link href='/about'>
-            <Text as='p' className='hover hover:text-gray-500'>
+            <Text as='p' className='hover:text-gray-500'>
               ABOUT
             </Text>
           </Link>
@@ -45,7 +45,7 @@ export default function Header({ variant, sticky }: HeaderType) {
             variant='secondary'
             label='🤖 나래봇'
             onClick={() => setIsChatOpen(true)}
-          ></Button>
+          />
         </div>
       </div>
     </header>

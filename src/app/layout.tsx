@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang='ko'>
       <body style={{ fontFamily: 'Pretendard, sans-serif' }}>
         <NavigationProvider>
-          <Header sticky={true} variant='white' />
+          <Header />
           {children}
         </NavigationProvider>
       </body>
