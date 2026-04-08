@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Header from '@/components/layout/Header'
 import './globals.css'
 import { NavigationProvider } from '@/context/navigation'
 
@@ -16,7 +17,8 @@ export default function RootLayout({
     <html lang='ko'>
       <body style={{ fontFamily: 'Pretendard, sans-serif' }}>
         <NavigationProvider>
-          <div className='max-w-7xl'>{children}</div>
+          <Header />
+          {children}
         </NavigationProvider>
       </body>
     </html>
