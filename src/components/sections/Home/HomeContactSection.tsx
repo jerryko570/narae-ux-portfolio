@@ -9,7 +9,7 @@ export default function HomeContactSection() {
       </div>
       <div className='flex gap-8'>
         <span className='font-bold'>GitHub</span>
-        <a href={HomeContact.github} target='_blank'>
+        <a href={HomeContact.github} target='_blank' rel='noopener noreferrer'>
           {HomeContact.github}
         </a>
       </div>

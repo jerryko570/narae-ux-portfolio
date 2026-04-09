@@ -1,6 +1,6 @@
 'use client'
 
-import type { StatCardData } from '@/data/types'
+import type { StatCardData } from '@/data/types/smols'
 import Text from '../Text/Text'
 import { CardVariant } from './Card.variants'
 import { VariantProps } from 'class-variance-authority'

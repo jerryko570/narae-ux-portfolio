@@ -9,7 +9,7 @@ import SmolsRetrospectiveSection from '@/components/sections/Smols/SmolsRetrospe
 
 import { smols } from '@/data/projects'
 
-export default function Home() {
+export default function SmolsPage() {
   return (
     <div>
       {smols.heros.map((hero) => (
