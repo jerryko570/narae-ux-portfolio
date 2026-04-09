@@ -1,4 +1,4 @@
-import type { ProductResult } from '@/data/types'
+import type { ProductResult } from '@/data/types/smols'
 
 export const smolsResult: ProductResult = {
   items: [
