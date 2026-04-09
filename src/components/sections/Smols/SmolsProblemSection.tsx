@@ -4,7 +4,7 @@ import StatSection from '@/components/ui/Cards/StatSection'
 import HighlightCard from '@/components/ui/Cards/HighlightCard'
 import AppReviewSection from '@/components/ui/Cards/UserFeedbackSection'
 import { smols } from '@/data/projects'
-import type { MetricsSection, InsightSection } from '@/data/types'
+import type { MetricsSection, InsightSection } from '@/data/types/smols'
 
 export default function SmolsProblemSection() {
   const problemMetrics = smols.sections.problemMetrics as MetricsSection

@@ -7,10 +7,12 @@ import Text from '@/components/ui/Text/Text'
 type NumberCardProps = {
   title: string
   description: string
-  number: number
+  number?: number
+  showBadge?: boolean
+  button?: { label: string; href: string }
 } & VariantProps<typeof CardVariant>
 
-export default function NumberedCard({
+export default function NumberCard({
   title,
   description,
   theme,
@@ -20,7 +22,7 @@ export default function NumberedCard({
   return (
     <div className={cn(CardVariant({ theme, ...props }))}>
       <div>
-        <Badge size='sm' label={String(number)} theme='orange' />
+        {number && <Badge size='sm' label={String(number)} theme='orange' />}
         <div className='pt-2 whitespace-pre-line'>
           <Text as='h6' className='font-bold'>
             {title}

@@ -1,4 +1,8 @@
-import type { StrategyItem, UxStrategy, Transformation } from '../../types'
+import type {
+  StrategyItem,
+  UxStrategy,
+  Transformation,
+} from '../../types/smols'
 
 export const smolsInsightSummary: { description: string } = {
   description:

@@ -1,27 +1,18 @@
-import HeroSection from '@/components/sections/Hero/HeroSection'
-import SmolsOverviewSection from '@/components/sections/Smols/SmolsOverviewSection'
-import SmolsProblemSection from '@/components/sections/Smols/SmolsProblemSection'
-import SmolsStickerSection from '@/components/sections/Smols/SmolsStickerSection'
-import SmolsUxStrategySection from '@/components/sections/Smols/SmolsUxStrategySection'
-import SmolsSolutionSection from '@/components/sections/Smols/SmolsSolutionSection'
-import SmolsResultSection from '@/components/sections/Smols/SmolsResultSection'
-import SmolsRetrospectiveSection from '@/components/sections/Smols/SmolsRetrospectiveSection'
+import HomeTitleSection from '@/components/sections/Home/HomeTitleSection'
+import HomeCardSection from '@/components/sections/Home/HomeCardSection'
+import HomeContactSection from '@/components/sections/Home/HomeContactSection'
 
-import { smols } from '@/data/projects'
-
-export default function Home() {
+import Section from '@/components/ui/Section'
+export default function MainPage() {
   return (
-    <div>
-      {smols.heros.map((hero) => (
-        <HeroSection key={hero.id} {...hero} />
-      ))}
-      <SmolsOverviewSection />
-      <SmolsProblemSection />
-      <SmolsUxStrategySection />
-      <SmolsSolutionSection />
-      <SmolsStickerSection />
-      <SmolsResultSection />
-      <SmolsRetrospectiveSection />
-    </div>
+    <Section>
+      <div>
+        <div className='flex items-center justify-between'>
+          <HomeTitleSection />
+          <HomeContactSection />
+        </div>
+        <HomeCardSection />
+      </div>
+    </Section>
   )
 }

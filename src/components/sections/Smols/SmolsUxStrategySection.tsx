@@ -1,6 +1,6 @@
 import Section from '@/components/ui/Section'
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
-import NumberedCard from '@/components/ui/Cards/NumberedCard'
+import NumberedCard from '@/components/ui/Cards/ProjectCard'
 import { smols } from '@/data/projects'
 
 export default function SmolsUxStrategySection() {
