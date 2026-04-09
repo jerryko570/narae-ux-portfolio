@@ -2,6 +2,12 @@
 @import './styles/font.css';
 @import './styles/theme.css';
 
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 body {
   min-width: 1280px;
 }
