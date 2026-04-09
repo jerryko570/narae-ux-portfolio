@@ -1,7 +1,7 @@
 import Badge from '@/components/ui/Badge/Badge'
 import Image from 'next/image'
 import Text from '@/components/ui/Text/Text'
-import type { Transformation, UxPrincipleType } from '@/data/types'
+import type { Transformation, UxPrincipleType } from '@/data/types/smols'
 
 type Props = {
   transformation: Transformation

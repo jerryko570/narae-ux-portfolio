@@ -8,9 +8,10 @@ type NumberCardProps = {
   title: string
   description: string
   number: number
+  showBadge?: boolean
 } & VariantProps<typeof CardVariant>
 
-export default function NumberedCard({
+export default function NumberCard({
   title,
   description,
   theme,

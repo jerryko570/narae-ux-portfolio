@@ -18,8 +18,11 @@
   --orange-500: #ff5e48;
   --orange-700: #d82810;
 
+  /* Pink */
+  --pink-500: #fc4574;
+
   /* Blue */
-  --blue-500: #00c8ff;
+  --blue-500: #0d1618;
   --blue-600: #00afdf;
 
   /* Radius */
@@ -67,6 +70,9 @@
   --color-orange-100: var(--orange-100);
   --color-orange-500: var(--orange-500);
   --color-orange-700: var(--orange-700);
+
+  /* Pink */
+  --color-pink-500: var(--pink-500);
 
   /* Blue */
   --color-blue-500: var(--blue-500);

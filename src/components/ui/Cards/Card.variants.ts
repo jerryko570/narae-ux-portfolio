@@ -1,4 +1,5 @@
 import { cva } from 'class-variance-authority'
+import type { VariantProps } from 'class-variance-authority'
 
 export const CardVariant = cva('flex w-full rounded-lg p-12', {
   variants: {
@@ -8,6 +9,7 @@ export const CardVariant = cva('flex w-full rounded-lg p-12', {
       white: 'bg-white text-gray-900',
       lightOrange: 'bg-orange-50 text-gray-900',
       orange: 'bg-orange-500 text-white',
+      pink: 'bg-pink-500 text-white',
       transparent: 'bg-transparent',
     },
   },
@@ -15,3 +17,5 @@ export const CardVariant = cva('flex w-full rounded-lg p-12', {
     theme: 'transparent',
   },
 })
+
+export type CardTheme = NonNullable<VariantProps<typeof CardVariant>['theme']>

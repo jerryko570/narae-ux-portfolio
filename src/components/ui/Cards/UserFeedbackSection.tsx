@@ -2,7 +2,7 @@ import Text from '../Text/Text'
 import { CardVariant } from './Card.variants'
 import { VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/cn'
-import type { FeedbackData } from '@/data/types'
+import type { FeedbackData } from '@/data/types/smols'
 import Image from 'next/image'
 
 type UserFeedbackSectionProps = {
@@ -95,3 +95,5 @@ export default function AppReviewSection({
     </section>
   )
 }
+
+// 테스트

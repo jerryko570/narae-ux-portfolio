@@ -1,4 +1,4 @@
-import type { HeroData } from '../../types'
+import type { HeroData } from '@/data/types/smols/hero.types.ts'
 
 export const smolsHeros: HeroData[] = [
   {

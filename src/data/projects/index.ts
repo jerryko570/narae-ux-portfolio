@@ -1,3 +1,12 @@
+// Home
+import { HomeHeros, HomeContact } from './home'
+
+export const home = {
+  heros: HomeHeros,
+  contact: HomeContact,
+}
+
+// Smols
 import {
   smolsHeros,
   smolsSections,
