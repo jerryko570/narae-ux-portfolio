@@ -1,4 +1,4 @@
-import type { SectionData } from '../../types'
+import type { SectionData } from '../../types/smols'
 
 export const smolsSections: Record<string, SectionData> = {
   overview: {
