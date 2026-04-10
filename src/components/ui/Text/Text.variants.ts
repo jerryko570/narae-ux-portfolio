@@ -4,7 +4,7 @@ export const textVariant = cva('', {
   variants: {
     as: {
       display: 'text-[4.5rem] leading-[1.2] font-extrabold', // 72px
-      h1: 'text-[3.5rem] leading-[1.2] font-bold', // 56px
+      h1: 'text-[3.5rem] leading-[1.3] font-bold', // 56px
       h2: 'text-[3rem] leading-[1.3] font-bold', // 48px
       h3: 'text-[2.5rem] leading-[1.3] font-semibold', // 40px
       h4: 'text-[2rem] leading-[1.4] font-semibold', // 32px

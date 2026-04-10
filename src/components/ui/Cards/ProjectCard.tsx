@@ -11,6 +11,7 @@ type ProjectCardProps = {
   button?: { label: string; href: string }
   titleSlot?: React.ReactNode
   children?: React.ReactNode
+  className?: string
 } & VariantProps<typeof CardVariant>
 
 export default function ProjectCard({
@@ -20,6 +21,7 @@ export default function ProjectCard({
   button,
   children,
   titleSlot,
+  className,
   ...props
 }: ProjectCardProps) {
   return (
@@ -27,13 +29,14 @@ export default function ProjectCard({
       href={button?.href ?? '#'}
       className={cn(
         CardVariant({ theme, ...props }),
-        'transition-all duration-400 hover:-translate-y-3 hover:shadow-xl'
+        'transition-all duration-400 hover:-translate-y-3 hover:shadow-xl',
+        className
       )}
     >
       <div className='flex w-full flex-col'>
         <div className='flex-1 whitespace-pre-line'>
           <div className='flex items-center gap-4'>
-            <Text as='h2' className='font-bold'>
+            <Text as='h3' className='font-bold'>
               {title}
             </Text>
             {titleSlot}
@@ -44,7 +47,7 @@ export default function ProjectCard({
           {children}
         </div>
         {button && (
-          <div className='mt-20 flex h-16 w-full items-center justify-center rounded-full bg-white text-xl font-semibold text-gray-900'>
+          <div className='mt-16 flex h-15 w-full items-center justify-center rounded-full bg-white text-xl font-semibold text-gray-900'>
             {button.label}
           </div>
         )}
