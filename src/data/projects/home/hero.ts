@@ -23,7 +23,7 @@ export const HomeHeros: HomeHeroData = {
     {
       title: '저는요!',
       description: '문제를 정의하고, \n끝까지 해결합니다.',
-      button: { label: '저 더 알아보기', href: '/about' },
+      button: { label: '저 더 알아보기', href: '/naraebot' },
       theme: 'sky',
     },
   ],
