@@ -29,6 +29,14 @@
   --radius-sm: 1.125rem;
   --radius-md: 1.25rem;
   --radius-lg: 1.75rem;
+
+  /* 시맨틱 토큰 */
+  --color-point: var(--orange-500);
+  --color-point-light: var(--orange-100);
+  --color-surface: var(--gray-50);
+  --color-surface-alt: var(--gray-100);
+  --color-on-surface: var(--gray-900);
+  --color-on-surface-muted: var(--gray-500);
 }
 
 /* 다크모드 */
@@ -44,6 +52,12 @@
   --gray-800: #e5e5e5;
   --gray-900: #f5f5f5;
   --gray-950: #fafafa;
+
+  --color-point: var(--orange-500);
+  --color-surface: var(--gray-100);
+  --color-surface-alt: var(--gray-200);
+  --color-on-surface: var(--gray-900);
+  --color-on-surface-muted: var(--gray-500);
 }
 
 /* Tailwind 테마 */
@@ -92,4 +106,12 @@
 
   /* 스페이싱 */
   --spacing-section: 6rem;
+
+  /* 시맨틱 토큰 */
+  --color-point: var(--color-point);
+  --color-point-light: var(--color-point-light);
+  --color-surface: var(--color-surface);
+  --color-surface-alt: var(--color-surface-alt);
+  --color-on-surface: var(--color-on-surface);
+  --color-on-surface-muted: var(--color-on-surface-muted);
 }
