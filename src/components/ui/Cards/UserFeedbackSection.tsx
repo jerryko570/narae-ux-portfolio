@@ -5,7 +5,7 @@ import { cn } from '@/lib/cn'
 import type { FeedbackData } from '@/data/types/smols'
 import Image from 'next/image'
 
-type UserFeedbackSectionProps = {
+type AppReviewSectionProps = {
   data: FeedbackData
   className?: string
 } & VariantProps<typeof CardVariant>
@@ -14,18 +14,19 @@ export default function AppReviewSection({
   data,
   className,
   theme,
-}: UserFeedbackSectionProps) {
+}: AppReviewSectionProps) {
   const { left, right } = data
 
   return (
     <section
       className={cn(
-        'grid grid-cols-[3fr_1px_7fr] gap-16',
+        'flex w-full overflow-hidden',
         CardVariant({ theme }),
         className
       )}
     >
-      <div className='w-full'>
+      {/* LEFT — 리뷰 분석 */}
+      <div className='flex w-[50%] shrink-0 flex-col gap-8 pr-16'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-4'>
             {left.icon && (
@@ -40,7 +41,7 @@ export default function AppReviewSection({
           </Text>
         </div>
 
-        <Text as='p' className='pt-8 whitespace-pre-line text-white/95'>
+        <Text as='p' className='whitespace-pre-line text-white/95'>
           {left.description}
         </Text>
 
@@ -48,7 +49,7 @@ export default function AppReviewSection({
           <a href={left.link.url} target='_blank' rel='noopener noreferrer'>
             <Text
               as='p'
-              className='mt-16 inline-block font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-600'
+              className='font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-600'
             >
               {left.link.label}
             </Text>
@@ -56,9 +57,11 @@ export default function AppReviewSection({
         )}
       </div>
 
-      <div className='w-1 bg-white/3' />
+      {/* 구분선 */}
+      <div className='mx-0 w-px shrink-0 self-stretch bg-white/5' />
 
-      <div className='w-full min-w-0'>
+      {/* RIGHT — Pain Points 차트 */}
+      <div className='flex min-w-0 flex-1 flex-col gap-10 pl-16'>
         <div className='flex items-center justify-between gap-6'>
           <Text as='h6' className='text-white'>
             {right.title}
@@ -71,7 +74,7 @@ export default function AppReviewSection({
           </Text>
         </div>
 
-        <div className='mt-10 flex w-full flex-col gap-10'>
+        <div className='flex flex-col gap-10'>
           {right.items.map((item) => (
             <div key={item.label} className='flex flex-col gap-3'>
               <div className='flex items-center justify-between gap-6'>
@@ -82,7 +85,7 @@ export default function AppReviewSection({
                   {item.value}%
                 </Text>
               </div>
-              <div className='h-6 w-full rounded-full bg-white/15'>
+              <div className='h-6 w-full overflow-hidden rounded-full bg-white/15'>
                 <div
                   className='h-6 rounded-full bg-orange-500'
                   style={{ width: `${item.value}%` }}
@@ -95,5 +98,3 @@ export default function AppReviewSection({
     </section>
   )
 }
-
-// 테스트

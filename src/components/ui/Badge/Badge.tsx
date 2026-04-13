@@ -4,10 +4,19 @@ import type { VariantProps } from 'class-variance-authority'
 type BadgeProps = {
   label: string
   className?: string
+  radius?: string
 } & VariantProps<typeof BadgeVariants>
 
-export default function Badge({ label, size, theme, className }: BadgeProps) {
+export default function Badge({
+  label,
+  size,
+  theme,
+  radius,
+  className,
+}: BadgeProps) {
   return (
-    <span className={BadgeVariants({ size, theme, className })}>{label}</span>
+    <span className={BadgeVariants({ size, theme, radius, className })}>
+      {label}
+    </span>
   )
 }
