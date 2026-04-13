@@ -31,7 +31,7 @@ export const smolsUxStrategy: UxStrategy = {
     {
       number: 1,
       title: '탐색 → 기록 전환',
-      description: '정보 구조 개선\n탐색 중 즉시 기록',
+      description: '탐색 중 즉시 기록\n정보 구조 개선',
     },
     {
       number: 2,
@@ -41,7 +41,7 @@ export const smolsUxStrategy: UxStrategy = {
     {
       number: 3,
       title: '꾸미기로 반복 유도',
-      description: '꾸미기 과정 단순화\n편집 요소로 기록의 재미 강화',
+      description: '자유 배치 구조\n기록의 재미 강화',
     },
   ],
 }

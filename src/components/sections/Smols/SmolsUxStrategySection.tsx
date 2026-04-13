@@ -14,7 +14,7 @@ export default function SmolsUxStrategySection() {
             align='left'
           />
         </div>
-        <div className='flex gap-8 pt-16'>
+        <div className='grid grid-cols-3 gap-8 pt-16'>
           {smols.uxStrategy.items.map((item) => (
             <NumberedCard
               key={item.number}

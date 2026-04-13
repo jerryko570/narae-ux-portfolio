@@ -2,6 +2,7 @@ import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
 import { smols } from '@/data/projects'
 import Section from '@/components/ui/Section'
 import Image from 'next/image'
+import Button from '@/components/ui/Button/Button'
 
 export default function SmolsRetrospectiveSection() {
   return (
@@ -18,6 +19,11 @@ export default function SmolsRetrospectiveSection() {
           height={600}
           className=''
         />
+      </div>
+
+      <div className='flex items-center gap-4 pt-8'>
+        <Button label='Figma 원본 보기' size='md' variant='white' />
+        <Button label='큐리 케이스 보기 →' size='md' variant='white' />
       </div>
     </Section>
   )

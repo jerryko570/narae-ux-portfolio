@@ -12,9 +12,8 @@ type MetaItem = {
 
 type HeroSectionProps = {
   badge: string
-  badgeText: string
+  badgeText: string[]
   title: string
-  description: string
   meta: MetaItem[]
   image: string
 }
@@ -23,7 +22,6 @@ export default function HeroSection({
   badge,
   badgeText,
   title,
-  description,
   meta,
   image,
 }: HeroSectionProps) {
@@ -32,10 +30,7 @@ export default function HeroSection({
       <Section className='w-full bg-orange-500'>
         {/* 배지 */}
         <div className='inline-flex items-center'>
-          <Badge label={badge} size='md' theme='white' />
-          <Text as='p' className='pl-4 font-semibold text-white'>
-            {badgeText}
-          </Text>
+          <Badge label={badge} size='md' theme='white' radius='full' />
         </div>
 
         {/* 타이틀 */}
@@ -43,21 +38,30 @@ export default function HeroSection({
           <Text as='display' className='break-keep'>
             {title}
           </Text>
-          <Text as='h6' className='pt-12'>
-            {description}
-          </Text>
+        </div>
+        {/* 뱃지 */}
+        <div className='flex items-center gap-4 pt-8'>
+          {badgeText.map((text) => (
+            <Badge
+              key={text}
+              label={text}
+              size='sm'
+              theme='outlineWhite'
+              radius='md'
+            />
+          ))}
         </div>
 
         {/* 메타 정보 */}
-        <div className='mt-40 flex w-fit gap-16 border-t border-white/20 pt-8 text-white'>
+        <div className='mt-32 flex w-fit gap-24 border-t border-white/20 pt-8 text-white'>
           {meta.map(({ label, values }) => (
             <div key={label}>
-              <Text as='p' className='font-bold'>
+              <Text as='caption' className='font-light'>
                 {label}
               </Text>
               <div className='pt-3'>
                 {values.map((v, index) => (
-                  <Text as='p' key={index}>
+                  <Text as='p' key={index} className='font-bold'>
                     {v}
                   </Text>
                 ))}

@@ -1,5 +1,4 @@
 import HeroSection from '@/components/sections/Hero/HeroSection'
-import SmolsOverviewSection from '@/components/sections/Smols/SmolsOverviewSection'
 import SmolsProblemSection from '@/components/sections/Smols/SmolsProblemSection'
 import SmolsStickerSection from '@/components/sections/Smols/SmolsStickerSection'
 import SmolsUxStrategySection from '@/components/sections/Smols/SmolsUxStrategySection'
@@ -15,7 +14,7 @@ export default function SmolsPage() {
       {smols.heros.map((hero) => (
         <HeroSection key={hero.id} {...hero} />
       ))}
-      <SmolsOverviewSection />
+
       <SmolsProblemSection />
       <SmolsUxStrategySection />
       <SmolsSolutionSection />

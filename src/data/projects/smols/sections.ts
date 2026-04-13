@@ -1,22 +1,13 @@
 import type { SectionData } from '../../types/smols'
 
 export const smolsSections: Record<string, SectionData> = {
-  overview: {
-    type: 'background',
-    badge: 'BACKGROUND',
-    title: '탐색에서 멈춘\n사용자 경험',
-    description:
-      '정보 탐색 중심으로 설계된 구조였습니다.\n사용자는 콘텐츠를 소비했지만,\n기록으로 이어지지 않았습니다.',
-    align: 'center',
-  },
-
   problemMetrics: {
     type: 'metrics',
     badge: 'BEHAVIOR INSIGHT',
-    title: '데이터가 보여준 문제',
+    title: '탐색에서 멈춘 \n사용자 경험',
     align: 'center',
     metrics: {
-      description: '탐색은 있었지만, 기록은 남지 않았습니다.',
+      description: '941건 서포터즈 데이터에서 발견한 패턴',
       items: [
         { value: '45초', label: '평균 체류 시간', insight: '' },
         { value: '60%', label: '1주 내 이탈률', insight: '' },
@@ -63,10 +54,8 @@ export const smolsSections: Record<string, SectionData> = {
 
   uxStrategy: {
     type: 'research',
-    badge: 'UX STRATEGY',
-    title: '기록 경험 중심\nUX 설계',
-    description:
-      '기록은 기능이 아니라 경험입니다.\n반복되는 기록 흐름을 만들었습니다.',
+    badge: 'CORE STRATEGY',
+    title: '기록이 중심이 되는 구조로',
     align: 'left',
   },
 
@@ -90,14 +79,14 @@ export const smolsSections: Record<string, SectionData> = {
   resultSection: {
     type: 'result',
     badge: 'RESULT',
-    title: 'UX 개선 결과 요약',
-    description: '사용자 행동 변화를 통해 검증된 UX 개선 효과',
+    title: 'UX 개선 기대 결과',
+    description: '',
     align: 'center',
   },
 
   retrospectiveSection: {
     type: 'retrospective',
-    badge: 'Insight',
+    badge: 'SMOLS',
     title: 'UX는 기능이 아니라, \n사용자 행동 흐름이다',
     description: '데이터 기반으로 행동을 설계할 때 비로소 전환이 만들어진다.',
     align: 'left',

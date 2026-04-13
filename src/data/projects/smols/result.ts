@@ -4,18 +4,18 @@ export const smolsResult: ProductResult = {
   items: [
     {
       emoji: '↑32%',
-      title: '기록 진입률',
-      description: ['상단 CTA로 기록 진입 전환 가속'],
+      title: '기록 전환율',
+      description: ['탐색 → 기록 진입 증가'],
     },
     {
-      emoji: '↑38%',
-      title: '탐색 체류시간 증가',
-      description: ['콘텐츠 구조 개선으로 탐색 몰입도 향상'],
+      emoji: '+28%',
+      title: '재방문율',
+      description: ['꾸미기 경험 반복 유도'],
     },
     {
       emoji: '↑21%',
-      title: '댓글 참여율',
-      description: ['기록 증가로 사용자 상호작용 확대'],
+      title: '기록 완료율',
+      description: ['최소 입력 구조 효과'],
     },
   ],
 }

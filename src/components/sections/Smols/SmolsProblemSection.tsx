@@ -1,7 +1,6 @@
 import Section from '@/components/ui/Section'
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
 import StatSection from '@/components/ui/Cards/StatSection'
-import HighlightCard from '@/components/ui/Cards/HighlightCard'
 import AppReviewSection from '@/components/ui/Cards/UserFeedbackSection'
 import { smols } from '@/data/projects'
 import type { MetricsSection, InsightSection } from '@/data/types/smols'
@@ -11,7 +10,7 @@ export default function SmolsProblemSection() {
   const userInsight = smols.sections.userInsight as InsightSection
 
   return (
-    <Section className='bg-gray-900'>
+    <Section className='bg-gray-900' inner='120'>
       <SectionHeader
         {...problemMetrics}
         className='whitespace-pre-line text-white'
@@ -34,28 +33,6 @@ export default function SmolsProblemSection() {
         data={smols.feedbackData}
         theme='dark'
       />
-      <HighlightCard
-        className='mt-8'
-        description={smols.insightSummary.description}
-        theme='dark'
-      />
-
-      <SectionHeader
-        {...smols.sections.strategy}
-        className='pt-32 whitespace-pre-line text-white'
-        align='center'
-      />
-      <div className='flex gap-8 whitespace-pre-line'>
-        {smols.strategy.map((item) => (
-          <HighlightCard
-            key={item.title}
-            className='mt-16'
-            imageClassName='max-w-60'
-            {...item}
-            theme='dark'
-          />
-        ))}
-      </div>
     </Section>
   )
 }
