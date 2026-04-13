@@ -41,9 +41,9 @@ export default function HeroSection({
         </div>
         {/* 뱃지 */}
         <div className='flex items-center gap-4 pt-8'>
-          {badgeText.map((text, i) => (
+          {badgeText.map((text) => (
             <Badge
-              key={i}
+              key={text}
               label={text}
               size='sm'
               theme='outlineWhite'

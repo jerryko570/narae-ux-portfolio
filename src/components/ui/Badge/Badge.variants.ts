@@ -5,7 +5,7 @@ export const BadgeVariants = cva(
   {
     variants: {
       size: {
-        sm: 'h-[1.75rem] px-3 py-4 text-[0.875rem]',
+        sm: 'h-7 px-3 text-sm',
         md: 'h-[2.25rem] px-4 text-[1rem]',
         lg: 'h-[3rem] px-5 text-[1.25rem]',
       },
