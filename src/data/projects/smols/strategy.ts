@@ -4,11 +4,13 @@ import type {
   Transformation,
 } from '../../types/smols'
 
+// ─── 인사이트 요약 ───────────────────────────────────────────
 export const smolsInsightSummary: { description: string } = {
   description:
     '기록 기능이 아니라,\n기록을 지속하게 만드는 경험이 필요했습니다.',
 }
 
+// ─── 전략 카드 (기존 경험 / 개선된 경험) ─────────────────────
 export const smolsStrategy: StrategyItem[] = [
   {
     title: '기존 경험',
@@ -26,6 +28,7 @@ export const smolsStrategy: StrategyItem[] = [
   },
 ]
 
+// ─── UX 전략 3단계 ───────────────────────────────────────────
 export const smolsUxStrategy: UxStrategy = {
   items: [
     {
@@ -46,18 +49,15 @@ export const smolsUxStrategy: UxStrategy = {
   ],
 }
 
+// ─── UX Principles — Sticky 스크롤 영상 데이터 ───────────────
 export const smolsUxPrinciples = [
   {
     id: 'solution',
+    title: '탐색이 기록으로 \n이어지다',
+    desc: '상단 CTA 추가로 기록 진입을 유도하고,\n하단 탭 중앙 버튼을 기록으로 전환했습니다.',
     video: {
-      before: {
-        src: '/images/smols/movie/solution-as-is.mp4',
-        className: 'w-70 rounded-xl',
-      },
-      after: {
-        src: '/images/smols/movie/solution-to-be.mp4',
-        className: 'w-70 rounded-xl',
-      },
+      before: { src: '/images/smols/movie/solution-as-is.mp4' },
+      after: { src: '/images/smols/movie/solution-to-be.mp4' },
     },
     asIsImage: {
       src: '/images/smols/mockups/as-is-prototype.png',
@@ -72,15 +72,11 @@ export const smolsUxPrinciples = [
   },
   {
     id: 'sticker',
+    title: '표현의 제약을 \n없애다',
+    desc: '전체 영역에서 자유롭게 스티커를 배치하고\n확장형 패널로 다양한 아이템을 탐색할 수 있습니다.',
     video: {
-      before: {
-        src: '/images/smols/movie/sticker-as-is.mp4',
-        className: 'w-70 rounded-xl',
-      },
-      after: {
-        src: '/images/smols/movie/sticker-to-be.mp4',
-        className: 'w-70 rounded-xl',
-      },
+      before: { src: '/images/smols/movie/sticker-as-is.mp4' },
+      after: { src: '/images/smols/movie/sticker-to-be.mp4' },
     },
     asIsImage: {
       src: '/images/smols/mockups/sticker-as-is-prototype.png',
@@ -95,6 +91,7 @@ export const smolsUxPrinciples = [
   },
 ]
 
+// ─── Transformation (AS-IS / TO-BE 텍스트) ───────────────────
 export const smolsTransformations: Transformation[] = [
   {
     center: '전환 중심 설계',

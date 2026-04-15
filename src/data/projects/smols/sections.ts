@@ -62,17 +62,8 @@ export const smolsSections: Record<string, SectionData> = {
   solution: {
     type: 'solution',
     badge: 'UX PRINCIPLES',
-    title: '탐색 → 기록 전환 UX',
-    description:
-      '탐색 흐름 속에서 자연스럽게 기록으로 전환되도록 설계했습니다.',
-    align: 'center',
-  },
-
-  sticker: {
-    type: 'solution',
-    title: '표현 자유도 확장 구조',
-    description:
-      '제한된 편집 구조를 개선해 자유로운 표현이 가능하도록 확장했습니다.',
+    title: '설계가 경험을 바꾼다',
+    description: '',
     align: 'center',
   },
 

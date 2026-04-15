@@ -22,7 +22,6 @@ export type UxStrategy = {
   video?: VideoConfig
 }
 
-// UX PRINCIPLES
 export type TransformationItem = {
   label: string
   title: string
@@ -47,6 +46,9 @@ export type ImageConfig = {
 }
 
 export type UxPrincipleType = {
+  id: string
+  title: string
+  desc: string
   video: {
     before: VideoConfig
     after: VideoConfig
