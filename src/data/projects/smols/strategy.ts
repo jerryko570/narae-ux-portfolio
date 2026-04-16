@@ -125,3 +125,10 @@ export const smolsTransformations: Transformation[] = [
     insights: { text: '자유로운 \n표현' },
   },
 ]
+
+// ─── Problem Metrics Stats ───────────────────────────────────
+export const smolsProblemStats = [
+  { value: '45초', label: '평균 체류 시간' },
+  { value: '60%', label: '1주 이탈율' },
+  { value: '15%', label: '기록 전환율' },
+]

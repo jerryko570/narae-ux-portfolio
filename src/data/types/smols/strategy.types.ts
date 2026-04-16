@@ -56,3 +56,9 @@ export type UxPrincipleType = {
   asIsImage: ImageConfig
   toBeImage: ImageConfig
 }
+
+// ─── Problem Metrics Stats ───────────────────────────────────
+export type ProblemStat = {
+  value: string
+  label: string
+}

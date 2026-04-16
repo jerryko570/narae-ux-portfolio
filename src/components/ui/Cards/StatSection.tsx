@@ -35,7 +35,7 @@ function StatItem({
 
   return (
     <div className='text-center'>
-      <Text as='h1' className='text-orange-500'>
+      <Text as='h2' className='text-orange-500'>
         {hasNumber ? (
           animated && started ? (
             <CountUp start={0} end={num} duration={1.2} suffix={suffix} />
@@ -84,11 +84,11 @@ export default function StatSection({
       )}
     >
       {description && (
-        <Text as='h6' className='text-center text-white'>
+        <Text as='h1' className='text-center text-white'>
           {description}
         </Text>
       )}
-      <div className='mt-8 grid grid-cols-3 gap-40'>
+      <div className='grid grid-cols-3 gap-40'>
         {items.map((item) => (
           <StatItem
             key={item.label}
