@@ -33,7 +33,7 @@ export default function StickyPhoneSection() {
           {/* 폰 + 텍스트 */}
           <div className='mx-auto flex w-full max-w-7xl items-center justify-between px-16'>
             {/* 텍스트 — 왼쪽 */}
-            <div className='w-100'>
+            <div className='w-full'>
               <Text as='h6' className='mb-2 font-extrabold text-orange-900'>
                 0{activeStep + 1}
               </Text>

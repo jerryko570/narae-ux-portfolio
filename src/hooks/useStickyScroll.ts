@@ -10,13 +10,16 @@ export function useStickyScroll(totalSteps: number) {
     const handleScroll = () => {
       if (!containerRef.current) return
 
-      // 컨테이너의 위치와 총 높이
       const { top, height } = containerRef.current.getBoundingClientRect()
 
-      // 스크롤이 컨테이너 안에 얼마나 들어왔는지 (0 ~ 1)
-      const scrollProgress = -top / (height - window.innerHeight)
+      // 박스 높이가 화면이랑 같거나 작으면 스크롤 불가 → 0으로 고정
+      const scrollableHeight = height - window.innerHeight
+      if (scrollableHeight <= 0) {
+        setActiveStep(0)
+        return
+      }
 
-      // 몇 번째 구간인지 계산
+      const scrollProgress = -top / scrollableHeight
       const step = Math.floor(scrollProgress * totalSteps)
       const clampedStep = Math.max(0, Math.min(totalSteps - 1, step))
 
@@ -24,6 +27,8 @@ export function useStickyScroll(totalSteps: number) {
     }
 
     window.addEventListener('scroll', handleScroll)
+    handleScroll() // ← 페이지 진입 시 초기 위치 바로 계산
+
     return () => window.removeEventListener('scroll', handleScroll)
   }, [totalSteps])
 
