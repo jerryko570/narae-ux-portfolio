@@ -1,13 +1,12 @@
 import Section from '@/components/ui/Section'
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
-import StatSection from '@/components/ui/Cards/StatSection'
 import AppReviewSection from '@/components/ui/Cards/UserFeedbackSection'
 import { smols } from '@/data/projects'
-import type { MetricsSection, InsightSection } from '@/data/types/smols'
+import type { MetricsSection } from '@/data/types/smols'
+import { smolsProblemStats } from '@/data/projects/smols/strategy'
 
 export default function SmolsProblemSection() {
   const problemMetrics = smols.sections.problemMetrics as MetricsSection
-  const userInsight = smols.sections.userInsight as InsightSection
 
   return (
     <Section className='bg-gray-900' inner='120'>
@@ -15,23 +14,11 @@ export default function SmolsProblemSection() {
         {...problemMetrics}
         className='whitespace-pre-line text-white'
       />
-      <StatSection
-        {...problemMetrics.metrics}
-        theme='dark'
-        className='mt-12 whitespace-pre-line'
-      />
-
-      <div className='mt-32'>
-        <SectionHeader
-          {...userInsight}
-          className='whitespace-pre-line text-white'
-          align='center'
-        />
-      </div>
       <AppReviewSection
-        className='mt-16'
+        className='mt-10'
         data={smols.feedbackData}
         theme='dark'
+        stats={smolsProblemStats}
       />
     </Section>
   )
