@@ -14,7 +14,7 @@ export default function Section({
   return (
     <section className={className}>
       <div
-        className={cn(`mx-auto ${maxWidth} px-16`, !inner && 'py-24')}
+        className={cn(`mx-auto ${maxWidth} px-16`, !inner && 'py-18')}
         style={
           inner
             ? { paddingTop: `${inner}px`, paddingBottom: `${inner}px` }

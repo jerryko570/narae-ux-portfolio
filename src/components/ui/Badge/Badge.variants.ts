@@ -16,6 +16,10 @@ export const BadgeVariants = cva(
         blue: 'bg-blue-500 text-white',
         darkOrange: 'bg-orange-700 text-white',
         outlineWhite: 'border border-white font-light text-white',
+        outlineDark: 'border border-gray-600 font-light text-gray-600',
+        outlineBlue: 'border border-blue-500 font-light text-blue-500',
+        outlinePink: 'border border-pink-500 font-light text-pink-500',
+        outlineOrange: 'border border-orange-500 font-light text-orange-500',
       },
       radius: {
         full: 'rounded-full',

@@ -54,7 +54,7 @@ export const smolsUxPrinciples = [
   {
     id: 'solution',
     title: '탐색이 기록으로 \n이어지다',
-    desc: '상단 CTA 추가로 기록 진입을 유도하고,\n하단 탭 중앙 버튼을 기록으로 전환했습니다.',
+    desc: '탐색 중 기록으로 바로 이어지도록\n상단 CTA와 하단 탭 버튼을 개선했습니다.\n\n탐색 중 60% 이탈 지점에서 진입 구조를 바꿨습니다.',
     video: {
       before: { src: '/images/smols/movie/solution-as-is.mp4' },
       after: { src: '/images/smols/movie/solution-to-be.mp4' },
@@ -73,7 +73,7 @@ export const smolsUxPrinciples = [
   {
     id: 'sticker',
     title: '표현의 제약을 \n없애다',
-    desc: '전체 영역에서 자유롭게 스티커를 배치하고\n확장형 패널로 다양한 아이템을 탐색할 수 있습니다.',
+    desc: '제한된 편집 영역을 벗어나\n자유롭게 꾸밀 수 있게 했습니다.\n\n꾸미기 불만이 44.5%로 가장 많은 Pain Point였습니다.',
     video: {
       before: { src: '/images/smols/movie/sticker-as-is.mp4' },
       after: { src: '/images/smols/movie/sticker-to-be.mp4' },
@@ -104,7 +104,7 @@ export const smolsTransformations: Transformation[] = [
       label: 'TO-BE',
       title: '기록 전환 구조',
       description:
-        '상단 CTA는 진입 시 기록 의도를 형성하고,\n하단 CTA는 탐색 중 행동 전환을 유도합니다.\n\n탐색 중 기록으로 자연스럽게\n전환되도록 설계했습니다.',
+        '기존 기록 진입은 다른 메뉴를 거쳐야 했습니다.\n상단 CTA와 하단 탭 중앙 버튼을 추가해\n기록 접근성을 높였습니다.',
     },
     insights: { text: '탐색 → 기록 전환' },
   },
