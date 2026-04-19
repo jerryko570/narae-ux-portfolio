@@ -26,7 +26,7 @@ export default function HeroSection({
   image,
 }: HeroSectionProps) {
   return (
-    <div className='relative min-w-[400px]'>
+    <div className='relative min-w-100'>
       <Section className='w-full bg-orange-500'>
         {/* 배지 */}
         <div className='inline-flex items-center'>
@@ -35,12 +35,12 @@ export default function HeroSection({
 
         {/* 타이틀 */}
         <div className='pt-4 whitespace-pre-line text-white'>
-          <Text as='display' className='break-keep'>
+          <Text as='h1' className='break-keep'>
             {title}
           </Text>
         </div>
         {/* 뱃지 */}
-        <div className='flex items-center gap-4 pt-8'>
+        <div className='flex items-center gap-4 pt-10'>
           {badgeText.map((text) => (
             <Badge
               key={text}

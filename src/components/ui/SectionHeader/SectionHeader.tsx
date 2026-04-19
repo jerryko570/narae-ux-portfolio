@@ -21,7 +21,7 @@ export default function SectionHeader({
   subtitle,
   description,
   align = 'center',
-  titleSize = 'h1',
+  titleSize = 'h2',
   badgeTheme = 'orange',
   className,
 }: SectionHeaderProps) {

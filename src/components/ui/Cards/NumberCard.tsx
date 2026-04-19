@@ -23,7 +23,7 @@ export default function NumberCard({
       <div>
         <Badge size='sm' label={String(number)} theme='orange' />
         <div className='pt-2 whitespace-pre-line'>
-          <Text as='h6' className='font-bold'>
+          <Text as='h6' className='font-medium'>
             {title}
           </Text>
           <Text as='p' className='pt-4'>

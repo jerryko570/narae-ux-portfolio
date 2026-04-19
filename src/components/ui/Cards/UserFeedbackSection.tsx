@@ -41,7 +41,7 @@ export default function AppReviewSection({
         <StatSection
           items={stats}
           theme={theme}
-          className='-8 border-b border-white/5 p-0 pb-8'
+          className='border-b border-white/5 p-0 pb-8'
         />
       )}
 
@@ -58,7 +58,7 @@ export default function AppReviewSection({
                 {left.title}
               </Text>
             </div>
-            <Text as='caption' className='ml-56 text-gray-400'>
+            <Text as='caption' className='ml-56 text-gray-500'>
               {left.count}
             </Text>
           </div>
@@ -88,7 +88,7 @@ export default function AppReviewSection({
             </Text>
             <Text
               as='caption'
-              className='text-right whitespace-pre-line text-gray-400'
+              className='text-right whitespace-pre-line text-gray-500'
             >
               {right.unit}
             </Text>
@@ -104,9 +104,9 @@ export default function AppReviewSection({
                     {item.value}%
                   </Text>
                 </div>
-                <div className='h-6 w-full overflow-hidden rounded-full bg-white/15'>
+                <div className='h-3 w-full overflow-hidden rounded-full bg-white/6'>
                   <div
-                    className='h-6 rounded-full bg-orange-500'
+                    className='h-3 rounded-full bg-orange-500'
                     style={{ width: `${item.value}%` }}
                   />
                 </div>

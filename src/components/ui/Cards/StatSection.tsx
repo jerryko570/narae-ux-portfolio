@@ -66,7 +66,6 @@ function StatItem({
 }
 
 export default function StatSection({
-  description,
   items,
   theme,
   className,
@@ -83,11 +82,6 @@ export default function StatSection({
         className
       )}
     >
-      {description && (
-        <Text as='h1' className='text-center text-white'>
-          {description}
-        </Text>
-      )}
       <div className='grid grid-cols-3 gap-40'>
         {items.map((item) => (
           <StatItem

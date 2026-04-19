@@ -1,6 +1,5 @@
 import HeroSection from '@/components/sections/Hero/HeroSection'
 import SmolsProblemSection from '@/components/sections/Smols/SmolsProblemSection'
-import SmolsUxStrategySection from '@/components/sections/Smols/SmolsUxStrategySection'
 import SmolsSolutionSection from '@/components/sections/Smols/SmolsSolutionSection'
 import SmolsRetrospectiveSection from '@/components/sections/Smols/SmolsRetrospectiveSection'
 
@@ -14,7 +13,6 @@ export default function SmolsPage() {
       ))}
 
       <SmolsProblemSection />
-      <SmolsUxStrategySection />
       <SmolsSolutionSection />
       <SmolsRetrospectiveSection />
     </div>

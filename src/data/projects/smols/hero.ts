@@ -10,7 +10,7 @@ export const smolsHeros: HeroData[] = [
     meta: [
       { label: 'ROLE', values: ['UX Research', 'UI Design'] },
       { label: 'DURATION', values: ['2023.03~', '2024.01'] },
-      { label: 'TOOLS', values: ['Figma', 'FigJam'] },
+      { label: 'TOOLS', values: ['Figma', 'Principle'] },
       { label: 'TEAM', values: ['1 Designer'] },
     ],
   },

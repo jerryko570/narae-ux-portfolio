@@ -25,16 +25,26 @@ export const smolsReviewSummary = {
 export const smolsReviewCategories = [
   '전체',
   '꾸미기 기능 부족',
-  '앱 성능 및 안정성',
-  '기록 과정의 불편함',
+  '앱 성능/안정성',
+  '기록 경험 불편',
   '소통 기능 부족',
   '기타',
 ] as const
 
 export const smolsReviewCategoryTheme = {
-  '꾸미기 기능 부족': 'blue',
-  '앱 성능 및 안정성': 'orange',
-  '기록 과정의 불편함': 'dark',
-  '소통 기능 부족': 'white',
-  기타: 'dark',
+  '꾸미기 기능 부족': 'outlineBlue',
+  '앱 성능/안정성': 'outlineOrange',
+  '기록 경험 불편': 'outlinePink',
+  '소통 기능 부족': 'outlinePink',
+  기타: 'outlineDark',
 } as const
+
+export const smolsReviewInsight = {
+  title: '꾸미기 기능 부족이 44.5%로 가장 많았습니다.',
+  description: '기록보다 꾸미기 경험이 핵심 문제였습니다.',
+  card: [
+    { title: '964건', description: '총 분석 리뷰' },
+    { title: '44.5%', description: '꾸미기 기능 부족' },
+    { title: '3기수', description: '04기 · 05기 · 06기' },
+  ],
+}
