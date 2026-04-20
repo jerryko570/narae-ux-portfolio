@@ -1,10 +1,10 @@
 import { BadgeVariants } from './Badge.variants'
 import type { VariantProps } from 'class-variance-authority'
 
-type BadgeProps = {
+export type BadgeProps = {
   label: string
   className?: string
-  radius?: string
+  onClick?: () => void
 } & VariantProps<typeof BadgeVariants>
 
 export default function Badge({
@@ -12,10 +12,23 @@ export default function Badge({
   size,
   theme,
   radius,
+  weight,
+  animation,
+  onClick,
   className,
 }: BadgeProps) {
   return (
-    <span className={BadgeVariants({ size, theme, radius, className })}>
+    <span
+      onClick={onClick}
+      className={BadgeVariants({
+        size,
+        theme,
+        radius,
+        weight,
+        animation,
+        className,
+      })}
+    >
       {label}
     </span>
   )

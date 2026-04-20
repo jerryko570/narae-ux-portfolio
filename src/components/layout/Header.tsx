@@ -61,7 +61,7 @@ export default function Header({ variant, sticky }: HeaderProps) {
               className={cn(
                 'mr-8 font-bold',
                 pathname === '/about'
-                  ? 'text-orange-500'
+                  ? 'text-blue-500'
                   : 'text-gray-900 hover:text-gray-400'
               )}
             >

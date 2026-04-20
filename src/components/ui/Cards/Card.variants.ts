@@ -9,6 +9,7 @@ export const CardVariant = cva('flex rounded-lg p-10', {
       white: 'bg-white text-gray-900',
       lightOrange: 'bg-orange-50 text-gray-900',
       sky: 'bg-blue-500 text-white',
+      lightSky: 'bg-blue-200 text-gray-900',
       orange: 'bg-orange-500 text-white',
       pink: 'bg-pink-500 text-white',
       transparent: 'bg-transparent',

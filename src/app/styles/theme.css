@@ -22,8 +22,15 @@
   --pink-500: #fc4574;
 
   /* Blue */
-  --blue-500: #00c8ff;
-  --blue-600: #00b3e4;
+  --blue-200: #f4f7ff;
+  --blue-400: #5f8aff;
+  --blue-500: #4576fc;
+  --blue-600: #2355de;
+  --blue-700: #11379f;
+  --blue-800: #001c67;
+
+  /* Green */
+  --green-500: #00e8bd;
 
   /* Radius */
   --radius-sm: 1.125rem;
@@ -89,8 +96,14 @@
   --color-pink-500: var(--pink-500);
 
   /* Blue */
+  --color-blue-200: var(--blue-200);
   --color-blue-500: var(--blue-500);
   --color-blue-600: var(--blue-600);
+  --color-blue-700: var(--blue-700);
+  --color-blue-800: var(--blue-800);
+
+  /* Green */
+  --color-green-500: var(--green-500);
 
   /* Radius */
   --radius-sm: var(--radius-sm);

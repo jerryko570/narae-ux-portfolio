@@ -2,6 +2,7 @@ import HeroSection from '@/components/sections/Hero/HeroSection'
 import SmolsProblemSection from '@/components/sections/Smols/SmolsProblemSection'
 import SmolsSolutionSection from '@/components/sections/Smols/SmolsSolutionSection'
 import SmolsRetrospectiveSection from '@/components/sections/Smols/SmolsRetrospectiveSection'
+import SmolsResultSection from '@/components/sections/Smols/SmolsResultSection'
 
 import { smols } from '@/data/projects'
 
@@ -14,6 +15,7 @@ export default function SmolsPage() {
 
       <SmolsProblemSection />
       <SmolsSolutionSection />
+      <SmolsResultSection />
       <SmolsRetrospectiveSection />
     </div>
   )

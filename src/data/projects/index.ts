@@ -1,9 +1,11 @@
+// contact - Home/About 공용이라 최상위로
+export { contactLinks } from './home/contact'
+
 // Home
-import { HomeHeros, HomeContact } from './home'
+import { HomeHeros } from './home'
 
 export const home = {
   heros: HomeHeros,
-  contact: HomeContact,
 }
 
 // Smols
@@ -36,7 +38,7 @@ export const smols = {
   insightSummary: smolsInsightSummary,
   strategy: smolsStrategy,
   uxStrategy: smolsUxStrategy,
-  uxPrinciple: smolsUxPrinciples,
-  transformation: smolsTransformations,
-  productResult: smolsResult,
+  uxPrinciples: smolsUxPrinciples,
+  transformations: smolsTransformations,
+  result: smolsResult,
 }

@@ -12,7 +12,7 @@ export default function SmolsResultSection() {
       <SectionHeader {...smols.sections.resultSection}></SectionHeader>
 
       <div className='grid grid-cols-3 gap-8 pt-16'>
-        {smols.productResult.items.map((item: ResultItem, index: number) => (
+        {smols.result.items.map((item: ResultItem, index: number) => (
           <FeatureCard
             key={index}
             emoji={item.emoji}
