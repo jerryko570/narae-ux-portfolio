@@ -22,7 +22,7 @@ export default function AboutStrengthSection() {
               description={item.description}
               theme='white'
               badgeTheme={item.badgeTheme}
-              className='hover:bg-blue-100'
+              className='transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100'
             />
           </FadeIn>
         ))}

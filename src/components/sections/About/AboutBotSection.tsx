@@ -32,7 +32,7 @@ export default function AboutBotSection() {
         <div className='grid w-114 grid-cols-2 gap-4'>
           {aboutBot.features.map((feature, i) => (
             <FadeIn key={feature.label} delay={0.2 + i * 0.1}>
-              <div className='rounded-xl bg-gray-800 p-4 hover:bg-gray-700'>
+              <div className='h rounded-xl bg-gray-800 p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-gray-700'>
                 <Text
                   as='body'
                   className='mb-1 block font-extralight text-white'

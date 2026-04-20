@@ -132,7 +132,7 @@ export default function AboutCareerSection() {
             </Text>
           </FadeIn>
 
-          <div className='flex flex-col gap-12'>
+          <div className='flex flex-col gap-14'>
             {techStack.categories.map((category, i) => (
               <FadeIn key={category.title} delay={0.4 + i * 0.15}>
                 <div className='grid grid-cols-[100px_1fr] items-start gap-16'>
