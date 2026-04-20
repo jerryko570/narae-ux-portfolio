@@ -37,7 +37,7 @@ export default function AboutCareerSection() {
 
           <FadeIn delay={0.1}>
             <div className='mb-14'>
-              <Text as='h6' className='mb-4 font-extralight text-gray-900'>
+              <Text as='body' className='mb-4 font-extralight text-gray-900'>
                 Education
               </Text>
               <ul className='flex flex-col gap-4'>
@@ -60,7 +60,7 @@ export default function AboutCareerSection() {
 
           <FadeIn delay={0.2}>
             <div>
-              <Text as='h6' className='-mb-4 font-extralight text-gray-900'>
+              <Text as='body' className='-mb-4 font-extralight text-gray-900'>
                 Experience
               </Text>
               <ul className='flex flex-col gap-4'>
@@ -104,8 +104,8 @@ export default function AboutCareerSection() {
                 )}
               </ul>
 
-              <div className='mt-10 rounded-2xl bg-white p-6 text-center'>
-                <Text as='caption' className='font-bold text-blue-500'>
+              <div className='mt-10 rounded-2xl bg-blue-500 p-6 text-center'>
+                <Text as='p' className='font-medium text-white'>
                   {aboutCareer.closing}
                 </Text>
               </div>
@@ -132,17 +132,17 @@ export default function AboutCareerSection() {
             </Text>
           </FadeIn>
 
-          <div className='flex flex-col gap-12'>
+          <div className='flex flex-col gap-14'>
             {techStack.categories.map((category, i) => (
               <FadeIn key={category.title} delay={0.4 + i * 0.15}>
                 <div className='grid grid-cols-[100px_1fr] items-start gap-16'>
-                  <Text as='h6' className='font-light text-gray-900'>
+                  <Text as='body' className='font-extralight text-gray-900'>
                     {category.title}
                   </Text>
                   <div className='pt-2'>
                     <Text
                       as='caption'
-                      className='mb-3 block font-medium text-gray-900'
+                      className='mb-3 block font-normal text-gray-500'
                     >
                       {category.description}
                     </Text>

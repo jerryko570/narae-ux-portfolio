@@ -22,6 +22,7 @@
   --pink-500: #fc4574;
 
   /* Blue */
+  --blue-100: #fcfdff;
   --blue-200: #f4f7ff;
   --blue-400: #5f8aff;
   --blue-500: #4576fc;
@@ -96,6 +97,7 @@
   --color-pink-500: var(--pink-500);
 
   /* Blue */
+  --color-blue-100: var(--blue-100);
   --color-blue-200: var(--blue-200);
   --color-blue-500: var(--blue-500);
   --color-blue-600: var(--blue-600);

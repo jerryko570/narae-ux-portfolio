@@ -43,7 +43,7 @@ export const aboutCareer = {
       kind: 'item',
       year: '2015',
       company: '요쿠스',
-      description: '라이브 방송 플랫폼의 앱·웹 UX 설계',
+      description: '오디션 영상 플랫폼의 앱·웹 UX 설계',
     },
 
     {
@@ -87,7 +87,7 @@ export const aboutCareer = {
     },
     {
       kind: 'item',
-      year: '2026',
+      year: '2025-2026',
       company: '코드잇 프론트엔드 부트캠프 수료',
       description: 'UI 컴포넌트 개발·배포·API 연동',
     },

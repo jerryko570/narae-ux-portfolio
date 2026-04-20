@@ -11,9 +11,11 @@ export default function AboutBotSection() {
         {/* 왼쪽 */}
         <FadeIn>
           <div className='max-w-xl'>
-            <Text as='h4' className='mb-4 font-bold text-white'>
-              {aboutBot.title}
-            </Text>
+            <div className='flex items-center gap-6'>
+              <Text as='h4' className='mb-4 font-bold text-white'>
+                {aboutBot.title}
+              </Text>
+            </div>
             <Text as='p' className='mb-8 whitespace-pre-line text-white'>
               {aboutBot.description}
             </Text>
@@ -30,17 +32,20 @@ export default function AboutBotSection() {
 
         {/* 오른쪽 — 구현 스택 */}
         <div className='grid w-114 grid-cols-2 gap-4'>
-          {aboutBot.features.map((f, i) => (
-            <FadeIn key={f.label} delay={0.2 + i * 0.1}>
-              <div className='rounded-xl bg-gray-800 p-4 hover:bg-gray-700'>
-                <Text as='body' className='mb-1 block font-medium text-white'>
-                  {f.label}
+          {aboutBot.features.map((feature, i) => (
+            <FadeIn key={feature.label} delay={0.2 + i * 0.1}>
+              <div className='h rounded-xl bg-gray-800 p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-gray-700'>
+                <Text
+                  as='body'
+                  className='mb-1 block font-extralight text-white'
+                >
+                  {feature.label}
                 </Text>
                 <Text
                   as='caption'
                   className='whitespace-pre-line text-gray-500'
                 >
-                  {f.desc}
+                  {feature.desc}
                 </Text>
               </div>
             </FadeIn>

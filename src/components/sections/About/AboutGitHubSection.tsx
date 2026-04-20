@@ -26,6 +26,9 @@ export default function AboutGitHubSection() {
           blockSize={10}
           blockMargin={3}
           fontSize={12}
+          labels={{
+            totalCount: '{{count}}번의 깃허브 커밋, 꾸준히 기록 중',
+          }}
           theme={{
             light: ['#ebedf0', '#c6e6ff', '#7cc5ff', '#378add', '#185fa5'],
           }}
