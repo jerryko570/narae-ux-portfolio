@@ -1,4 +1,4 @@
-import Badge from '../Badge/Badge'
+import Badge, { type BadgeProps } from '../Badge/Badge'
 import { VariantProps } from 'class-variance-authority'
 import { CardVariant } from './Card.variants'
 import { cn } from '@/lib/cn'
@@ -9,6 +9,10 @@ type NumberCardProps = {
   description: string
   number: number
   showBadge?: boolean
+  badgeTheme?: BadgeProps['theme']
+  badgeSize?: BadgeProps['size']
+  badgeRadius?: BadgeProps['radius']
+  badgeWeight?: BadgeProps['weight']
 } & VariantProps<typeof CardVariant>
 
 export default function NumberCard({
@@ -16,12 +20,25 @@ export default function NumberCard({
   description,
   theme,
   number,
+  showBadge = true,
+  badgeTheme = 'orange',
+  badgeSize = 'sm',
+  badgeRadius,
+  badgeWeight = 'light',
   ...props
 }: NumberCardProps) {
   return (
     <div className={cn(CardVariant({ theme, ...props }))}>
       <div>
-        <Badge size='sm' label={String(number)} theme='orange' />
+        {showBadge && (
+          <Badge
+            size={badgeSize}
+            label={String(number)}
+            theme={badgeTheme}
+            radius={badgeRadius}
+            weight={badgeWeight}
+          />
+        )}
         <div className='pt-2 whitespace-pre-line'>
           <Text as='h6' className='font-medium'>
             {title}
