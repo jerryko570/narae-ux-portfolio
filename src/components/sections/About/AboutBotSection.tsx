@@ -11,9 +11,11 @@ export default function AboutBotSection() {
         {/* 왼쪽 */}
         <FadeIn>
           <div className='max-w-xl'>
-            <Text as='h4' className='mb-4 font-bold text-white'>
-              {aboutBot.title}
-            </Text>
+            <div className='flex items-center gap-6'>
+              <Text as='h4' className='mb-4 font-bold text-white'>
+                {aboutBot.title}
+              </Text>
+            </div>
             <Text as='p' className='mb-8 whitespace-pre-line text-white'>
               {aboutBot.description}
             </Text>
