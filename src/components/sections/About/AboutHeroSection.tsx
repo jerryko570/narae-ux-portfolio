@@ -38,13 +38,13 @@ export default function AboutHeroSection() {
                   <FadeIn key={award.year} delay={0.4 + i * 0.15}>
                     <div>
                       <div className='flex items-center gap-2'>
-                        <Text as='p' className='font-bold text-gray-900'>
+                        <Text as='p' className='font-medium text-gray-900'>
                           {award.year}
                         </Text>
                         <Badge
                           label={award.label}
-                          theme='outlineBlue'
-                          size='sm'
+                          theme='blue'
+                          size='xs'
                           weight='medium'
                           radius='md'
                         />

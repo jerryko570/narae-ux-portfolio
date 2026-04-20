@@ -13,6 +13,7 @@ type NumberCardProps = {
   badgeSize?: BadgeProps['size']
   badgeRadius?: BadgeProps['radius']
   badgeWeight?: BadgeProps['weight']
+  className?: string
 } & VariantProps<typeof CardVariant>
 
 export default function NumberCard({
@@ -24,11 +25,12 @@ export default function NumberCard({
   badgeTheme = 'orange',
   badgeSize = 'sm',
   badgeRadius,
-  badgeWeight = 'light',
+  badgeWeight = 'bold',
+  className,
   ...props
 }: NumberCardProps) {
   return (
-    <div className={cn(CardVariant({ theme, ...props }))}>
+    <div className={cn(CardVariant({ theme, className, ...props }))}>
       <div>
         {showBadge && (
           <Badge

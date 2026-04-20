@@ -12,10 +12,9 @@ import { useToggleMode } from '@/hooks/useToggleMode'
 
 const MODES = ['figma', 'code'] as const
 const INTERVAL = 6000
-
 const BOX_WIDTH = 200
 const BOX_HEIGHT = 64
-const EXPAND_DURATION = 0.8
+const EXPAND_DURATION = 0.6
 
 export default function DesignerToggle() {
   const mode = useToggleMode({ modes: MODES, interval: INTERVAL })
@@ -54,10 +53,10 @@ function FigmaMode() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.4 }}
       className='relative inline-block px-4 py-1'
     >
-      {/* 박스: 너비 0 → 220px 확장 */}
+      {/* 박스: 너비 0 → 200px 확장 */}
       <motion.span
         style={{ width }}
         className='absolute top-0 left-0 h-full origin-left border-2 border-blue-500'
@@ -90,7 +89,7 @@ function CodeMode() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.1 }}
       className='inline-flex items-center text-[0.90em] font-medium text-blue-500'
     >
       {chars.map((char, i) => (
@@ -99,8 +98,8 @@ function CodeMode() {
           initial={{ width: 0, opacity: 0 }}
           animate={{ width: 'auto', opacity: 1 }}
           transition={{
-            duration: 0.01,
-            delay: 0.3 + i * 0.08,
+            duration: 0.02,
+            delay: i * 0.05,
           }}
           className='inline-block overflow-hidden whitespace-pre'
         >
@@ -116,7 +115,7 @@ function CodeMode() {
           repeat: Infinity,
           ease: 'linear',
         }}
-        className='ml-0.5 inline-block h-[0.9em] w-0.5 bg-blue-500'
+        className='ml-0.5 inline-block h-[0.9em] w-1 bg-blue-500'
       />
     </motion.span>
   )

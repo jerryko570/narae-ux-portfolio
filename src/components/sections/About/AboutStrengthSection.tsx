@@ -8,7 +8,7 @@ export default function AboutStrengthSection() {
   return (
     <Section className='bg-blue-200'>
       <FadeIn>
-        <Text as='h4' className='mb-8 font-bold'>
+        <Text as='h4' className='mb-6 font-bold'>
           이런 디자이너입니다
         </Text>
       </FadeIn>
@@ -22,6 +22,7 @@ export default function AboutStrengthSection() {
               description={item.description}
               theme='white'
               badgeTheme={item.badgeTheme}
+              className='hover:bg-blue-100'
             />
           </FadeIn>
         ))}
