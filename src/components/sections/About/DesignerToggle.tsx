@@ -11,10 +11,10 @@ import { useEffect, useState } from 'react'
 import { useToggleMode } from '@/hooks/useToggleMode'
 
 const MODES = ['figma', 'code'] as const
-const INTERVAL = 6000
+const INTERVAL = 3600
 const BOX_WIDTH = 200
 const BOX_HEIGHT = 64
-const EXPAND_DURATION = 0.6
+const EXPAND_DURATION = 0.4
 
 export default function DesignerToggle() {
   const mode = useToggleMode({ modes: MODES, interval: INTERVAL })
