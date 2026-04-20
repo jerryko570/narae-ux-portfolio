@@ -104,8 +104,8 @@ export default function AboutCareerSection() {
                 )}
               </ul>
 
-              <div className='mt-10 rounded-2xl bg-white p-6 text-center'>
-                <Text as='caption' className='font-bold text-blue-500'>
+              <div className='mt-10 rounded-2xl bg-blue-500 p-6 text-center'>
+                <Text as='p' className='font-medium text-white'>
                   {aboutCareer.closing}
                 </Text>
               </div>
