@@ -41,13 +41,13 @@ export default function ProjectCard({
             </Text>
             {titleSlot}
           </div>
-          <Text as='body' className='pt-4'>
+          <Text as='p' className='pt-4'>
             {description}
           </Text>
           {children}
         </div>
         {button && (
-          <div className='mt-16 flex h-15 w-full items-center justify-center rounded-full bg-white text-xl font-semibold text-gray-900'>
+          <div className='mt-16 flex h-15 w-full items-center justify-center rounded-full bg-white text-lg font-semibold text-gray-900'>
             {button.label}
           </div>
         )}
