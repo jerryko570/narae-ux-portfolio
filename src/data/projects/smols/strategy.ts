@@ -32,19 +32,19 @@ export const smolsStrategy: StrategyItem[] = [
 export const smolsUxStrategy: UxStrategy = {
   items: [
     {
-      number: 1,
-      title: '탐색 → 기록 전환',
-      description: '탐색 중 즉시 기록\n정보 구조 개선',
+      numbering: '기록 진입',
+      title: '탐색 중에도 바로 기록으로',
+      description: '상단 CTA로 Viewer·Writer 분리 \n이탈 지점을 전환점으로',
     },
     {
-      number: 2,
-      title: '빠른 기록 시작',
-      description: '상단 CTA 배치\n최소 입력 구조',
+      numbering: '기록 과정',
+      title: '빠르게, 군더더기 없이',
+      description: '키패드 즉시 노출 + 옵션 제거로 \n흐름 단순화',
     },
     {
-      number: 3,
-      title: '꾸미기로 반복 유도',
-      description: '자유 배치 구조\n기록의 재미 강화',
+      numbering: '재방문 유도',
+      title: '꾸미기로 다시 돌아오게',
+      description: '바텀시트 핸들로 꾸미기 자유도 확장 \n재미 → 재방문 유도',
     },
   ],
 }

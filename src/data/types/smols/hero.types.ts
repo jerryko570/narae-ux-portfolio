@@ -5,6 +5,7 @@ export type HeroData = {
   badge: string
   badgeText: string[]
   title: string
+  description: string
   image: string
   meta: HeroMeta[]
 }

@@ -7,7 +7,7 @@ import Text from '@/components/ui/Text/Text'
 type NumberCardProps = {
   title: string
   description: string
-  number: number
+  number: string
   showBadge?: boolean
   badgeTheme?: BadgeProps['theme']
   badgeSize?: BadgeProps['size']
@@ -23,7 +23,7 @@ export default function NumberCard({
   number,
   showBadge = true,
   badgeTheme = 'orange',
-  badgeSize = 'sm',
+  badgeSize = 'xs',
   badgeRadius,
   badgeWeight = 'bold',
   className,
@@ -41,11 +41,11 @@ export default function NumberCard({
             weight={badgeWeight}
           />
         )}
-        <div className='pt-2 whitespace-pre-line'>
-          <Text as='h6' className='font-medium'>
+        <div className='pt-3 whitespace-pre-line'>
+          <Text as='body' className='font-medium'>
             {title}
           </Text>
-          <Text as='p' className='pt-4'>
+          <Text as='p' className='pt-3 font-extralight text-gray-400'>
             {description}
           </Text>
         </div>

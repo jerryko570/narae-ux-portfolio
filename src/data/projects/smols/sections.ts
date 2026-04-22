@@ -3,8 +3,8 @@ import type { SectionData } from '../../types/smols'
 export const smolsSections: Record<string, SectionData> = {
   problemMetrics: {
     type: 'metrics',
-    badge: 'BEHAVIOR INSIGHT',
-    title: '탐색에서 멈춘 \n사용자 경험',
+    badge: '문제 정의',
+    title: '사용자는 기록하러 왔지만, \n기록하지 못하고 떠났다',
     align: 'center',
     metrics: {
       description: '941건 서포터즈 데이터에서 발견한 패턴',
@@ -37,10 +37,11 @@ export const smolsSections: Record<string, SectionData> = {
     },
   },
 
+  // 문저 정의 타이틀
   feedbackAnalysis: {
     type: 'research',
-    badge: 'USER FEEDBACK',
-    title: '기록하고 싶었지만,\n꾸미기가 부족했습니다',
+    badge: '리서치',
+    title: '숫자로 확인한 진짜 사용 목적',
     align: 'left',
     description: '',
   },
@@ -54,8 +55,8 @@ export const smolsSections: Record<string, SectionData> = {
 
   uxStrategy: {
     type: 'research',
-    badge: 'CORE STRATEGY',
-    title: '기록이 중심이 되는 구조로',
+    badge: '개선 방향',
+    title: '기록을 중심으로 \n구조를 다시 설계한다',
     align: 'left',
   },
 
