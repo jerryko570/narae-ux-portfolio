@@ -41,7 +41,7 @@ export default function AppReviewSection({
               <Image src={rightTop.icon} alt='' width={32} height={32} />
             )}
             <Text as='caption' className='text-gray-500'>
-              {rightTop.title} · {rightTop.count.replace(/[()]/g, '')}
+              {rightTop.title}
             </Text>
           </div>
           <Text
