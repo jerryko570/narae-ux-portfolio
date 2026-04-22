@@ -7,10 +7,17 @@ export type FeedbackCardData = {
   title: string
   count: string
   description: string
-  link: FeedbackLink
+}
+
+// ← 추가
+export type FeedbackStat = {
+  label: string
+  value: string
+  description: string
 }
 
 export type FeedbackData = {
-  left: FeedbackCardData
+  rightTop: FeedbackCardData
   right: { title: string; unit: string; items: FeedbackItem[] }
+  stats?: FeedbackStat[] // ← 추가 (optional)
 }

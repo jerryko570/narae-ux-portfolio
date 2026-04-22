@@ -19,19 +19,19 @@ export const aboutHero = {
 
 export const aboutStrengths = [
   {
-    number: 1,
+    number: '1',
     title: '구현을 이해하고 설계합니다',
     description: '구조를 이해하고 재사용 가능한 UI를  \n설계합니다.',
     badgeTheme: 'blue',
   },
   {
-    number: 2,
+    number: '2',
     title: '데이터로 문제를 정의합니다',
     description: 'VOC 964건 분석으로 사용자 흐름을\n 개선합니다.',
     badgeTheme: 'blue',
   },
   {
-    number: 3,
+    number: '3',
     title: '계속 확장하고 있습니다',
     description: '컴포넌트 구현부터 API까지, 이해의 폭을 \n넓혀갑니다.',
     badgeTheme: 'blue',

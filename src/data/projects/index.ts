@@ -1,14 +1,3 @@
-// contact - Home/About 공용이라 최상위로
-export { contactLinks } from './home/contact'
-
-// Home
-import { HomeHeros } from './home'
-
-export const home = {
-  heros: HomeHeros,
-}
-
-// Smols
 import {
   smolsHeros,
   smolsSections,
@@ -16,6 +5,7 @@ import {
   smolsReviewPageContent,
   smolsReviewSummary,
   smolsReviewCategories,
+  smolsUserBehavior,
   smolsReviewCategoryTheme,
   smolsInsightSummary,
   smolsReviewInsight,
@@ -33,6 +23,7 @@ export const smols = {
   reviewPageContent: smolsReviewPageContent,
   reviewSummary: smolsReviewSummary,
   reviewCategories: smolsReviewCategories,
+  userBehavior: smolsUserBehavior, // ← 추가
   reviewCategoryTheme: smolsReviewCategoryTheme,
   reviewInsight: smolsReviewInsight,
   insightSummary: smolsInsightSummary,

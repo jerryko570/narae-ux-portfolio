@@ -12,7 +12,7 @@ export type StrategyItem = {
 }
 
 export type UxStrategyItem = {
-  number: number
+  numbering: string
   title: string
   description: string
 }

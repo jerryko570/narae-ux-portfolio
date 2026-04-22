@@ -1,118 +1,78 @@
 'use client'
 
-import Text from '../Text/Text'
-import { CardVariant } from './Card.variants'
-import { VariantProps } from 'class-variance-authority'
-import { cn } from '@/lib/cn'
-import type { FeedbackData } from '@/data/types/smols'
 import Image from 'next/image'
+import { VariantProps } from 'class-variance-authority'
+import type { FeedbackData } from '@/data/types/smols'
+import { cn } from '@/lib/cn'
+import { CardVariant } from './Card.variants'
+import Text from '../Text/Text'
 import StatSection from './StatSection'
-
-type StatItem = {
-  value: string
-  label: string
-}
 
 type AppReviewSectionProps = {
   data: FeedbackData
   className?: string
-  stats?: StatItem[]
 } & VariantProps<typeof CardVariant>
 
 export default function AppReviewSection({
   data,
   className,
   theme,
-  stats,
 }: AppReviewSectionProps) {
-  const { left, right } = data
+  const { rightTop, right, stats } = data
 
   return (
-    <section
-      className={cn(
-        'flex w-full flex-col overflow-hidden',
-        CardVariant({ theme }),
-        className
-      )}
-    >
-      {/* STATS — 상단 */}
-
+    <section className={cn('grid w-full grid-cols-2 gap-8', className)}>
+      {/* LEFT — 지표 3개 */}
       {stats && (
         <StatSection
           items={stats}
           theme={theme}
-          className='border-b border-white/5 p-0 pb-8'
+          layout='stack'
+          className='rounded-lg bg-gray-800'
         />
       )}
 
-      {/* LEFT + RIGHT */}
-      <div className='flex w-full'>
-        {/* LEFT — 리뷰 분석 */}
-        <div className='flex w-[50%] shrink-0 flex-col gap-8 p-6 pt-12'>
-          <div className='flex items-center justify-start'>
-            <div className='flex items-center gap-4'>
-              {left.icon && (
-                <Image src={left.icon} alt='app icon' width={40} height={40} />
-              )}
-              <Text as='h6' className='text-white'>
-                {left.title}
-              </Text>
-            </div>
-            <Text as='caption' className='ml-56 text-gray-500'>
-              {left.count}
+      {/* RIGHT — 리뷰 헤더 + Pain Points 차트 */}
+      <div className={cn('flex flex-col', CardVariant({ theme }))}>
+        {/* 헤더 */}
+        <div className='flex flex-col gap-6'>
+          <div className='flex items-center gap-4'>
+            {rightTop.icon && (
+              <Image src={rightTop.icon} alt='' width={32} height={32} />
+            )}
+            <Text as='caption' className='text-gray-500'>
+              {rightTop.title} · {rightTop.count.replace(/[()]/g, '')}
             </Text>
           </div>
-          <Text as='p' className='whitespace-pre-line text-white'>
-            {left.description}
+          <Text
+            as='h6'
+            className='font-extralight whitespace-pre-line text-white'
+          >
+            {rightTop.description}
           </Text>
-          {left.link && (
-            <a href={left.link.url} target='_blank' rel='noopener noreferrer'>
-              <Text
-                as='p'
-                className='font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-600'
-              >
-                {left.link.label}
-              </Text>
-            </a>
-          )}
         </div>
 
-        {/* 구분선 */}
-        <div className='w-px shrink-0 self-stretch bg-white/5' />
-
-        {/* RIGHT — Pain Points 차트 */}
-        <div className='flex min-w-0 flex-1 flex-col gap-10 p-8 pt-12'>
-          <div className='flex items-center justify-between gap-6'>
-            <Text as='h6' className='text-white'>
-              {right.title}
-            </Text>
-            <Text
-              as='caption'
-              className='text-right whitespace-pre-line text-gray-500'
+        {/* Pain Points 차트 */}
+        <div className='mt-auto flex flex-col gap-5'>
+          {right.items.map((item) => (
+            <div
+              key={item.label}
+              className='grid grid-cols-[100px_1fr_40px] items-center gap-6'
             >
-              {right.unit}
-            </Text>
-          </div>
-          <div className='flex flex-col gap-10'>
-            {right.items.map((item) => (
-              <div key={item.label} className='flex flex-col gap-3'>
-                <div className='flex items-center justify-between gap-6'>
-                  <Text as='p' className='text-white'>
-                    {item.label}
-                  </Text>
-                  <Text as='p' className='shrink-0 text-white'>
-                    {item.value}%
-                  </Text>
-                </div>
-                <div className='h-3 w-full overflow-hidden rounded-full bg-white/6'>
-                  <div
-                    className='h-3 rounded-full bg-orange-500'
-                    style={{ width: `${item.value}%` }}
-                  />
-                </div>
+              <Text as='caption' className='text-white'>
+                {item.label}
+              </Text>
+              <div className='h-2 w-full overflow-hidden rounded-full bg-white/10'>
+                <div
+                  className='h-full rounded-full bg-orange-500'
+                  style={{ width: `${item.value}%` }}
+                />
               </div>
-            ))}
-          </div>
+              <Text as='caption' className='text-right text-white tabular-nums'>
+                {item.value}%
+              </Text>
+            </div>
+          ))}
         </div>
       </div>
     </section>
