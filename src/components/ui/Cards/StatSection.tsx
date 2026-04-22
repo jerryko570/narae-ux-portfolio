@@ -45,7 +45,7 @@ function StatValue({
     <Text as='h2' className={cn('leading-none text-orange-500', className)}>
       {hasNumber ? (
         animated && started ? (
-          <CountUp start={0} end={num} duration={1.2} suffix={suffix} />
+          <CountUp start={0} end={num} duration={3} suffix={suffix} />
         ) : (
           `${num}${suffix}`
         )
