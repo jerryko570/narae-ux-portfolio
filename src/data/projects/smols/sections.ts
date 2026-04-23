@@ -80,8 +80,8 @@ export const smolsSections: Record<string, SectionData> = {
   retrospectiveSection: {
     type: 'retrospective',
     badge: 'SMOLS',
-    title: 'UX는 기능이 아니라, \n사용자 행동 흐름이다',
-    description: '데이터 기반으로 행동을 설계할 때 비로소 전환이 만들어진다.',
+    title: '진입 구조를 바꾸자, \n기록이 2배 늘었다.',
+    description: '작은 흐름 하나가 지표를 움직인다는 걸 배웠다.',
     align: 'left',
   },
 }

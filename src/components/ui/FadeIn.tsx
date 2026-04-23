@@ -9,6 +9,7 @@ type FadeInProps = {
   duration?: number
   y?: number
   className?: string
+  amount?: number
 }
 
 export default function FadeIn({
@@ -17,13 +18,14 @@ export default function FadeIn({
   duration = 0.6,
   y = 30,
   className,
+  amount = 0.2,
 }: FadeInProps) {
   return (
     <motion.div
       className={className}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount }}
       transition={{ duration, delay, ease: 'easeOut' }}
     >
       {children}

@@ -14,6 +14,7 @@ import {
   smolsUxPrinciples,
   smolsTransformations,
   smolsResult,
+  smolsClosing,
 } from './smols'
 
 export const smols = {
@@ -32,4 +33,5 @@ export const smols = {
   uxPrinciples: smolsUxPrinciples,
   transformations: smolsTransformations,
   result: smolsResult,
+  closing: smolsClosing,
 }
