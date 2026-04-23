@@ -1,110 +1,105 @@
-import Badge from '@/components/ui/Badge/Badge'
+'use client'
+
 import Image from 'next/image'
-import Text from '@/components/ui/Text/Text'
-import type { Transformation, UxPrincipleType } from '@/data/types/smols'
+import Text from '../ui/Text/Text'
+import SectionHeader from '../ui/SectionHeader/SectionHeader'
+import ComparisonCard from '../ui/Cards/ComparisonCard'
+import Section from '../ui/Section'
+import { smols } from '@/data/projects'
+import type {
+  UxPrincipleType,
+  ImageConfig,
+  Transformation,
+} from '@/data/types/smols'
 
 type Props = {
-  transformation: Transformation
   uxPrinciple: UxPrincipleType
+  transformation?: Transformation
+  index?: number
+  showSectionHeader?: boolean
 }
 
 export default function UxPrincipleLayout({
-  transformation,
   uxPrinciple,
+  showSectionHeader = false,
 }: Props) {
   return (
-    <div className='pt-16'>
-      {/* 뱃지 + 라인 */}
-      <div className='relative flex items-center'>
-        <div className='absolute top-1/2 left-0 h-px w-full -translate-y-1/2 bg-white' />
-        <div className='z-10 w-[45%]'>
-          <Badge label={transformation.before.label} theme='darkOrange' />
-        </div>
-        <div className='z-10 w-[30%]'>
-          <Badge label={transformation.center} theme='darkOrange' />
-        </div>
-        <div className='z-10 w-[40%]'>
-          <Badge label={transformation.after.label} theme='darkOrange' />
-        </div>
-      </div>
-
-      {/* 영상 + 이미지 */}
-      <div className='flex items-start'>
-        {/* AS-IS */}
-        <div className='relative h-140 w-full'>
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className='absolute top-12 left-0 z-10 w-50 rounded-4xl drop-shadow-2xl'
-          >
-            <source src={uxPrinciple.video.before.src} type='video/mp4' />
-          </video>
-
-          <Image
-            src={uxPrinciple.asIsImage.src}
-            alt='AS-IS 프로토타입'
-            width={uxPrinciple.asIsImage.imageWidth}
-            height={uxPrinciple.asIsImage.imageHeight}
-            className='absolute top-28 left-44 z-0 w-50 rounded-2xl'
+    <Section className='mx-auto w-full max-w-7xl'>
+      {/* 상단: 섹션 헤더 (옵션) */}
+      {showSectionHeader && (
+        <div className='mb-12'>
+          <SectionHeader
+            badge={smols.sections.solution.badge}
+            title={smols.sections.solution.title}
+            align='left'
+            titleSize='h4'
+            badgeTheme='orange'
+            className='text-gray-900'
           />
         </div>
+      )}
 
-        {/* 포스트잇 */}
-        <div className='relative mt-18 w-50 text-center'>
-          {/* 첫번째 */}
-          <div className='absolute -right-12 w-56 rounded-md bg-yellow-200 p-12 shadow-md'>
-            <Text
-              as='h6'
-              className='font-bold whitespace-pre-line text-gray-900'
-            >
-              {transformation.insights?.text}
-            </Text>
-          </div>
-        </div>
+      {/* 원칙 헤더: 넘버링 · 제목 · 키워드 */}
+      <div className='mb-10'>
+        <div className='text-center'>
+          <Text as='body' className='mb-2 font-bold text-orange-500'>
+            {uxPrinciple.numbering}
+          </Text>
 
-        {/* TO-BE */}
-        <div className='relative w-full'>
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className='absolute top-18 left-30 z-10 w-50 rounded-4xl drop-shadow-xl'
+          <Text
+            as='h6'
+            className='mb-8 font-extralight whitespace-pre-line text-gray-900'
           >
-            <source src={uxPrinciple.video.after.src} type='video/mp4' />
-          </video>
+            {uxPrinciple.title}
+          </Text>
+        </div>
+      </div>
 
-          <Image
-            src={uxPrinciple.toBeImage.src}
-            alt='TO-BE 프로토타입'
-            width={uxPrinciple.toBeImage.imageWidth}
-            height={uxPrinciple.toBeImage.imageHeight}
-            className='absolute top-8 -right-2 z-0 w-50 rounded-2xl'
-          />
-        </div>
+      {/* 중간: 폰 이미지 AS-IS 그룹 / TO-BE 그룹 */}
+      <div className='mb-16 grid grid-cols-2 gap-8'>
+        <PhoneGroup images={uxPrinciple.asIsImages} altPrefix='AS-IS' />
+        <PhoneGroup images={uxPrinciple.toBeImages} altPrefix='TO-BE' />
       </div>
-      {/* 텍스트 */}
-      <div className='flex justify-center'>
-        <div className='w-[40%]'>
-          <Text as='h6' className='font-bold whitespace-pre-line text-white'>
-            {transformation.before.title}
-          </Text>
-          <Text as='p' className='pt-4 whitespace-pre-line text-white'>
-            {transformation.before.description}
-          </Text>
-        </div>
-        <div className='w-[30%]' />
-        <div className='w-[40%]'>
-          <Text as='h6' className='font-bold whitespace-pre-line text-white'>
-            {transformation.after.title}
-          </Text>
-          <Text as='p' className='pt-4 whitespace-pre-line text-white'>
-            {transformation.after.description}
-          </Text>
-        </div>
+
+      {/* 하단: AS-IS → TO-BE 비교 카드 */}
+      <div className='flex items-center gap-8'>
+        <ComparisonCard
+          label='AS-IS'
+          points={uxPrinciple.asIsPoints}
+          variant='before'
+        />
+        <Text as='caption' className='text-2xl font-medium text-gray-900'>
+          →
+        </Text>
+        <ComparisonCard
+          label='TO-BE'
+          points={uxPrinciple.toBePoints}
+          variant='after'
+        />
       </div>
+    </Section>
+  )
+}
+
+function PhoneGroup({
+  images,
+  altPrefix,
+}: {
+  images: ImageConfig[]
+  altPrefix: string
+}) {
+  return (
+    <div className='flex items-start justify-center gap-8'>
+      {images.map((image, i) => (
+        <Image
+          key={i}
+          src={image.src}
+          width={image.imageWidth}
+          height={image.imageHeight}
+          alt={`${altPrefix}-${i + 1}`}
+          className={`h-auto w-[48%] max-w-50 ${i % 2 === 1 ? 'mt-4' : 'mt-0'}`}
+        />
+      ))}
     </div>
   )
 }
