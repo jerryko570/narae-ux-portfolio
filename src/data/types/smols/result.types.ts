@@ -1,6 +1,6 @@
 export type ProductResult = {
   items: {
-    emoji: string
+    value: string
     title: string
     description: string[]
   }[]

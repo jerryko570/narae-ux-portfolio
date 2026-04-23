@@ -14,13 +14,13 @@ export default function SmolsResultSection() {
         className='text-white'
         titleSize='h4'
         {...smols.sections.resultSection}
-      ></SectionHeader>
+      />
 
       <div className='grid grid-cols-3 gap-8 pt-16'>
         {smols.result.items.map((item: ResultItem, index: number) => (
           <FeatureCard
             key={index}
-            emoji={item.emoji}
+            value={item.value}
             title={item.title}
             description={item.description}
             theme='dark'

@@ -6,13 +6,13 @@ import { cn } from '@/lib/cn'
 type FeatureCardProps = {
   title: string
   description: string | string[]
-  emoji: string
+  value: string
 } & VariantProps<typeof CardVariant>
 
 export default function FeatureCard({
   title,
   description,
-  emoji,
+  value,
   theme,
 }: FeatureCardProps) {
   const descriptions = Array.isArray(description) ? description : [description]
@@ -24,11 +24,11 @@ export default function FeatureCard({
         'flex flex-col items-center text-center'
       )}
     >
-      <Text as='h4' className='text-5xl font-bold text-orange-500'>
-        {emoji}
+      <Text as='body' className='text-4xl font-bold text-orange-500'>
+        {value}
       </Text>
 
-      <Text as='body' className='mt-8 font-medium'>
+      <Text as='body' className='mt-6 font-medium'>
         {title}
       </Text>
 
