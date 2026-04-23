@@ -8,8 +8,13 @@ type ResultItem = ProductResult['items'][number]
 
 export default function SmolsResultSection() {
   return (
-    <Section className='bg-orange-500'>
-      <SectionHeader {...smols.sections.resultSection}></SectionHeader>
+    <Section className='bg-gray-900'>
+      <SectionHeader
+        badgeTheme='orange'
+        className='text-white'
+        titleSize='h4'
+        {...smols.sections.resultSection}
+      ></SectionHeader>
 
       <div className='grid grid-cols-3 gap-8 pt-16'>
         {smols.result.items.map((item: ResultItem, index: number) => (
@@ -18,7 +23,7 @@ export default function SmolsResultSection() {
             emoji={item.emoji}
             title={item.title}
             description={item.description}
-            theme='lightOrange'
+            theme='dark'
           />
         ))}
       </div>
