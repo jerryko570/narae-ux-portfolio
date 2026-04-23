@@ -71,8 +71,8 @@ export const smolsSections: Record<string, SectionData> = {
 
   resultSection: {
     type: 'result',
-    badge: 'RESULT',
-    title: 'UX 개선 기대 결과',
+    badge: '회고',
+    title: '구조를 바꾸자 사람이 \n기록하기 시작했다',
     description: '',
     align: 'center',
   },
