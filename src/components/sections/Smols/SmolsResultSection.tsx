@@ -8,10 +8,10 @@ type ResultItem = ProductResult['items'][number]
 
 export default function SmolsResultSection() {
   return (
-    <Section>
+    <Section className='bg-orange-500'>
       <SectionHeader {...smols.sections.resultSection}></SectionHeader>
 
-      <div className='grid grid-cols-3 gap-8 pt-16'>
+      <div className='grid grid-cols-3 gap-8 bg-orange-500 pt-16'>
         {smols.result.items.map((item: ResultItem, index: number) => (
           <FeatureCard
             key={index}

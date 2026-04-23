@@ -2,6 +2,7 @@ import type {
   StrategyItem,
   UxStrategy,
   Transformation,
+  UxPrincipleType,
 } from '../../types/smols'
 
 // ─── 인사이트 요약 ───────────────────────────────────────────
@@ -49,45 +50,92 @@ export const smolsUxStrategy: UxStrategy = {
   ],
 }
 
-// ─── UX Principles — Sticky 스크롤 영상 데이터 ───────────────
-export const smolsUxPrinciples = [
+// ─── UX Principles — AS-IS / TO-BE 비교 데이터 ───────────────
+export const smolsUxPrinciples: UxPrincipleType[] = [
   {
     id: 'solution',
-    title: '탐색이 기록으로 \n이어지다',
-    desc: '탐색 중 기록으로 바로 이어지도록\n상단 CTA와 하단 탭 버튼을 개선했습니다.\n\n탐색 중 60% 이탈 지점에서 진입 구조를 바꿨습니다.',
-    video: {
-      before: { src: '/images/smols/movie/solution-as-is.mp4' },
-      after: { src: '/images/smols/movie/solution-to-be.mp4' },
-    },
-    asIsImage: {
-      src: '/images/smols/mockups/as-is-prototype.png',
-      imageWidth: 300,
-      imageHeight: 400,
-    },
-    toBeImage: {
-      src: '/images/smols/mockups/to-be-prototype.png',
-      imageWidth: 300,
-      imageHeight: 400,
-    },
+    numbering: '기록 진입',
+    quote: '',
+    title: '기록은 익숙할수록 지속된다. \n그래서 마찰을 없앴다.',
+    keywords: ['키패드 즉시 노출', '불필요 옵션 제거', '작성 우선순위 가이드'],
+    asIsImages: [
+      {
+        src: '/images/smols/mockups/solution-as-is-1.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+      {
+        src: '/images/smols/mockups/solution-as-is-2.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+    ],
+    toBeImages: [
+      {
+        src: '/images/smols/mockups/solution-to-be-1.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+      {
+        src: '/images/smols/mockups/solution-to-be-2.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+    ],
+    asIsPoints: [
+      {
+        highlight: '사진 UI 우선 배치, ',
+        text: '글 작성 의도와 시각 위계 불일치',
+      },
+      { highlight: '필수·선택 필드 혼재, ', text: '입력 우선순위 판단 부담' },
+      { text: '부가 옵션(기분·날씨·태그·위치) 상시 노출로 시선 분산' },
+    ],
+    toBePoints: [
+      { highlight: '키패드 즉시 노출, ', text: '제목부터 입력 시작' },
+      { highlight: '불필요 옵션 제거, ', text: '사진·꾸미기만 남기고' },
+      { highlight: '작성 우선순위 가이드, ', text: '이탈 없이 완성' },
+    ],
   },
   {
     id: 'sticker',
-    title: '표현의 제약을 \n없애다',
-    desc: '제한된 편집 영역을 벗어나\n자유롭게 꾸밀 수 있게 했습니다.\n\n꾸미기 불만이 44.5%로 가장 많은 Pain Point였습니다.',
-    video: {
-      before: { src: '/images/smols/movie/sticker-as-is.mp4' },
-      after: { src: '/images/smols/movie/sticker-to-be.mp4' },
-    },
-    asIsImage: {
-      src: '/images/smols/mockups/sticker-as-is-prototype.png',
-      imageWidth: 300,
-      imageHeight: 400,
-    },
-    toBeImage: {
-      src: '/images/smols/mockups/sticker-to-be-prototype.png',
-      imageWidth: 300,
-      imageHeight: 400,
-    },
+    numbering: '표현 확장',
+    quote: '',
+    title: '꾸미기가 자유로울수록 더 많이 쓴다. \n그래서 제약을 없앴다.',
+    keywords: ['자유로운 배치', '확장형 패널', '가변 영역 인터랙션'],
+    asIsImages: [
+      {
+        src: '/images/smols/mockups/sticker-as-is-1.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+      {
+        src: '/images/smols/mockups/sticker-as-is-2.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+    ],
+    toBeImages: [
+      {
+        src: '/images/smols/mockups/sticker-to-be-1.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+      {
+        src: '/images/smols/mockups/sticker-to-be-2.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+    ],
+    asIsPoints: [
+      { highlight: '제한된 편집 영역', text: '스티커가 특정 구간만 이동' },
+      { text: '좌우 스크롤에만 의존한 아이템 탐색' },
+      { text: '확장성 없는 고정형 카테고리 구조' },
+    ],
+    toBePoints: [
+      { highlight: '자유로운 배치', text: '전체 영역에서 스티커 이동' },
+      { highlight: '확장형 패널', text: '상하 스크롤로 아이템 한눈에' },
+      { highlight: '가변 영역 인터랙션', text: '추가 기능에도 대응' },
+    ],
   },
 ]
 

@@ -45,16 +45,22 @@ export type ImageConfig = {
   imageHeight: number
 }
 
+// ─── UX Principle — AS-IS / TO-BE 비교 구조 ──────────────────
+export type ComparisonPoint = {
+  text: string
+  highlight?: string
+}
+
 export type UxPrincipleType = {
   id: string
+  numbering: string
+  quote: string
   title: string
-  desc: string
-  video: {
-    before: VideoConfig
-    after: VideoConfig
-  }
-  asIsImage: ImageConfig
-  toBeImage: ImageConfig
+  keywords: string[]
+  asIsImages: ImageConfig[]
+  toBeImages: ImageConfig[]
+  asIsPoints: ComparisonPoint[]
+  toBePoints: ComparisonPoint[]
 }
 
 // ─── Problem Metrics Stats ───────────────────────────────────

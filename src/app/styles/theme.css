@@ -16,7 +16,7 @@
   --orange-50: #fff5f4;
   --orange-100: #ffdad5;
   --orange-500: #ff5e48;
-  --orange-700: #d82810;
+  --orange-600: #ec4b36;
 
   /* Pink */
   --pink-500: #fc4574;
@@ -91,7 +91,7 @@
   --color-orange-50: var(--orange-50);
   --color-orange-100: var(--orange-100);
   --color-orange-500: var(--orange-500);
-  --color-orange-700: var(--orange-700);
+  --color-orange-600: var(--orange-600);
 
   /* Pink */
   --color-pink-500: var(--pink-500);

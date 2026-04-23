@@ -60,10 +60,11 @@ export const smolsSections: Record<string, SectionData> = {
     align: 'left',
   },
 
+  // 개선 과정
   solution: {
     type: 'solution',
-    badge: 'UX PRINCIPLES',
-    title: '설계가 경험을 바꾼다',
+    badge: '개선 과정',
+    title: '세 단계로 바꾼 사용자 경험',
     description: '',
     align: 'center',
   },
