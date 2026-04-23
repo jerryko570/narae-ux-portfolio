@@ -31,7 +31,7 @@ export default function ComparisonCard({
         {points.map((point, i) => (
           <div
             key={i}
-            className={`gap- flex items-start px-6 py-4 ${
+            className={`flex items-start px-6 py-4 ${
               i !== points.length - 1 ? 'border-b border-gray-100' : ''
             }`}
           >

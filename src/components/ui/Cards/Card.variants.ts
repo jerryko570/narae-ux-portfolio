@@ -53,18 +53,6 @@ export const ComparisonCardHeader = cva(
   }
 )
 
-export const ComparisonCardIcon = cva('', {
-  variants: {
-    variant: {
-      before: 'text-gray-900',
-      after: 'text-gray-900',
-    },
-  },
-  defaultVariants: {
-    variant: 'before',
-  },
-})
-
 export const ComparisonCardText = cva('text-base', {
   variants: {
     variant: {
