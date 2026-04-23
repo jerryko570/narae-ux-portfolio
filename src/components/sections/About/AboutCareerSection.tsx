@@ -14,7 +14,7 @@ const eraGapClassMap = {
 
 export default function AboutCareerSection() {
   return (
-    <Section className='-mt-8 bg-blue-200'>
+    <Section className='-mt-24 bg-blue-200'>
       <div className='grid grid-cols-2 gap-20'>
         {/* 왼쪽 — Career */}
         <div>
@@ -104,8 +104,8 @@ export default function AboutCareerSection() {
                 )}
               </ul>
 
-              <div className='mt-10 rounded-2xl bg-blue-500 p-6 text-center'>
-                <Text as='p' className='font-medium text-white'>
+              <div className='mt-10 rounded-2xl border border-blue-500 bg-blue-300 p-6 text-center'>
+                <Text as='p' className='font-medium text-blue-500'>
                   {aboutCareer.closing}
                 </Text>
               </div>
