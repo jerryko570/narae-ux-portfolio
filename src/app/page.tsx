@@ -6,7 +6,7 @@ import FadeIn from '@/components/ui/FadeIn'
 
 export default function MainPage() {
   return (
-    <Section inner='50'>
+    <Section>
       <div className='flex items-start justify-between gap-8'>
         <FadeIn>
           <HomeTitleSection />
@@ -15,7 +15,6 @@ export default function MainPage() {
           <HomeContact />
         </FadeIn>
       </div>
-
       <HomeCardSection />
     </Section>
   )

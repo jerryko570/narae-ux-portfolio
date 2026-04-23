@@ -1,3 +1,5 @@
+// 회고 영역
+
 import FeatureCard from '@/components/ui/Cards/FeatureCard'
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
 import FadeIn from '@/components/ui/FadeIn'
@@ -19,7 +21,7 @@ export default function SmolsResultSection() {
         />
       </FadeIn>
 
-      <div className='grid grid-cols-3 gap-8 pt-16'>
+      <div className='grid grid-cols-3 gap-8 pt-10'>
         {smols.result.items.map((item: ResultItem, index: number) => (
           <FadeIn key={index} delay={0.2 + index * 0.15}>
             <FeatureCard
@@ -27,6 +29,7 @@ export default function SmolsResultSection() {
               title={item.title}
               description={item.description}
               theme='dark'
+              className='transition-all duration-300 hover:-translate-y-1 hover:bg-gray-700'
             />
           </FadeIn>
         ))}

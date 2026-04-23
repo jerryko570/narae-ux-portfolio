@@ -14,7 +14,7 @@ const eraGapClassMap = {
 
 export default function AboutCareerSection() {
   return (
-    <Section className='-mt-24 bg-blue-200'>
+    <Section className='bg-blue-200' noTopPadding>
       <div className='grid grid-cols-2 gap-20'>
         {/* 왼쪽 — Career */}
         <div>

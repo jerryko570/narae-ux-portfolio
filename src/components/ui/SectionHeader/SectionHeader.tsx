@@ -30,9 +30,11 @@ export default function SectionHeader({
 
   return (
     <div className={cn('flex flex-col', textAlign, className)}>
-      {badge && <Badge label={badge} size='md' theme={badgeTheme} />}
+      {badge && (
+        <Badge label={badge} size='sm' theme={badgeTheme} className='mb-4' />
+      )}
       {title && (
-        <Text as={titleSize} className='mt-4 break-keep whitespace-pre-line'>
+        <Text as={titleSize} className='break-keep whitespace-pre-line'>
           {title}
         </Text>
       )}

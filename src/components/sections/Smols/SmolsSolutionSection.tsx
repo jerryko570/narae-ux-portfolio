@@ -1,3 +1,5 @@
+// 개선과정: 기록하기 영역
+
 import UxPrincipleLayout from '@/components/common/UxPrincipleLayout'
 import { smols } from '@/data/projects'
 

@@ -1,4 +1,4 @@
-// Smols 문제정의 섹션
+// Smols 문제정의 영역
 
 import Section from '@/components/ui/Section'
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'

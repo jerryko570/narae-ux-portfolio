@@ -18,7 +18,7 @@ export default function Section({
       <div
         className={cn(
           `mx-auto ${maxWidth} px-16`,
-          !inner && (noTopPadding ? 'pb-24' : 'py-24')
+          !inner && (noTopPadding ? 'pt-8 pb-16' : 'py-16')
         )}
         style={
           inner
