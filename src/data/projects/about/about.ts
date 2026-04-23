@@ -38,6 +38,20 @@ export const aboutStrengths = [
   },
 ] as const
 
+export const aboutBlog = {
+  badge: 'AI IMPLEMENTATION',
+  title: '✏️ 3일마다 쌓이는 학습 파이프라인',
+  description:
+    '디자인·개발·AI는 매일 새로운 게 쏟아집니다.\n3일마다 최신 소식을 자동 수집하고 블로그로 \n기록되도록 구축했습니다.',
+  cta: '깃 블로그 구경가기',
+  features: [
+    { label: 'Claude API', desc: 'AI 답변 생성 엔진' },
+    { label: 'Next.js API Route', desc: '서버 통신 직접 구현' },
+    { label: 'Streaming', desc: '실시간 타이핑 효과' },
+    { label: '지식베이스', desc: '포트폴리오 내용을 AI에 학습' },
+  ],
+}
+
 export const aboutBot = {
   badge: 'AI IMPLEMENTATION',
   title: '🤖 나래봇 포트폴리오 AI 어시스턴트',

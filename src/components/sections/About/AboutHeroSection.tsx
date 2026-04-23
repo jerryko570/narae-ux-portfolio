@@ -7,7 +7,7 @@ import { aboutHero } from '@/data/projects/about'
 
 export default function AboutHeroSection() {
   return (
-    <Section inner='50' className='bg-white'>
+    <Section className='bg-white'>
       <div className='flex items-start justify-between'>
         {/* 왼쪽 — 타이틀 + 설명 */}
         <FadeIn>
