@@ -17,7 +17,7 @@ export const BadgeVariants = cva(
         bold: 'font-bold',
       },
       theme: {
-        dark: 'bg-gray-800 text-white',
+        dark: 'bg-gray-700 text-gray-300',
         black: 'bg-black text-white',
         white: 'bg-white text-orange-500',
         orange: 'bg-orange-500 text-white',

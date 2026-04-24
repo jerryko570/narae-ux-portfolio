@@ -1,3 +1,5 @@
+// smols 마지막 영역
+
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
 import { smols } from '@/data/projects'
 import Section from '@/components/ui/Section'

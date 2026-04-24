@@ -1,3 +1,5 @@
+// 리서치 영역
+
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
 import Section from '@/components/ui/Section'
 import HorizontalCardList from '@/components/ui/Cards/HorizontalCardList'

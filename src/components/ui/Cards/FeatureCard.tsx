@@ -7,6 +7,7 @@ type FeatureCardProps = {
   title: string
   description: string | string[]
   value: string
+  className?: string
 } & VariantProps<typeof CardVariant>
 
 export default function FeatureCard({
@@ -14,6 +15,7 @@ export default function FeatureCard({
   description,
   value,
   theme,
+  className,
 }: FeatureCardProps) {
   const descriptions = Array.isArray(description) ? description : [description]
 
@@ -21,7 +23,8 @@ export default function FeatureCard({
     <div
       className={cn(
         CardVariant({ theme }),
-        'flex flex-col items-center text-center'
+        'flex flex-col items-center text-center',
+        className
       )}
     >
       <Text as='body' className='text-4xl font-bold text-orange-500'>

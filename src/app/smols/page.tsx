@@ -11,11 +11,10 @@ import { smols } from '@/data/projects'
 
 export default function SmolsPage() {
   return (
-    <div>
+    <div className=''>
       {smols.heros.map((hero) => (
         <SmolsHeroSection key={hero.id} {...hero} />
       ))}
-
       <SmolsProblemSection />
       <SmolsBehaviorSection />
       <SmolsCoreStrategySection />

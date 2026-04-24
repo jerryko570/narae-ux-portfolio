@@ -1,3 +1,5 @@
+// 개선방향 영역
+
 import NumberedCard from '@/components/ui/Cards/NumberCard'
 import SectionHeader from '@/components/ui/SectionHeader/SectionHeader'
 import Section from '@/components/ui/Section'
@@ -24,7 +26,8 @@ export default function SmolsCoreStrategySection() {
               title={item.title}
               description={item.description}
               theme='dark'
-              badgeTheme='outlineOrange'
+              badgeTheme='dark'
+              className='transition-all duration-300 hover:-translate-y-1 hover:bg-gray-700'
             />
           </FadeIn>
         ))}

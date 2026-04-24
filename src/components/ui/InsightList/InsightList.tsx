@@ -23,7 +23,7 @@ export default function InsightList({
   return (
     <div className={cn('flex flex-col gap-8', className)}>
       {title && (
-        <Text as='body' className='font-extralight text-orange-500'>
+        <Text as='body' className='font-medium text-orange-500'>
           {title}
         </Text>
       )}
@@ -32,10 +32,10 @@ export default function InsightList({
         {items.map((item, idx) => (
           <Fragment key={item.subTitle}>
             <div className='flex flex-col gap-2'>
-              <Text as='p' className='font-extralight text-white'>
+              <Text as='body' className='font-extralight text-white'>
                 {item.subTitle}
               </Text>
-              <Text as='caption' className='text-gray-500'>
+              <Text as='caption' className='pt-2 text-gray-400'>
                 {item.description}
               </Text>
             </div>

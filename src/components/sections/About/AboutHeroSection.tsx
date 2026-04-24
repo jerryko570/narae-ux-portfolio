@@ -12,7 +12,7 @@ export default function AboutHeroSection() {
         {/* 왼쪽 — 타이틀 + 설명 */}
         <FadeIn>
           <div className='max-w-lg'>
-            <Text as='h2' className='mt-4 break-keep text-gray-900'>
+            <Text as='h2' className='break-keep text-gray-900'>
               문제를 구조로 정의하고
               <br />
               구현까지 연결하는
