@@ -1,16 +1,23 @@
 import type { BadgeProps } from '@/components/ui/Badge/Badge'
 
-// Education용
+// ─── Link (공용 타입) ─────────────────────────────────────────
+export type CareerLink = {
+  label: string
+  url: string
+}
+
+// ─── Education ────────────────────────────────────────────────
 export type EducationItem = {
   year: string
   title: string
 }
 
-// Experience용
+// ─── Experience ───────────────────────────────────────────────
 export type ExperienceItem = {
   year: string
   company?: string
   description: string
+  link?: CareerLink
 }
 
 export type CareerEra = {
@@ -24,6 +31,7 @@ export type CareerTimelineEntry =
   | ({ kind: 'era' } & CareerEra)
   | ({ kind: 'item' } & ExperienceItem)
 
+// ─── Tech Stack ───────────────────────────────────────────────
 export type TechBadge = {
   label: string
   theme: BadgeProps['theme']

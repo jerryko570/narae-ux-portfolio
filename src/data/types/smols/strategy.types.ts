@@ -68,3 +68,19 @@ export type ProblemStat = {
   value: string
   label: string
 }
+
+// 개선 방향 아이템 타입
+export type ImprovementDirection = {
+  id: string
+  numbering: string // "01", "02", "03"
+  category: string // "기록 진입", "기록 과정", "재방문 유도"
+  title: string // "탐색 중에도 바로 기록으로"
+  description: string // "상단 CTA로 Viewer·Writer 진입 분리..."
+}
+
+// 개선 방향 섹션 전체
+export type ImprovementStrategy = {
+  badge: string // "개선 방향"
+  title: string // "기록을 중심으로 구조를 다시 설계한다"
+  directions: ImprovementDirection[]
+}

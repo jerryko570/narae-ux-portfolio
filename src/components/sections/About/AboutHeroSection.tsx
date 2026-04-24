@@ -45,13 +45,26 @@ export default function AboutHeroSection() {
                           label={award.label}
                           theme='blue'
                           size='xs'
-                          weight='medium'
+                          weight='bold'
                           radius='md'
                         />
                       </div>
                       <Text as='caption' className='mt-3 block text-gray-500'>
                         {award.description}
                       </Text>
+
+                      {/* ⭐ 링크 추가 */}
+                      {award.link && (
+                        <a
+                          href={award.link.url}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='mt-3 inline-flex items-center gap-1 text-xs text-gray-600 underline-offset-4 transition hover:text-blue-500'
+                        >
+                          <span>{award.link.label}</span>
+                          <span aria-hidden>↗</span>
+                        </a>
+                      )}
                     </div>
                   </FadeIn>
                 ))}
