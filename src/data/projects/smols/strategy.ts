@@ -29,7 +29,7 @@ export const smolsStrategy: StrategyItem[] = [
   },
 ]
 
-// ─── UX 전략 3단계 ───────────────────────────────────────────
+// ─── UX 전략 3단계 (개선방향)───────────────────────────────────────────
 export const smolsUxStrategy: UxStrategy = {
   items: [
     {
@@ -131,14 +131,14 @@ export const smolsUxPrinciples: UxPrincipleType[] = [
       },
     ],
     asIsPoints: [
-      { highlight: '제한된 편집 영역', text: '스티커가 특정 구간만 이동' },
+      { highlight: '제한된 편집 영역, ', text: '스티커가 특정 구간만 이동' },
       { text: '좌우 스크롤에만 의존한 아이템 탐색' },
       { text: '확장성 없는 고정형 카테고리 구조' },
     ],
     toBePoints: [
-      { highlight: '자유로운 배치', text: '전체 영역에서 스티커 이동' },
-      { highlight: '확장형 패널', text: '상하 스크롤로 아이템 한눈에' },
-      { highlight: '가변 영역 인터랙션', text: '추가 기능에도 대응' },
+      { highlight: '자유로운 배치, ', text: '전체 영역에서 스티커 이동' },
+      { highlight: '확장형 패널, ', text: '상하 스크롤로 아이템 한눈에' },
+      { highlight: '가변 영역 인터랙션, ', text: '추가 기능에도 대응' },
     ],
   },
 
@@ -180,7 +180,7 @@ export const smolsUxPrinciples: UxPrincipleType[] = [
     asIsPoints: [
       { highlight: '이미지 중심, ', text: '정보 탐색 제한' },
       { highlight: '기록·탐색 목적,  ', text: '혼재' },
-      { text: '좋아요·댓글·공유 동일 레벨 — 소통 진입 불편' },
+      { text: '좋아요·댓글·공유 동일 레벨. 소통 진입 불편' },
     ],
     toBePoints: [
       { highlight: '상단 기록하기 배너, ', text: 'Writer·Viewer 진입 분리' },
