@@ -1,6 +1,4 @@
-import type { FeedbackData } from '@/data/types/common/feedback.types'
-
-export const smolsReviewPageContent = {
+export const curiReviewPageContent = {
   title: '서포터즈 피드백 원문 데이터',
   description:
     '서포터즈 4~6기 피드백을 UX 관점으로 재분류하고,\n사용자가 직접 탐색할 수 있도록 인터페이스를 설계했습니다.',
@@ -24,7 +22,7 @@ export const smolsReviewSummary = {
   ],
 }
 
-export const smolsReviewCategories = [
+export const curiReviewCategories = [
   '전체',
   '꾸미기 기능 부족',
   '앱 성능/안정성',
@@ -33,7 +31,7 @@ export const smolsReviewCategories = [
   '기타',
 ] as const
 
-export const smolsReviewCategoryTheme = {
+export const curiReviewCategoryTheme = {
   '꾸미기 기능 부족': 'outlineBlue',
   '앱 성능/안정성': 'outlineOrange',
   '기록 경험 불편': 'outlinePink',
@@ -41,7 +39,7 @@ export const smolsReviewCategoryTheme = {
   기타: 'outlineDark',
 } as const
 
-export const smolsReviewInsight = {
+export const curiReviewInsight = {
   title: '꾸미기 기능 부족이 44.5%로 가장 많았습니다.',
   description: '기록보다 꾸미기 경험이 핵심 문제였습니다.',
   card: [
@@ -49,36 +47,4 @@ export const smolsReviewInsight = {
     { title: '44.5%', description: '꾸미기 기능 부족' },
     { title: '3기수', description: '04기 · 05기 · 06기' },
   ],
-}
-
-export const smolsFeedbackData: FeedbackData = {
-  stats: [
-    {
-      label: '평균 체류 시간',
-      value: '45초',
-      description: '기록 진입 없이 피드만 보고 이탈',
-    },
-    { label: '1주 이탈율', value: '60%', description: '재방문 없이 앱 종료' },
-    {
-      label: '기록 전환율',
-      value: '15%',
-      description: '피드 탐색 중 기록 전환 비율',
-    },
-  ],
-  rightTop: {
-    icon: '/images/smols/icons/app-icon.png',
-    title: '사용자 리뷰 분석',
-    count: '(941건)',
-    description: '사용자는 기록하고 싶었다.\n구조가 막았다.',
-  },
-  right: {
-    title: '',
-    unit: '',
-    items: [
-      { label: '꾸미기 기능 부족', value: 44.5 },
-      { label: '앱 성능 및 안정성', value: 39.2 },
-      { label: '기록 과정 불편', value: 10.0 },
-      { label: '소통 기능 부족', value: 6.3 },
-    ],
-  },
 }

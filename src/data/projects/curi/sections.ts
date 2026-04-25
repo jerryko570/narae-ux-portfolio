@@ -1,0 +1,87 @@
+import type { SectionData } from '../../types/curi'
+
+export const curiSections: Record<string, SectionData> = {
+  problemMetrics: {
+    type: 'metrics',
+    badge: '문제 정의',
+    title: '학생은 답을 찾으러 왔지만, \n찾기도 전에 포기했다',
+    align: 'center',
+    metrics: {
+      description: '941건 서포터즈 데이터에서 발견한 패턴',
+      items: [
+        { value: '45초', label: '평균 체류 시간', insight: '' },
+        { value: '60%', label: '1주 내 이탈률', insight: '' },
+        { value: '15%', label: '기록 전환율', insight: '' },
+      ],
+    },
+  },
+
+  userInsight: {
+    type: 'insight',
+    badge: 'INSIGHT',
+    title: '정보보다 기록과 꾸미기',
+    description: '',
+    align: 'left',
+    titleSize: 'h1',
+    image: '/images/smols/research/user-research-chat.png',
+    researchSummary: {
+      who: {
+        title: '서포터즈 참여자',
+        data: '118명',
+      },
+      what: {
+        title: '기록 목적 사용',
+        data: '80%',
+      },
+      highlight: '기록·꾸미기 사용 54.8%',
+    },
+  },
+
+  // 문저 정의 타이틀
+  feedbackAnalysis: {
+    type: 'research',
+    badge: '리서치',
+    title: '숫자로 확인한 진짜 사용 목적',
+    align: 'left',
+    description: '',
+  },
+
+  strategy: {
+    type: 'research',
+    badge: 'PRODUCT STRATEGY',
+    title: '기록 중심 구조로\n경험 전환',
+    align: 'left',
+  },
+
+  uxStrategy: {
+    type: 'research',
+    badge: '개선 방향',
+    title: '기록을 중심으로 \n구조를 다시 설계한다',
+    align: 'left',
+  },
+
+  // 개선 과정
+  solution: {
+    type: 'solution',
+    badge: '개선 과정',
+    title: '세 단계로 바꾼 사용자 경험',
+    description: '',
+    align: 'center',
+  },
+
+  resultSection: {
+    type: 'result',
+    badge: '회고',
+    title: '구조를 바꾸자 사람이 \n기록하기 시작했다',
+    description: '',
+    align: 'center',
+  },
+
+  retrospectiveSection: {
+    type: 'retrospective',
+    badge: 'SMOLS',
+    title: '진입 구조를 바꾸자, \n기록이 2배 늘었다.',
+    description: '작은 흐름 하나가 지표를 움직인다는 걸 배웠다.',
+    align: 'left',
+  },
+}

@@ -1,0 +1,6 @@
+export * from './section.types'
+export * from './hero.types'
+export * from './review.types'
+export * from './strategy.types'
+export * from './result.types'
+export * from './userBehavior.types'

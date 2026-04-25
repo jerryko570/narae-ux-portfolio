@@ -17,6 +17,24 @@ import {
   smolsClosing,
 } from './smols'
 
+import {
+  curiHeros,
+  curiSections,
+  curiFeedbackData,
+  curiReviewPageContent,
+  curiReviewCategories,
+  curiUserBehavior,
+  curiReviewCategoryTheme,
+  curiInsightSummary,
+  curiReviewInsight,
+  curiStrategy,
+  curiUxStrategy,
+  curiUxPrinciples,
+  curiTransformations,
+  curiResult,
+  curiClosing,
+} from './curi'
+
 export const smols = {
   heros: smolsHeros,
   sections: smolsSections,
@@ -24,7 +42,7 @@ export const smols = {
   reviewPageContent: smolsReviewPageContent,
   reviewSummary: smolsReviewSummary,
   reviewCategories: smolsReviewCategories,
-  userBehavior: smolsUserBehavior, // ← 추가
+  userBehavior: smolsUserBehavior,
   reviewCategoryTheme: smolsReviewCategoryTheme,
   reviewInsight: smolsReviewInsight,
   insightSummary: smolsInsightSummary,
@@ -34,4 +52,22 @@ export const smols = {
   transformations: smolsTransformations,
   result: smolsResult,
   closing: smolsClosing,
+}
+
+export const curi = {
+  heros: curiHeros,
+  sections: curiSections,
+  feedbackData: curiFeedbackData,
+  reviewPageContent: curiReviewPageContent,
+  reviewCategories: curiReviewCategories,
+  userBehavior: curiUserBehavior,
+  reviewCategoryTheme: curiReviewCategoryTheme,
+  reviewInsight: curiReviewInsight,
+  insightSummary: curiInsightSummary,
+  strategy: curiStrategy,
+  uxStrategy: curiUxStrategy,
+  uxPrinciples: curiUxPrinciples,
+  transformations: curiTransformations,
+  result: curiResult,
+  closing: curiClosing,
 }
