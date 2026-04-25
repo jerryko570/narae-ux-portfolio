@@ -3,17 +3,21 @@ import type {
   CareerTimelineEntry,
 } from '@/data/types/home/career.types'
 
+// ─── 경력 타임라인 ─────────────────────────────────────────────
 export const aboutCareer = {
   title: '경력 타임라인',
   description:
     '다양한 도메인에서 UX를 설계하며 구조와 흐름 중심으로 확장해왔습니다.',
 
+  // ─── 학력 ───────────────────────────────────────────────────
   education: [
     { year: '2006', title: '세화 여자고등학교 (서울)' },
     { year: '2012', title: '계원예술대학교 멀티미디어디자인과 졸업' },
   ] satisfies EducationItem[],
 
+  // ─── 경력 ───────────────────────────────────────────────────
   experience: [
+    // ─── Era 1: 2012-2015 디자이너로서의 출발 ─────────────────
     {
       kind: 'era',
       period: '2012-2015',
@@ -37,7 +41,11 @@ export const aboutCareer = {
       kind: 'item',
       year: '2014',
       company: '페타비전',
-      description: '영상·앱 툴 디자인을 함께 경험하며 매체별 UI 감각을 익힘',
+      description: ' 글로벌 iOS 앱 3종 디자인 (Gridplay·Vinema·Hardcover)',
+      link: {
+        label: 'App Store에서 보기',
+        url: 'https://apps.apple.com/us/developer/peta-vision/id401432180',
+      },
     },
     {
       kind: 'item',
@@ -46,6 +54,7 @@ export const aboutCareer = {
       description: '오디션 영상 플랫폼의 앱·웹 UX 설계',
     },
 
+    // ─── Era 2: 2016-2024 UX · 프로덕트 확장 ──────────────────
     {
       kind: 'era',
       period: '2016-2024',
@@ -78,6 +87,7 @@ export const aboutCareer = {
       description: '스몰스 UI·UX 개편과 브랜드 톤 가이드 구축',
     },
 
+    // ─── Era 3: 2025- 구현까지 연결하는 디자이너 ──────────────
     {
       kind: 'era',
       period: '2025-',
@@ -97,6 +107,7 @@ export const aboutCareer = {
     '디자인하고, 만들고, 증명합니다.\n코드·데이터·AI로 설계의 폭을 넓혀갑니다.',
 }
 
+// ─── 기술 스택 ─────────────────────────────────────────────────
 export const techStack = {
   title: '기술 스택',
   description:
@@ -113,7 +124,7 @@ export const techStack = {
       ],
     },
     {
-      title: 'frontend',
+      title: 'Frontend',
       description: 'UI 구조 이해 기반의 컴포넌트 및 API, 배포 구현 경험',
       items: [
         { label: 'react', theme: 'outlineDark' },
@@ -122,7 +133,7 @@ export const techStack = {
       ],
     },
     {
-      title: 'workflow',
+      title: 'Workflow',
       description: 'Git 기반 협업 및 핸드오프, 컴포넌트 관리 경험',
       items: [
         { label: 'github', theme: 'outlineDark' },

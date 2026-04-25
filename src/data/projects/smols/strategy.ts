@@ -29,7 +29,7 @@ export const smolsStrategy: StrategyItem[] = [
   },
 ]
 
-// ─── UX 전략 3단계 ───────────────────────────────────────────
+// ─── UX 전략 3단계 (개선방향)───────────────────────────────────────────
 export const smolsUxStrategy: UxStrategy = {
   items: [
     {
@@ -51,7 +51,9 @@ export const smolsUxStrategy: UxStrategy = {
 }
 
 // ─── UX Principles — AS-IS / TO-BE 비교 데이터 ───────────────
+// 순서: [0] 기록 → [1] 꾸미기 → [2] 피드
 export const smolsUxPrinciples: UxPrincipleType[] = [
+  // ─── [0] 기록 진입 ─────────────────────────
   {
     id: 'solution',
     numbering: '기록 진입',
@@ -96,6 +98,8 @@ export const smolsUxPrinciples: UxPrincipleType[] = [
       { highlight: '작성 우선순위 가이드, ', text: '이탈 없이 완성' },
     ],
   },
+
+  // ─── [1] 표현 확장 (꾸미기) ────────────────
   {
     id: 'sticker',
     numbering: '표현 확장',
@@ -127,20 +131,72 @@ export const smolsUxPrinciples: UxPrincipleType[] = [
       },
     ],
     asIsPoints: [
-      { highlight: '제한된 편집 영역', text: '스티커가 특정 구간만 이동' },
+      { highlight: '제한된 편집 영역, ', text: '스티커가 특정 구간만 이동' },
       { text: '좌우 스크롤에만 의존한 아이템 탐색' },
       { text: '확장성 없는 고정형 카테고리 구조' },
     ],
     toBePoints: [
-      { highlight: '자유로운 배치', text: '전체 영역에서 스티커 이동' },
-      { highlight: '확장형 패널', text: '상하 스크롤로 아이템 한눈에' },
-      { highlight: '가변 영역 인터랙션', text: '추가 기능에도 대응' },
+      { highlight: '자유로운 배치, ', text: '전체 영역에서 스티커 이동' },
+      { highlight: '확장형 패널, ', text: '상하 스크롤로 아이템 한눈에' },
+      { highlight: '가변 영역 인터랙션, ', text: '추가 기능에도 대응' },
+    ],
+  },
+
+  // ─── [2] 피드 탐색 ─────────────────────────
+  {
+    id: 'feed',
+    numbering: '피드 탐색',
+    quote: '빠른 기록 진입, 다양한 피드 탐색을 원한다.',
+    title: '보는 사람과 기록하는 사람, \n둘 다 배려하다',
+    keywords: [
+      '상단 기록하기 배너 (Writer 진입)',
+      'Viewing Mode 추가',
+      '댓글 작성 UX 개선',
+    ],
+    asIsImages: [
+      {
+        src: '/images/smols/mockups/feed-as-is-1.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+      {
+        src: '/images/smols/mockups/feed-as-is-2.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+    ],
+    toBeImages: [
+      {
+        src: '/images/smols/mockups/feed-to-be-1.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+      {
+        src: '/images/smols/mockups/feed-to-be-2.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+    ],
+    asIsPoints: [
+      { highlight: '이미지 중심, ', text: '정보 탐색 제한' },
+      { highlight: '기록·탐색 목적,  ', text: '혼재' },
+      { text: '좋아요·댓글·공유 동일 레벨. 소통 진입 불편' },
+    ],
+    toBePoints: [
+      { highlight: '상단 기록하기 배너, ', text: 'Writer·Viewer 진입 분리' },
+      {
+        highlight: 'Viewing Mode 추가, ',
+        text: '적은 스크롤로 더 많은 피드',
+      },
+      { highlight: '댓글 UX 개선, ', text: '바로 소통 가능' },
     ],
   },
 ]
 
 // ─── Transformation (AS-IS / TO-BE 텍스트) ───────────────────
+// UxPrinciples와 동일 순서: [0] 기록 → [1] 꾸미기 → [2] 피드
 export const smolsTransformations: Transformation[] = [
+  // ─── [0] 기록 진입 ─────────────────────────
   {
     center: '전환 중심 설계',
     before: {
@@ -156,6 +212,8 @@ export const smolsTransformations: Transformation[] = [
     },
     insights: { text: '탐색 → 기록 전환' },
   },
+
+  // ─── [1] 표현 확장 (꾸미기) ────────────────
   {
     center: '표현 확장 구조',
     before: {
@@ -171,6 +229,24 @@ export const smolsTransformations: Transformation[] = [
         '전체 영역에서 자유롭게 배치하고 확장형 패널로 \n다양한 아이템을 한 번에 탐색할 수 있습니다.\n\n확장 가능한 구조로 기능 추가에도 대응할 수 있도록 개선했습니다.',
     },
     insights: { text: '자유로운 \n표현' },
+  },
+
+  // ─── [2] 피드 탐색 ─────────────────────────
+  {
+    center: '피드 탐색 구조',
+    before: {
+      label: 'AS-IS',
+      title: '이미지 중심 탐색 구조',
+      description:
+        '이미지가 화면 대부분을 차지해\n정보 탐색에 제한이 있었고,\n기록과 탐색의 목적이 혼재되어\n사용자 진입 의도가 불분명했습니다.',
+    },
+    after: {
+      label: 'TO-BE',
+      title: '목적 분리형 탐색 구조',
+      description:
+        '상단 기록하기 배너로 Writer·Viewer 진입을 분리하고\nViewing Mode를 추가해 적은 스크롤로\n다양한 피드를 탐색할 수 있도록 개선했습니다.\n\n댓글 UX도 전면 배치해 바로 소통할 수 있습니다.',
+    },
+    insights: { text: '탐색 · 소통\n효율화' },
   },
 ]
 

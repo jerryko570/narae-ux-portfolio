@@ -6,12 +6,12 @@ import SmolsSolutionSection from '@/components/sections/Smols/SmolsSolutionSecti
 import SmolsStickerSection from '@/components/sections/Smols/SmolsStickerSection'
 import SmolsRetrospectiveSection from '@/components/sections/Smols/SmolsRetrospectiveSection'
 import SmolsResultSection from '@/components/sections/Smols/SmolsResultSection'
-
+import SmolsFeedSection from '@/components/sections/Smols/SmolsFeedSection'
 import { smols } from '@/data/projects'
 
 export default function SmolsPage() {
   return (
-    <div className=''>
+    <div>
       {smols.heros.map((hero) => (
         <SmolsHeroSection key={hero.id} {...hero} />
       ))}
@@ -20,6 +20,7 @@ export default function SmolsPage() {
       <SmolsCoreStrategySection />
       <SmolsSolutionSection />
       <SmolsStickerSection />
+      <SmolsFeedSection />
       <SmolsResultSection />
       <SmolsRetrospectiveSection />
     </div>
