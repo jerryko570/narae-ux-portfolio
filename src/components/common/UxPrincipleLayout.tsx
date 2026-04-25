@@ -7,15 +7,10 @@ import ComparisonCard from '../ui/Cards/ComparisonCard'
 import Section from '../ui/Section'
 import FadeIn from '../ui/FadeIn'
 import { smols } from '@/data/projects'
-import type {
-  UxPrincipleType,
-  ImageConfig,
-  Transformation,
-} from '@/data/types/smols'
+import type { UxPrincipleType, ImageConfig } from '@/data/types/smols'
 
 type Props = {
   uxPrinciple: UxPrincipleType
-  transformation?: Transformation
   index?: number
   showSectionHeader?: boolean
 }
