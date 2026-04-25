@@ -7,11 +7,7 @@ export const smolsFeedbackData: FeedbackData = {
       value: '45초',
       description: '기록 진입 없이 피드만 보고 이탈',
     },
-    {
-      label: '1주 이탈율',
-      value: '60%',
-      description: '재방문 없이 앱 종료',
-    },
+    { label: '1주 이탈율', value: '60%', description: '재방문 없이 앱 종료' },
     {
       label: '기록 전환율',
       value: '15%',

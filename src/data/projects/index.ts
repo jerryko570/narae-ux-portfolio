@@ -17,6 +17,24 @@ import {
   smolsClosing,
 } from './smols'
 
+import {
+  curiHeros,
+  curiSections,
+  curiFeedbackData,
+  curiReviewPageContent,
+  curiReviewCategories,
+  curiUserBehavior,
+  curiReviewCategoryTheme,
+  curiInsightSummary,
+  curiReviewInsight,
+  curiStrategy,
+  curiUxStrategy,
+  curiUxPrinciples,
+  curiTransformations,
+  curiResult,
+  curiClosing,
+} from './curi'
+
 export const smols = {
   heros: smolsHeros,
   sections: smolsSections,
@@ -35,24 +53,6 @@ export const smols = {
   result: smolsResult,
   closing: smolsClosing,
 }
-
-import {
-  curiHeros,
-  curiSections,
-  curiFeedbackData,
-  curiReviewPageContent,
-  curiReviewCategories,
-  curiUserBehavior,
-  curiReviewCategoryTheme,
-  curiInsightSummary,
-  curiReviewInsight,
-  curiStrategy,
-  curiUxStrategy,
-  curiUxPrinciples,
-  curiTransformations,
-  curiResult,
-  curiClosing,
-} from './curi'
 
 export const curi = {
   heros: curiHeros,
