@@ -12,7 +12,6 @@ import {
   smolsStrategy,
   smolsUxStrategy,
   smolsUxPrinciples,
-  smolsTransformations,
   smolsResult,
   smolsClosing,
 } from './smols'
@@ -49,7 +48,6 @@ export const smols = {
   strategy: smolsStrategy,
   uxStrategy: smolsUxStrategy,
   uxPrinciples: smolsUxPrinciples,
-  transformations: smolsTransformations,
   result: smolsResult,
   closing: smolsClosing,
 }

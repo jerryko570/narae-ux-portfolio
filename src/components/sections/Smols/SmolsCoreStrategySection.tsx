@@ -18,7 +18,7 @@ export default function SmolsCoreStrategySection() {
         />
       </FadeIn>
 
-      <div className='mt-10 grid grid-cols-3 gap-8'>
+      <div className='mt-10 grid grid-cols-2 gap-8'>
         {smols.uxStrategy.items.map((item, index) => (
           <FadeIn key={item.numbering} delay={0.25 + index * 0.15}>
             <NumberedCard
