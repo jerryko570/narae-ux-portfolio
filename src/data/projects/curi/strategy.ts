@@ -40,7 +40,8 @@ export const curiUxStrategy: UxStrategy = {
     {
       numbering: '기록 과정',
       title: '빠르게, 군더더기 없이',
-      description: '키패드 즉시 노출 + 옵션 제거로 \n흐름 단순화',
+      description:
+        '기록 작성 마찰 제거와 꾸미기 자유도 확장.  \n키패드 즉시 노출·옵션 정리·바텀시트 개선으로 완성까지 이탈 없이.',
     },
     {
       numbering: '재방문 유도',
@@ -147,7 +148,7 @@ export const curiUxPrinciples: UxPrincipleType[] = [
     id: 'feed',
     numbering: '피드 탐색',
     quote: '빠른 기록 진입, 다양한 피드 탐색을 원한다.',
-    title: '보는 사람과 기록하는 사람, \n둘 다 배려하다',
+    title: '묻혀 있던 기록 버튼을 \n가장 잘 보이는 곳으로',
     keywords: [
       '상단 기록하기 배너 (Writer 진입)',
       'Viewing Mode 추가',

@@ -33,7 +33,7 @@ export default function UxPrincipleLayout({
             <SectionHeader
               badge={smols.sections.solution.badge}
               title={smols.sections.solution.title}
-              align='left'
+              align='center'
               titleSize='h4'
               badgeTheme='orange'
               className='text-gray-900'
@@ -44,7 +44,7 @@ export default function UxPrincipleLayout({
 
       {/*  구역 2: 원칙 헤더 (넘버링 + 제목) — 0.2초 */}
       <FadeIn delay={0.2}>
-        <div className='py-4 text-center'>
+        <div className='py-4 text-left'>
           <Text as='h6' className='mb-2 font-bold text-orange-500'>
             {uxPrinciple.numbering}
           </Text>

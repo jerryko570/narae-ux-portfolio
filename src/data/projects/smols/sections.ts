@@ -64,7 +64,7 @@ export const smolsSections: Record<string, SectionData> = {
   solution: {
     type: 'solution',
     badge: '개선 과정',
-    title: '세 단계로 바꾼 사용자 경험',
+    title: '기록 진입과 기록 과정,\n두 퍼널을 바꾸다',
     description: '',
     align: 'center',
   },

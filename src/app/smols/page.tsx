@@ -5,7 +5,6 @@ import SmolsCoreStrategySection from '@/components/sections/Smols/SmolsCoreStrat
 import SmolsFeedSection from '@/components/sections/Smols/SmolsFeedSection'
 import SmolsSolutionSection from '@/components/sections/Smols/SmolsSolutionSection'
 import SmolsStickerSection from '@/components/sections/Smols/SmolsStickerSection'
-import SmolsRetrospectiveSection from '@/components/sections/Smols/SmolsRetrospectiveSection'
 import SmolsResultSection from '@/components/sections/Smols/SmolsResultSection'
 import { smols } from '@/data/projects'
 
@@ -23,7 +22,6 @@ export default function SmolsPage() {
 
       <SmolsStickerSection />
       <SmolsResultSection />
-      <SmolsRetrospectiveSection />
     </div>
   )
 }
