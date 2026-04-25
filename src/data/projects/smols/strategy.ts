@@ -34,18 +34,14 @@ export const smolsUxStrategy: UxStrategy = {
   items: [
     {
       numbering: '기록 진입',
-      title: '탐색 중에도 바로 기록으로',
-      description: '상단 CTA로 Viewer·Writer 분리 \n이탈 지점을 전환점으로',
+      title: '피드에서 기록으로, 바로',
+      description:
+        '구경하던 사용자도 쉽게 기록할 수 있도록, 진입 경로를 둘로 나눴습니다.',
     },
     {
       numbering: '기록 과정',
       title: '빠르게, 군더더기 없이',
-      description: '키패드 즉시 노출 + 옵션 제거로 \n흐름 단순화',
-    },
-    {
-      numbering: '재방문 유도',
-      title: '꾸미기로 다시 돌아오게',
-      description: '바텀시트 핸들로 꾸미기 자유도 확장 \n재미 → 재방문 유도',
+      description: '입력은 빠르게, 꾸미기는 자유롭게, 완성까지 끊김 없이.',
     },
   ],
 }
@@ -53,101 +49,12 @@ export const smolsUxStrategy: UxStrategy = {
 // ─── UX Principles — AS-IS / TO-BE 비교 데이터 ───────────────
 // 순서: [0] 기록 → [1] 꾸미기 → [2] 피드
 export const smolsUxPrinciples: UxPrincipleType[] = [
-  // ─── [0] 기록 진입 ─────────────────────────
-  {
-    id: 'solution',
-    numbering: '기록 진입',
-    quote: '',
-    title: '기록은 익숙할수록 지속된다. \n그래서 마찰을 없앴다.',
-    keywords: ['키패드 즉시 노출', '불필요 옵션 제거', '작성 우선순위 가이드'],
-    asIsImages: [
-      {
-        src: '/images/smols/mockups/solution-as-is-1.png',
-        imageWidth: 300,
-        imageHeight: 600,
-      },
-      {
-        src: '/images/smols/mockups/solution-as-is-2.png',
-        imageWidth: 300,
-        imageHeight: 600,
-      },
-    ],
-    toBeImages: [
-      {
-        src: '/images/smols/mockups/solution-to-be-1.png',
-        imageWidth: 300,
-        imageHeight: 600,
-      },
-      {
-        src: '/images/smols/mockups/solution-to-be-2.png',
-        imageWidth: 300,
-        imageHeight: 600,
-      },
-    ],
-    asIsPoints: [
-      {
-        highlight: '사진 UI 우선 배치, ',
-        text: '글 작성 의도와 시각 위계 불일치',
-      },
-      { highlight: '필수·선택 필드 혼재, ', text: '입력 우선순위 판단 부담' },
-      { text: '부가 옵션(기분·날씨·태그·위치) 상시 노출로 시선 분산' },
-    ],
-    toBePoints: [
-      { highlight: '키패드 즉시 노출, ', text: '제목부터 입력 시작' },
-      { highlight: '불필요 옵션 제거, ', text: '사진·꾸미기만 남기고' },
-      { highlight: '작성 우선순위 가이드, ', text: '이탈 없이 완성' },
-    ],
-  },
-
-  // ─── [1] 표현 확장 (꾸미기) ────────────────
-  {
-    id: 'sticker',
-    numbering: '표현 확장',
-    quote: '',
-    title: '꾸미기가 자유로울수록 더 많이 쓴다. \n그래서 제약을 없앴다.',
-    keywords: ['자유로운 배치', '확장형 패널', '가변 영역 인터랙션'],
-    asIsImages: [
-      {
-        src: '/images/smols/mockups/sticker-as-is-1.png',
-        imageWidth: 300,
-        imageHeight: 600,
-      },
-      {
-        src: '/images/smols/mockups/sticker-as-is-2.png',
-        imageWidth: 300,
-        imageHeight: 600,
-      },
-    ],
-    toBeImages: [
-      {
-        src: '/images/smols/mockups/sticker-to-be-1.png',
-        imageWidth: 300,
-        imageHeight: 600,
-      },
-      {
-        src: '/images/smols/mockups/sticker-to-be-2.png',
-        imageWidth: 300,
-        imageHeight: 600,
-      },
-    ],
-    asIsPoints: [
-      { highlight: '제한된 편집 영역, ', text: '스티커가 특정 구간만 이동' },
-      { text: '좌우 스크롤에만 의존한 아이템 탐색' },
-      { text: '확장성 없는 고정형 카테고리 구조' },
-    ],
-    toBePoints: [
-      { highlight: '자유로운 배치, ', text: '전체 영역에서 스티커 이동' },
-      { highlight: '확장형 패널, ', text: '상하 스크롤로 아이템 한눈에' },
-      { highlight: '가변 영역 인터랙션, ', text: '추가 기능에도 대응' },
-    ],
-  },
-
-  // ─── [2] 피드 탐색 ─────────────────────────
+  // ─── [0] 피드 탐색 ─────────────────────────
   {
     id: 'feed',
-    numbering: '피드 탐색',
+    numbering: '기록 진입',
     quote: '빠른 기록 진입, 다양한 피드 탐색을 원한다.',
-    title: '보는 사람과 기록하는 사람, \n둘 다 배려하다',
+    title: '보는 사람과 기록하는 사람, \n진입을 분리하다',
     keywords: [
       '상단 기록하기 배너 (Writer 진입)',
       'Viewing Mode 추가',
@@ -189,6 +96,101 @@ export const smolsUxPrinciples: UxPrincipleType[] = [
         text: '적은 스크롤로 더 많은 피드',
       },
       { highlight: '댓글 UX 개선, ', text: '바로 소통 가능' },
+    ],
+  },
+  // ─── [1] 기록 진입 ─────────────────────────
+  {
+    id: 'solution',
+    numbering: '기록 과정',
+    quote: '',
+    title: '쓰고, 꾸미고, 완성하는 \n흐름을 다시 설계하다',
+    keywords: ['키패드 즉시 노출', '불필요 옵션 제거', '작성 우선순위 가이드'],
+    asIsImages: [
+      {
+        src: '/images/smols/mockups/solution-as-is-1.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+      {
+        src: '/images/smols/mockups/solution-as-is-2.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+    ],
+    toBeImages: [
+      {
+        src: '/images/smols/mockups/solution-to-be-1.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+      {
+        src: '/images/smols/mockups/solution-to-be-2.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+    ],
+    asIsPoints: [
+      { highlight: '필수값·옵션 혼재, ', text: '입력 순서 불분명' },
+      { highlight: '', text: '꾸미기가 텍스트 입력보다 앞에 노출' },
+      { highlight: '', text: '우선순위를 사용자가 직접 판단해야 함' },
+    ],
+    toBePoints: [
+      { highlight: '키패드 즉시 노출,   ', text: '제목부터 입력 시작' },
+      { highlight: '사진·꾸미기만 남기고, ', text: '불필요 옵션 제거' },
+      { highlight: '기록 흐름 명확, ', text: '이탈 없이 완성' },
+    ],
+  },
+
+  // ─── [3] 표현 확장 (꾸미기) ────────────────
+  {
+    id: 'sticker',
+    numbering: '',
+    quote: '',
+    title: '',
+    keywords: [
+      '바텀시트 핸들로 영역 가변',
+      '카테고리 이동 UX 개선',
+      '상하 스크롤 아이템 탐색',
+    ],
+    asIsImages: [
+      {
+        src: '/images/smols/mockups/sticker-as-is-1.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+      {
+        src: '/images/smols/mockups/sticker-as-is-2.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+    ],
+    toBeImages: [
+      {
+        src: '/images/smols/mockups/sticker-to-be-1.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+      {
+        src: '/images/smols/mockups/sticker-to-be-2.png',
+        imageWidth: 300,
+        imageHeight: 600,
+      },
+    ],
+    asIsPoints: [
+      { highlight: '카테고리·메뉴, ', text: ' 선택 흐름 끊김' },
+      {
+        highlight: '고정 메뉴 영역, ',
+        text: '아이템 탐색 제한',
+      },
+      { highlight: '좌우 스크롤, ', text: '확장성 부족' },
+    ],
+    toBePoints: [
+      {
+        highlight: '카테고리·아이템, ',
+        text: '선택 흐름 연결',
+      },
+      { highlight: '바텀시트 핸들, ', text: '영역 크기 자유 조절' },
+      { highlight: '상하 스크롤, ', text: '로 아이템 탐색 확장' },
     ],
   },
 ]

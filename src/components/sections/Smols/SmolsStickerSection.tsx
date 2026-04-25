@@ -7,8 +7,8 @@ export default function SmolsStickerSection() {
   return (
     <div className='bg-gray-100'>
       <UxPrincipleLayout
-        transformation={smols.transformations[1]}
-        uxPrinciple={smols.uxPrinciples[1]}
+        transformation={smols.transformations[2]}
+        uxPrinciple={smols.uxPrinciples[2]}
         index={1}
       />
     </div>

@@ -6,7 +6,7 @@ export const smolsHeros: HeroData[] = [
     badge: '반려동물 기록 앱',
     title: '기록하지 않던 사용자가 \n 매일 기록하는 앱이 되기까지',
     description:
-      '941건 리뷰 분석과 설문으로 문제를 정의하고, 기록 진입 / 꾸미기 / 피드 \n세 단계를 개선해 전환율을 2배 끌어올렸습니다.',
+      '941건 리뷰 분석과 설문으로 문제를 정의했습니다.\n핵심 퍼널인 기록 진입과 기록 과정을 개선해 전환율을 2배 끌어올렸습니다.',
     badgeText: ['진저나인', '2022-2024'],
     image: '/images/smols/mockups/hero-mockup.png',
     meta: [

@@ -45,7 +45,7 @@ export default function NumberCard({
           <Text as='body' className='font-medium'>
             {title}
           </Text>
-          <Text as='p' className='pt-3 font-extralight text-gray-500'>
+          <Text as='body' className='pt-3 font-extralight text-gray-500'>
             {description}
           </Text>
         </div>

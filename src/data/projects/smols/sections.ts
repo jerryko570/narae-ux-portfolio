@@ -37,7 +37,7 @@ export const smolsSections: Record<string, SectionData> = {
     },
   },
 
-  // 문저 정의 타이틀
+  // 문제 정의 타이틀
   feedbackAnalysis: {
     type: 'research',
     badge: '리서치',
@@ -56,7 +56,7 @@ export const smolsSections: Record<string, SectionData> = {
   uxStrategy: {
     type: 'research',
     badge: '개선 방향',
-    title: '기록을 중심으로 \n구조를 다시 설계한다',
+    title: '사용자가 거쳐가는 \n두 가지 길을 다시 설계하다',
     align: 'left',
   },
 
@@ -73,7 +73,8 @@ export const smolsSections: Record<string, SectionData> = {
     type: 'result',
     badge: '회고',
     title: '구조를 바꾸자 사람이 \n기록하기 시작했다',
-    description: '',
+    description:
+      '기록을 시작할 수 없는 구조가 문제였다. 기능이 아니라 흐름이었다. \n941건 리뷰로 행동 패턴을 정의하고 마찰을 제거했다. 진입 구조를 바꾸자 전환율이 올랐고, 꾸미기 자유도를 높이자 재방문이 따라왔다.',
     align: 'center',
   },
 
