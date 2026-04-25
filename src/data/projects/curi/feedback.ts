@@ -1,10 +1,10 @@
-import type { FeedbackData } from '../../types/smols'
+import type { FeedbackData } from '@/data/types/common/feedback.types'
 
 export const curiFeedbackData: FeedbackData = {
   stats: [
     {
       label: '평균 체류 시간',
-      value: '45초',
+      value: '되네',
       description: '기록 진입 없이 피드만 보고 이탈',
     },
     {
@@ -19,16 +19,16 @@ export const curiFeedbackData: FeedbackData = {
     },
   ],
   rightTop: {
-    icon: '/images/smols/icons/app-icon.png',
+    icon: '/images/curi/icons/app-icon.png',
     title: '사용자 리뷰 분석',
     count: '(941건)',
-    description: '사용자는 기록하고 싶었다.\n구조가 막았다.',
+    description: '사용자는 답을 찾으러 왔지만,\n찾기도 전에 포기했다.',
   },
   right: {
     title: '',
     unit: '',
     items: [
-      { label: '꾸미기 기능 부족', value: 44.5 },
+      { label: '기능 부족', value: 44.5 },
       { label: '앱 성능 및 안정성', value: 39.2 },
       { label: '기록 과정 불편', value: 10.0 },
       { label: '소통 기능 부족', value: 6.3 },

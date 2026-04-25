@@ -1,5 +1,6 @@
 export * from './hero'
 export * from './sections'
+export * from './feedback'
 export * from './review'
 export * from './strategy'
 export * from './result'

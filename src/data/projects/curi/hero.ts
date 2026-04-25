@@ -3,15 +3,15 @@ import type { HeroData } from '@/data/types/curi/hero.types.ts'
 export const curiHeros: HeroData[] = [
   {
     id: 1,
-    badge: '반려동물 기록 앱',
-    title: '기록하지 않던 사용자가 \n 매일 기록하는 앱이 되기까지',
+    badge: '학생 참여형 교육 서비스',
+    title: '4번 눌러야 했던 질문을 \n1번으로 줄이기까지',
     description:
-      '941건 리뷰 분석과 설문으로 문제를 정의하고, 기록 진입 / 꾸미기 / 피드 \n세 단계를 개선해 전환율을 2배 끌어올렸습니다.',
-    badgeText: ['진저나인', '2022-2024'],
+      '학생이 튜터에게 직접 묻고 답을 받는 서비스. 하지만 질문까지의 흐름이 복잡했습니다. \n설문조사로 사용 패턴을 파악하고, 질문 진입 단계를 50% 줄여 마찰을 없앴습니다.',
+    badgeText: ['플랫비', '2020-2022'],
     image: '/images/smols/mockups/hero-mockup.png',
     meta: [
       { label: 'ROLE', values: ['UX Research ', '/ UI Design'] },
-      { label: 'DURATION', values: ['2022.05 -', '2024.08'] },
+      { label: 'DURATION', values: ['2020.12 -', '2022.04'] },
       { label: 'TOOLS', values: ['Figma ', '/ Principle'] },
       { label: 'TEAM', values: ['Designer 1인'] },
     ],

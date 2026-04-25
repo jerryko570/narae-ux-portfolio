@@ -1,6 +1,5 @@
 export * from './section.types'
 export * from './hero.types'
-export * from './feedback.types'
 export * from './review.types'
 export * from './strategy.types'
 export * from './result.types'

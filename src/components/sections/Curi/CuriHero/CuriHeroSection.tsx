@@ -35,7 +35,7 @@ export default function HeroSection({
         <HeroImage src={image} />
       </FadeIn>
 
-      <Section className='w-full bg-orange-500'>
+      <Section className='w-full bg-pink-500'>
         {/* 배지 */}
         <FadeIn delay={0.1}>
           <div className='inline-flex items-center'>

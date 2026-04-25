@@ -26,7 +26,7 @@ export default function HeroImage({
     >
       <Image
         src={src}
-        alt='smols 앱 목업'
+        alt='curi 앱 목업'
         width={600}
         height={508}
         className='w-full'

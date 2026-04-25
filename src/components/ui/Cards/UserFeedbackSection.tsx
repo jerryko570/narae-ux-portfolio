@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { VariantProps } from 'class-variance-authority'
-import type { FeedbackData } from '@/data/types/smols'
+import type { FeedbackData } from '@/data/types/common/feedback.types'
 import { cn } from '@/lib/cn'
 import { CardVariant } from './Card.variants'
 import Text from '../Text/Text'

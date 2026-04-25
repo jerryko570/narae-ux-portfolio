@@ -1,4 +1,4 @@
-import type { FeedbackData } from '../../types/smols'
+import type { FeedbackData } from '@/data/types/common/feedback.types'
 
 export const smolsFeedbackData: FeedbackData = {
   stats: [

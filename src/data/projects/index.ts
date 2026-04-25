@@ -24,7 +24,7 @@ export const smols = {
   reviewPageContent: smolsReviewPageContent,
   reviewSummary: smolsReviewSummary,
   reviewCategories: smolsReviewCategories,
-  userBehavior: smolsUserBehavior, // ← 추가
+  userBehavior: smolsUserBehavior,
   reviewCategoryTheme: smolsReviewCategoryTheme,
   reviewInsight: smolsReviewInsight,
   insightSummary: smolsInsightSummary,
@@ -39,6 +39,7 @@ export const smols = {
 import {
   curiHeros,
   curiSections,
+  curiFeedbackData,
   curiReviewPageContent,
   curiReviewCategories,
   curiUserBehavior,
@@ -56,6 +57,7 @@ import {
 export const curi = {
   heros: curiHeros,
   sections: curiSections,
+  feedbackData: curiFeedbackData,
   reviewPageContent: curiReviewPageContent,
   reviewCategories: curiReviewCategories,
   userBehavior: curiUserBehavior,

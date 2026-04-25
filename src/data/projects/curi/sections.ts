@@ -4,7 +4,7 @@ export const curiSections: Record<string, SectionData> = {
   problemMetrics: {
     type: 'metrics',
     badge: '문제 정의',
-    title: '사용자는 기록하러 왔지만, \n기록하지 못하고 떠났다',
+    title: '학생은 답을 찾으러 왔지만, \n찾기도 전에 포기했다',
     align: 'center',
     metrics: {
       description: '941건 서포터즈 데이터에서 발견한 패턴',
