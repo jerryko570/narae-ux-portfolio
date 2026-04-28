@@ -5,11 +5,8 @@ import { smols } from '@/data/projects'
 
 export default function SmolsSolutionSection() {
   return (
-    <div className='bg-gray-100'>
-      <UxPrincipleLayout
-        uxPrinciple={smols.uxPrinciples[0]}
-        showSectionHeader
-      />
+    <div className='bg-gray-100 pt-16'>
+      <UxPrincipleLayout uxPrinciple={smols.uxPrinciples[1]} />
     </div>
   )
 }

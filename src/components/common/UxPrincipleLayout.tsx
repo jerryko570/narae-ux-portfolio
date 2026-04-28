@@ -3,21 +3,21 @@
 import Image from 'next/image'
 import Text from '../ui/Text/Text'
 import SectionHeader from '../ui/SectionHeader/SectionHeader'
-import ComparisonCard from '../ui/Cards/ComparisonCard'
 import Section from '../ui/Section'
+import Badge from '../ui/Badge/Badge'
 import FadeIn from '../ui/FadeIn'
 import { smols } from '@/data/projects'
-import type {
-  UxPrincipleType,
-  ImageConfig,
-  Transformation,
-} from '@/data/types/smols'
+import type { UxPrincipleType, ImageConfig } from '@/data/types/smols'
 
 type Props = {
   uxPrinciple: UxPrincipleType
-  transformation?: Transformation
   index?: number
   showSectionHeader?: boolean
+}
+
+type Point = {
+  highlight?: string
+  text: string
 }
 
 export default function UxPrincipleLayout({
@@ -26,92 +26,172 @@ export default function UxPrincipleLayout({
 }: Props) {
   return (
     <Section className='mx-auto w-full max-w-7xl' inner='0'>
-      {/*  구역 1: 섹션 헤더 — 0초 */}
+      {/* 구역 1: 섹션 헤더 (옵션) */}
       {showSectionHeader && (
-        <FadeIn>
-          <div className='pt-16 pb-8'>
+        <div className='pt-16'>
+          <FadeIn>
             <SectionHeader
               badge={smols.sections.solution.badge}
               title={smols.sections.solution.title}
-              align='left'
+              align='center'
               titleSize='h4'
               badgeTheme='orange'
               className='text-gray-900'
             />
-          </div>
-        </FadeIn>
+          </FadeIn>
+        </div>
       )}
 
-      {/*  구역 2: 원칙 헤더 (넘버링 + 제목) — 0.2초 */}
-      <FadeIn delay={0.2}>
-        <div className='py-4 text-center'>
-          <Text as='h6' className='mb-2 font-bold text-orange-500'>
-            {uxPrinciple.numbering}
-          </Text>
-          <Text
-            as='body'
-            className='font-extralight whitespace-pre-line text-gray-900'
-          >
-            {uxPrinciple.title}
-          </Text>
+      {/* 구역 2: 원칙 헤더 — 이모지 박스 + 텍스트 */}
+      <FadeIn>
+        <div className='py-8'>
+          <div className='flex items-center gap-5'>
+            {uxPrinciple.icon && (
+              <div
+                role='img'
+                aria-label='principle-icon'
+                className='flex h-16 w-16 items-center justify-center rounded-3xl border border-gray-100 bg-white'
+              >
+                <Text as='h4'>{uxPrinciple.icon}</Text>
+              </div>
+            )}
+
+            <div className='flex flex-col'>
+              <Text as='p' className='font-bold tracking-wide text-orange-500'>
+                {uxPrinciple.numbering}
+              </Text>
+              <Text
+                as='h6'
+                className='font-extralight whitespace-pre-line text-gray-900'
+              >
+                {uxPrinciple.title}
+              </Text>
+            </div>
+          </div>
         </div>
       </FadeIn>
 
-      {/*  구역 3: 폰 이미지 AS-IS / TO-BE — 0.4초, 0.6초 */}
-      <div className='grid grid-cols-2 gap-8 py-6'>
-        <FadeIn delay={0.4}>
-          <PhoneGroup images={uxPrinciple.asIsImages} altPrefix='AS-IS' />
-        </FadeIn>
-        <FadeIn delay={0.6}>
-          <PhoneGroup images={uxPrinciple.toBeImages} altPrefix='TO-BE' />
-        </FadeIn>
-      </div>
-
-      {/*  구역 4: 비교 카드 AS-IS → TO-BE — 0.8초, 1.0초, 1.2초 */}
-      <div className='flex items-center gap-8 pt-8 pb-16'>
-        <FadeIn delay={0.8} className='flex-1'>
-          <ComparisonCard
-            label='AS-IS'
-            points={uxPrinciple.asIsPoints}
+      {/* 구역 3: AS-IS / TO-BE 2패널 가로 비교 */}
+      <div className='relative grid grid-cols-2 items-stretch gap-8'>
+        {/* AS-IS — 먼저 등장 */}
+        <FadeIn delay={0.1} duration={0.7}>
+          <ComparisonPanel
             variant='before'
+            images={uxPrinciple.asIsImages}
+            points={uxPrinciple.asIsPoints}
           />
         </FadeIn>
-        <FadeIn delay={1.0}>
-          <Text as='caption' className='text-2xl font-medium text-gray-900'>
-            →
-          </Text>
-        </FadeIn>
-        <FadeIn delay={1.2} className='flex-1'>
-          <ComparisonCard
-            label='TO-BE'
-            points={uxPrinciple.toBePoints}
+
+        {/* TO-BE — 나중에 등장 */}
+        <FadeIn delay={0.5} duration={0.7}>
+          <ComparisonPanel
             variant='after'
+            images={uxPrinciple.toBeImages}
+            points={uxPrinciple.toBePoints}
           />
+        </FadeIn>
+
+        {/* 가운데 화살표 — TO-BE와 함께 등장 */}
+        <FadeIn
+          delay={0.5}
+          duration={0.7}
+          y={0}
+          className='pointer-events-none absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2'
+        >
+          <div className='flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg ring-1 ring-gray-100'>
+            <svg
+              width='30'
+              height='24'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2.5'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              className='text-orange-500'
+            >
+              <path d='M5 12h14' />
+              <path d='m12 5 7 7-7 7' />
+            </svg>
+          </div>
         </FadeIn>
       </div>
     </Section>
   )
 }
 
-function PhoneGroup({
+/* ─────────────────────────────────────────────
+ * ComparisonPanel : AS-IS / TO-BE 한 패널
+ * ─────────────────────────────────────────── */
+function ComparisonPanel({
+  variant,
   images,
-  altPrefix,
+  points,
 }: {
+  variant: 'before' | 'after'
   images: ImageConfig[]
-  altPrefix: string
+  points: Point[]
 }) {
+  const isBefore = variant === 'before'
+
   return (
-    <div className='flex items-start justify-center gap-8'>
-      {images.map((image, i) => (
-        <Image
-          key={i}
-          src={image.src}
-          width={image.imageWidth}
-          height={image.imageHeight}
-          alt={`${altPrefix}-${i + 1}`}
-          className={`h-auto w-[48%] max-w-50 ${i % 2 === 1 ? 'mt-2' : 'mt-0'}`}
+    <div
+      className={`flex h-full flex-col rounded-3xl px-8 py-8 transition-all ${
+        isBefore
+          ? 'bg-white ring-1 ring-gray-100'
+          : 'bg-orange-50 ring-1 ring-orange-100'
+      }`}
+    >
+      {/* 패널 헤더 */}
+      <div className='mb-6 flex items-center justify-between'>
+        <Badge
+          label={isBefore ? 'AS-IS' : 'TO-BE'}
+          theme={isBefore ? 'outlineDark' : 'outlineOrange'}
+          size='sm'
+          className='w-fit'
         />
-      ))}
+      </div>
+
+      {/* 폰 이미지 그룹 */}
+      <div className='flex h-96 items-center justify-center gap-5'>
+        {images.map((image, i) => (
+          <Image
+            key={i}
+            src={image.src}
+            width={image.imageWidth}
+            height={image.imageHeight}
+            alt={`${isBefore ? 'AS-IS' : 'TO-BE'}-${i + 1}`}
+            className='h-full w-auto object-contain'
+          />
+        ))}
+      </div>
+
+      {/* 하단 영역 */}
+      <div className='pt-10'>
+        {/* 포인트 리스트 — 각 항목 사이에 자동으로 가로선 */}
+        <ul
+          className={`divide-y ${
+            isBefore ? 'divide-gray-200' : 'divide-orange-100'
+          }`}
+        >
+          {points.map((point, i) => (
+            <li key={i} className='flex items-start py-3 first:pt-0 last:pb-0'>
+              <span>
+                {point.highlight && (
+                  <strong
+                    className={`font-semibold ${
+                      isBefore ? 'text-gray-700' : 'text-gray-900'
+                    }`}
+                  >
+                    {point.highlight}
+                  </strong>
+                )}
+                {point.text}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }

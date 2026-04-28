@@ -15,7 +15,7 @@ export const smolsResult: ProductResult = {
     {
       value: '3단계 → 1단계',
       title: '행동 단계 수정',
-      description: ['메인에서 기록 진입까지 CTA 최소화'],
+      description: ['메인에서 기록 진입까지 CTA 3번 → 1번'],
     },
   ],
 }

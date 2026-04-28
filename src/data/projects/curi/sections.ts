@@ -56,7 +56,7 @@ export const curiSections: Record<string, SectionData> = {
   uxStrategy: {
     type: 'research',
     badge: '개선 방향',
-    title: '기록을 중심으로 \n구조를 다시 설계한다',
+    title: '두 퍼널을 바꿔 \n경험을 다시 설계한다',
     align: 'left',
   },
 

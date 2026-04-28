@@ -1,16 +1,12 @@
-// 개선과정: 꾸미기 영역
+// 개선과정: 기록하기 영역
 
 import UxPrincipleLayout from '@/components/common/UxPrincipleLayout'
 import { smols } from '@/data/projects'
 
-export default function SmolsStickerSection() {
+export default function SmolsSolutionSection() {
   return (
-    <div className='bg-gray-100'>
-      <UxPrincipleLayout
-        transformation={smols.transformations[1]}
-        uxPrinciple={smols.uxPrinciples[1]}
-        index={1}
-      />
+    <div className='bg-gray-100 pt-16 pb-16'>
+      <UxPrincipleLayout uxPrinciple={smols.uxPrinciples[2]} />
     </div>
   )
 }
