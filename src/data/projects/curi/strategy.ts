@@ -57,6 +57,7 @@ export const curiUxPrinciples: UxPrincipleType[] = [
   // ─── [0] 기록 진입 ─────────────────────────
   {
     id: 'solution',
+    icon: '',
     numbering: '기록 진입',
     quote: '',
     title: '기록은 익숙할수록 지속된다. \n그래서 마찰을 없앴다.',
@@ -103,6 +104,7 @@ export const curiUxPrinciples: UxPrincipleType[] = [
   // ─── [1] 표현 확장 (꾸미기) ────────────────
   {
     id: 'sticker',
+    icon: '',
     numbering: '표현 확장',
     quote: '',
     title: '꾸미기가 자유로울수록 더 많이 쓴다. \n그래서 제약을 없앴다.',
@@ -146,6 +148,7 @@ export const curiUxPrinciples: UxPrincipleType[] = [
   // ─── [2] 피드 탐색 ─────────────────────────
   {
     id: 'feed',
+    icon: '',
     numbering: '피드 탐색',
     quote: '빠른 기록 진입, 다양한 피드 탐색을 원한다.',
     title: '묻혀 있던 기록 버튼을 \n가장 잘 보이는 곳으로',

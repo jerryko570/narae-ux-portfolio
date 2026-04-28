@@ -24,12 +24,12 @@ export default function HighlightCard({
   imageHeight = 400,
   imageClassName,
   className,
-  gap = 'mt-2',
+  gap = 'mt-1',
 }: Partial<HighlightCardProps>) {
   return (
     <div className={cn(CardVariant({ theme }), className, 'block')}>
       {title && (
-        <Text as='p' className='text-center font-bold text-orange-500'>
+        <Text as='h6' className='text-center font-bold text-orange-500'>
           {title}
         </Text>
       )}
@@ -44,7 +44,7 @@ export default function HighlightCard({
           alt={title ?? ''}
           width={imageWidth}
           height={imageHeight}
-          className={cn('mx-auto pt-2', imageClassName)}
+          className={cn('mx-auto pt-1', imageClassName)}
         />
       )}
     </div>

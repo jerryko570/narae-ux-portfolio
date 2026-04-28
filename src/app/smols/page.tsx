@@ -19,7 +19,6 @@ export default function SmolsPage() {
       <SmolsCoreStrategySection />
       <SmolsFeedSection />
       <SmolsSolutionSection />
-
       <SmolsStickerSection />
       <SmolsResultSection />
     </div>

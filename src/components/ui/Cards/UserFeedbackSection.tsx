@@ -40,9 +40,14 @@ export default function AppReviewSection({
             {rightTop.icon && (
               <Image src={rightTop.icon} alt='' width={32} height={32} />
             )}
-            <Text as='caption' className='text-gray-500'>
-              {rightTop.title}
-            </Text>
+            <div className='flex items-center'>
+              <Text as='caption' className='text-gray-500'>
+                {rightTop.title}
+              </Text>
+              <Text as='caption' className='text-gray-500'>
+                {rightTop.count}
+              </Text>
+            </div>
           </div>
           <Text
             as='h6'

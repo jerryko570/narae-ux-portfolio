@@ -53,6 +53,7 @@ export type ComparisonPoint = {
 
 export type UxPrincipleType = {
   id: string
+  icon: string
   numbering: string
   quote: string
   title: string

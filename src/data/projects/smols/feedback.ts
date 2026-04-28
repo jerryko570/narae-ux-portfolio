@@ -24,7 +24,7 @@ export const smolsFeedbackData: FeedbackData = {
   rightTop: {
     icon: '/images/smols/icons/app-icon.png',
     title: '사용자 리뷰',
-    count: '(941건)',
+    count: '· (941건)',
     description: '사용자는 기록하고 싶었다.\n구조가 막았다.',
   },
   right: {

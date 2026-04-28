@@ -13,7 +13,7 @@ export const smolsInsightSummary: { description: string } = {
 // ─── 전략 카드 (기존 경험 / 개선된 경험) ─────────────────────
 export const smolsStrategy: StrategyItem[] = [
   {
-    title: '기존 ㄹㄹㄹ경험',
+    title: '기존 경험',
     description: '탐색은 있었지만, \n기록은 남지 않았습니다.',
     image: '/images/smols/strategy-charts/smols-strategy-before-flow.png',
     imageWidth: 400,
@@ -40,17 +40,19 @@ export const smolsUxStrategy: UxStrategy = {
     {
       numbering: '기록 과정',
       title: '빠르게, 군더더기 없이',
-      description: '입력은 빠르게, 꾸미기는 자유롭게, 완성까지 끊김 없이.',
+      description:
+        '기록 작성 마찰 제거와 꾸미기 자유도 확장. \n키패드 즉시 노출·옵션 정리·바텀시트 개선으로 완성까지 이탈 없이.',
     },
   ],
 }
 
 // ─── UX Principles — AS-IS / TO-BE 비교 데이터 ───────────────
-// 순서: [0] 기록 → [1] 꾸미기 → [2] 피드
+// 순서: [0] 기록 진입 → [1] 기록 작성 → [2] 꾸미기
 export const smolsUxPrinciples: UxPrincipleType[] = [
-  // ─── [0] 피드 탐색 ─────────────────────────
+  // ─── [0] 기록 진입 ─────────────────────────
   {
     id: 'feed',
+    icon: '👀',
     numbering: '기록 진입',
     quote: '',
     title: '묻혀 있던 기록 버튼을 가장 잘 보이는 곳으로',
@@ -85,30 +87,32 @@ export const smolsUxPrinciples: UxPrincipleType[] = [
     ],
     asIsPoints: [
       {
-        highlight: '기록하려면 하단 탭 → 스토리 → 기록 순으로 진입, ',
-        text: '',
+        highlight: '',
+        text: '기록하려면 하단 탭 → 스토리 → 기록 순으로 진입',
       },
-      { highlight: '기록 버튼이 탭 구조 안에 숨겨진 상태,  ', text: '' },
-      { text: '기록 의지가 있어도 진입 전에 이탈 발생' },
+      { highlight: '', text: '기록 버튼이 탭 구조 안에 숨겨진 상태' },
+      { highlight: '', text: '기록 의지가 있어도 진입 전에 이탈 발생' },
     ],
     toBePoints: [
       {
-        highlight: '메인 상단 배너, ',
-        text: '기록 의지가 있어도 진입 전에 이탈 발생',
+        highlight: '메인 상단 배너 배치, ',
+        text: '기록 진입을 즉시 노출',
       },
       {
-        highlight: '하단 탭 중앙, ',
-        text: '에 기록하기 버튼 고정 — 어느 화면에서든 접근 가능',
+        highlight: '하단 탭 중앙에 기록 버튼 고정, ',
+        text: '어느 화면에서든 접근 가능',
       },
-      { highlight: '기록 진입 경로 단축 ', text: '이탈 지점 제거' },
+      { highlight: '기록 진입 경로 단축, ', text: '이탈 지점 제거' },
     ],
   },
-  // ─── [1] 기록 과정 ─────────────────────────
+
+  // ─── [1] 기록 작성 ─────────────────────────
   {
     id: 'solution',
-    numbering: '기록 과정 - 기록 작성',
+    icon: '✏️',
+    numbering: '기록 과정 1',
     quote: '',
-    title: '쓰고, 꾸미고, 완성하는 흐름을 다시 설계하다',
+    title: '기록 작성: 쓰고, 꾸미고, 완성하는 흐름을 다시 설계하다',
     keywords: ['키패드 즉시 노출', '불필요 옵션 제거', '작성 우선순위 가이드'],
     asIsImages: [
       {
@@ -134,25 +138,25 @@ export const smolsUxPrinciples: UxPrincipleType[] = [
         imageHeight: 600,
       },
     ],
-
     asIsPoints: [
-      { highlight: '필수값·옵션 혼재, ', text: '입력 순서 불분명' },
-      { highlight: '', text: '꾸미기가 텍스트 입력보다 앞에 노출' },
+      { highlight: '', text: '필수값·옵션 혼재 → 입력 순서 불분명' },
+      { highlight: '', text: '사진등록(+꾸미기)가 텍스트 입력보다 앞에 노출' },
       { highlight: '', text: '우선순위를 사용자가 직접 판단해야 함' },
     ],
     toBePoints: [
-      { highlight: '키패드 즉시 노출,   ', text: '제목부터 입력 시작' },
-      { highlight: '사진·꾸미기만 남기고, ', text: '불필요 옵션 제거' },
+      { highlight: '키패드 즉시 노출, ', text: '제목부터 입력 시작' },
+      { highlight: '사진·꾸미기만 노출, ', text: '불필요 옵션 제거' },
       { highlight: '기록 흐름 명확, ', text: '이탈 없이 완성' },
     ],
   },
 
-  // ─── [3] 표현 확장 (꾸미기) ────────────────
+  // ─── [2] 꾸미기 ────────────────────────────
   {
     id: 'sticker',
-    numbering: '기록 과정 - 꾸미기',
+    icon: '🎨',
+    numbering: '기록 과정 2',
     quote: '',
-    title: '',
+    title: '꾸미기: 카테고리·메뉴를 한 흐름으로, 영역은 자유롭게',
     keywords: [
       '바텀시트 핸들로 영역 가변',
       '카테고리 이동 UX 개선',
@@ -183,20 +187,14 @@ export const smolsUxPrinciples: UxPrincipleType[] = [
       },
     ],
     asIsPoints: [
-      { highlight: '카테고리·메뉴, ', text: ' 선택 흐름 끊김' },
-      {
-        highlight: '고정 메뉴 영역, ',
-        text: '아이템 탐색 제한',
-      },
-      { highlight: '좌우 스크롤, ', text: '확장성 부족' },
+      { highlight: '', text: '카테고리·메뉴 → 선택 흐름 끊김' },
+      { highlight: '', text: '고정 메뉴 영역 → 아이템 탐색 제한' },
+      { highlight: '', text: '좌우 스크롤 → 확장성 부족' },
     ],
     toBePoints: [
-      {
-        highlight: '카테고리·아이템, ',
-        text: '선택 흐름 연결',
-      },
+      { highlight: '카테고리·아이템, ', text: '선택 흐름 연결' },
       { highlight: '바텀시트 핸들, ', text: '영역 크기 자유 조절' },
-      { highlight: '상하 스크롤, ', text: '로 아이템 탐색 확장' },
+      { highlight: '상하 스크롤로 ', text: '아이템 탐색 확장' },
     ],
   },
 ]
