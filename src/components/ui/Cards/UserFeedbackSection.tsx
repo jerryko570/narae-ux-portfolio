@@ -11,14 +11,19 @@ import StatSection from './StatSection'
 type AppReviewSectionProps = {
   data: FeedbackData
   className?: string
+  valueClassName?: string
+  barClassName?: string
 } & VariantProps<typeof CardVariant>
 
 export default function AppReviewSection({
   data,
   className,
   theme,
+  valueClassName,
+  barClassName,
 }: AppReviewSectionProps) {
   const { rightTop, right, stats } = data
+  const isDark = theme === 'dark'
 
   return (
     <section className={cn('grid w-full grid-cols-2 gap-8', className)}>
@@ -28,7 +33,7 @@ export default function AppReviewSection({
           items={stats}
           theme={theme}
           layout='stack'
-          className='rounded-lg bg-gray-800'
+          valueClassName={valueClassName}
         />
       )}
 
@@ -36,23 +41,29 @@ export default function AppReviewSection({
       <div className={cn('flex flex-col', CardVariant({ theme }))}>
         {/* 헤더 */}
         <div className='flex flex-col gap-6'>
-          <div className='flex items-center gap-4'>
+          <div className='flex items-center gap-2'>
             {rightTop.icon && (
-              <Image src={rightTop.icon} alt='' width={32} height={32} />
+              <Image
+                src={rightTop.icon}
+                alt='큐리 앱 아이콘'
+                width={32}
+                height={32}
+                className={cn(
+                  'rounded-xl border',
+                  isDark ? 'border-white/10' : 'border-gray-200'
+                )}
+              />
             )}
             <div className='flex items-center'>
-              <Text as='caption' className='text-gray-500'>
+              <Text as='caption' className='font-medium opacity-100'>
                 {rightTop.title}
               </Text>
-              <Text as='caption' className='text-gray-500'>
+              <Text as='caption' className='pl-1 opacity-60'>
                 {rightTop.count}
               </Text>
             </div>
           </div>
-          <Text
-            as='h6'
-            className='font-extralight whitespace-pre-line text-white'
-          >
+          <Text as='h6' className='font-extralight whitespace-pre-line'>
             {rightTop.description}
           </Text>
         </div>
@@ -64,16 +75,22 @@ export default function AppReviewSection({
               key={item.label}
               className='grid grid-cols-[100px_1fr_40px] items-center gap-6'
             >
-              <Text as='caption' className='text-white'>
-                {item.label}
-              </Text>
-              <div className='h-2 w-full overflow-hidden rounded-full bg-white/10'>
+              <Text as='caption'>{item.label}</Text>
+              <div
+                className={cn(
+                  'h-2 w-full overflow-hidden rounded-full',
+                  isDark ? 'bg-white/10' : 'bg-black/5'
+                )}
+              >
                 <div
-                  className='h-full rounded-full bg-orange-500'
+                  className={cn(
+                    'h-full rounded-full bg-pink-500',
+                    barClassName
+                  )}
                   style={{ width: `${item.value}%` }}
                 />
               </div>
-              <Text as='caption' className='text-right text-white tabular-nums'>
+              <Text as='caption' className='text-right tabular-nums'>
                 {item.value}%
               </Text>
             </div>

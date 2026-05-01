@@ -29,7 +29,7 @@ export default function ChartInsightSection({
         className
       )}
     >
-      <Text as='h6' className='font-extralight text-white'>
+      <Text as='h6' className='font-extralight'>
         {title}
       </Text>
 

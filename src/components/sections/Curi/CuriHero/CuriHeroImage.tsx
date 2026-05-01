@@ -11,9 +11,9 @@ type HeroImageProps = {
 
 export default function HeroImage({
   src,
-  imageWidth = '600px',
+  imageWidth = '760px',
   right = 0,
-  top = 140,
+  top = 10,
 }: HeroImageProps) {
   return (
     <div

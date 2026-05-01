@@ -11,7 +11,7 @@ export type MetricItem = { value: string; label: string; insight?: string }
 
 export type MetricsSection = BaseSectionData & {
   type: 'metrics'
-  metrics: { description: string; items: MetricItem[] }
+  metrics?: { description: string; items: MetricItem[] }
 }
 
 export type StatCardData = {

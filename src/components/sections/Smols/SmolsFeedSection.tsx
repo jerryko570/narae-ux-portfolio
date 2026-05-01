@@ -6,7 +6,11 @@ export default function SmolsFeedSection() {
     <div className='bg-gray-100'>
       <UxPrincipleLayout
         uxPrinciple={smols.uxPrinciples[0]}
-        showSectionHeader
+        theme='orange'
+        sectionHeader={{
+          badge: smols.sections.solution.badge ?? '',
+          title: smols.sections.solution.title ?? '',
+        }}
       />
     </div>
   )

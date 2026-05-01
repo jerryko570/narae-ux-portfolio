@@ -24,6 +24,7 @@ export default function CuriProblemSection() {
           className='mt-10'
           data={smols.feedbackData}
           theme='dark'
+          valueClassName='text-orange-500'
         />
       </FadeIn>
     </Section>

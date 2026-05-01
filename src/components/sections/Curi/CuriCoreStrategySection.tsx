@@ -6,14 +6,15 @@ import Section from '@/components/ui/Section'
 import FadeIn from '@/components/ui/FadeIn'
 import { curi } from '@/data/projects'
 
-export default function SmolsCoreStrategySection() {
+export default function CuriCoreStrategySection() {
   return (
-    <Section className='bg-gray-900' noTopPadding>
+    <Section className='bg-gray-100' noTopPadding>
       <FadeIn delay={0.1}>
         <SectionHeader
           {...curi.sections.uxStrategy}
-          className='whitespace-pre-line text-white'
+          className='text-dark-900 whitespace-pre-line'
           align='left'
+          badgeTheme='pink'
           titleSize='h4'
         />
       </FadeIn>
@@ -25,9 +26,9 @@ export default function SmolsCoreStrategySection() {
               number={item.numbering}
               title={item.title}
               description={item.description}
-              theme='dark'
-              badgeTheme='dark'
-              className='transition-all duration-300 hover:-translate-y-1 hover:bg-gray-700'
+              theme='white'
+              badgeTheme='lightDark'
+              className='transition-all duration-300 hover:-translate-y-1 hover:bg-white'
             />
           </FadeIn>
         ))}

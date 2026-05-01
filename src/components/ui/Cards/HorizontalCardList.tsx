@@ -34,7 +34,7 @@ export default function HorizontalCardList({
             emoji={item.emoji}
             title={item.title}
             description={item.description}
-            theme='dark'
+            theme={theme}
           />
         ))}
       </div>

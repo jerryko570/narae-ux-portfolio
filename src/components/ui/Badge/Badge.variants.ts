@@ -18,8 +18,10 @@ export const BadgeVariants = cva(
       },
       theme: {
         dark: 'bg-gray-700 text-gray-300',
+        lightDark: 'bg-gray-200 text-gray-500',
         black: 'bg-black text-white',
         white: 'bg-white text-orange-500',
+        whitePink: 'bg-white text-pink-500',
         orange: 'bg-orange-500 text-white',
         blue: 'bg-blue-500 text-white',
         darkOrange: 'bg-orange-700 text-white',

@@ -32,10 +32,10 @@ export default function InsightList({
         {items.map((item, idx) => (
           <Fragment key={item.subTitle}>
             <div className='flex flex-col gap-2'>
-              <Text as='body' className='font-extralight text-white'>
+              <Text as='body' className='font-extralight'>
                 {item.subTitle}
               </Text>
-              <Text as='caption' className='pt-2 text-gray-400'>
+              <Text as='caption' className='pt-2 opacity-50'>
                 {item.description}
               </Text>
             </div>

@@ -26,10 +26,8 @@ import {
   curiReviewCategoryTheme,
   curiInsightSummary,
   curiReviewInsight,
-  curiStrategy,
   curiUxStrategy,
   curiUxPrinciples,
-  curiTransformations,
   curiResult,
   curiClosing,
 } from './curi'
@@ -62,10 +60,9 @@ export const curi = {
   reviewCategoryTheme: curiReviewCategoryTheme,
   reviewInsight: curiReviewInsight,
   insightSummary: curiInsightSummary,
-  strategy: curiStrategy,
+
   uxStrategy: curiUxStrategy,
   uxPrinciples: curiUxPrinciples,
-  transformations: curiTransformations,
   result: curiResult,
   closing: curiClosing,
 }

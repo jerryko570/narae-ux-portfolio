@@ -39,7 +39,7 @@ export default function HeroSection({
         {/* 배지 */}
         <FadeIn delay={0.1}>
           <div className='inline-flex items-center'>
-            <Badge label={badge} size='md' theme='white' radius='full' />
+            <Badge label={badge} size='md' theme='whitePink' radius='full' />
           </div>
         </FadeIn>
 
