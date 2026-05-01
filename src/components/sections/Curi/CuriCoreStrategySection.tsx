@@ -12,7 +12,7 @@ export default function CuriCoreStrategySection() {
       <FadeIn delay={0.1}>
         <SectionHeader
           {...curi.sections.uxStrategy}
-          className='text-dark-900 whitespace-pre-line'
+          className='whitespace-pre-line text-gray-900'
           align='left'
           badgeTheme='pink'
           titleSize='h4'

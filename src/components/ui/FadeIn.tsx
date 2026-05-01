@@ -18,7 +18,7 @@ export default function FadeIn({
   duration = 0.6,
   y = 30,
   className,
-  amount = 0.8,
+  amount = 0.3,
 }: FadeInProps) {
   return (
     <motion.div

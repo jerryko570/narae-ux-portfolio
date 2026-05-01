@@ -29,7 +29,7 @@ export default function FeatureCard({
         className
       )}
     >
-      <Text as='h4' className={(cn('font-bold'), valueClassName)}>
+      <Text as='h4' className={cn('font-bold', valueClassName)}>
         {value}
       </Text>
 
