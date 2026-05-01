@@ -83,10 +83,7 @@ export default function AppReviewSection({
                 )}
               >
                 <div
-                  className={cn(
-                    'h-full rounded-full bg-pink-500',
-                    barClassName
-                  )}
+                  className={cn('h-full rounded-full', barClassName)}
                   style={{ width: `${item.value}%` }}
                 />
               </div>

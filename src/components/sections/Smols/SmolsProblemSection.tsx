@@ -25,6 +25,7 @@ export default function CuriProblemSection() {
           data={smols.feedbackData}
           theme='dark'
           valueClassName='text-orange-500'
+          barClassName='bg-orange-500'
         />
       </FadeIn>
     </Section>

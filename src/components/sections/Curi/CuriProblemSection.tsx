@@ -26,6 +26,7 @@ export default function CuriProblemSection() {
           data={curi.feedbackData}
           theme='white'
           valueClassName='text-pink-500'
+          barClassName='bg-pink-500'
         />
       </FadeIn>
     </Section>

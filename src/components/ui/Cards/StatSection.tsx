@@ -135,7 +135,7 @@ export default function StatSection({
   animated = true,
   layout = 'stack',
 }: StatSectionProps) {
-  const { ref, started } = useVisible(0.3)
+  const { ref, started } = useVisible(0.1)
   const isSplit = layout === 'split'
   const Item = isSplit ? SplitItem : StackItem
   const isDark =
