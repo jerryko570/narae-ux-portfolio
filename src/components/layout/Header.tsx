@@ -13,8 +13,8 @@ import { usePathname } from 'next/navigation'
 type HeaderProps = VariantProps<typeof HeaderVariant>
 
 const navLinks = [
-  { href: '/smols', label: 'SMOLS' },
-  { href: '/curi', label: 'CURI' },
+  { href: '/smols', label: 'SMOLS', activeColor: 'text-orange-500' },
+  { href: '/curi', label: 'CURI', activeColor: 'text-pink-500' },
 ]
 
 export default function Header({ variant, sticky }: HeaderProps) {
@@ -36,14 +36,14 @@ export default function Header({ variant, sticky }: HeaderProps) {
 
         <div className='flex items-center gap-8'>
           <div className='flex items-center gap-8'>
-            {navLinks.map(({ href, label }) => (
+            {navLinks.map(({ href, label, activeColor }) => (
               <Link key={href} href={href}>
                 <Text
                   as='p'
                   className={cn(
                     'px-2 font-bold',
                     pathname === href
-                      ? 'text-orange-500'
+                      ? activeColor
                       : 'text-gray-900 hover:text-gray-400'
                   )}
                 >

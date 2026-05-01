@@ -19,6 +19,8 @@
   --orange-600: #ec4b36;
 
   /* Pink */
+  --pink-50: #fff5fa;
+  --pink-100: #ffeaf6;
   --pink-500: #fc4574;
 
   /* Blue */
@@ -95,6 +97,8 @@
   --color-orange-600: var(--orange-600);
 
   /* Pink */
+  --color-pink-50: var(--pink-50);
+  --color-pink-100: var(--pink-100);
   --color-pink-500: var(--pink-500);
 
   /* Blue */

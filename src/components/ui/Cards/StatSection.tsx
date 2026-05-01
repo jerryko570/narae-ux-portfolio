@@ -17,6 +17,7 @@ type StatItem = {
 type StatSectionProps = {
   items: StatItem[]
   className?: string
+  valueClassName?: string
   animated?: boolean
   layout?: 'stack' | 'split'
 } & VariantProps<typeof CardVariant>
@@ -24,6 +25,8 @@ type StatSectionProps = {
 type ItemInnerProps = StatItem & {
   started: boolean
   animated: boolean
+  valueClassName?: string
+  isDark: boolean
 }
 
 /* ---------- 공통: 숫자 렌더링 ---------- */
@@ -42,7 +45,7 @@ function StatValue({
   const hasNumber = /\d/.test(value)
 
   return (
-    <Text as='h2' className={cn('leading-none text-orange-500', className)}>
+    <Text as='h2' className={cn('leading-none', className)}>
       {hasNumber ? (
         animated && started ? (
           <CountUp start={0} end={num} duration={2} suffix={suffix} />
@@ -63,23 +66,30 @@ function StackItem({
   description,
   started,
   animated,
+  valueClassName,
+  isDark,
 }: ItemInnerProps) {
   return (
-    <div className='flex items-center justify-between gap-8 border-t border-white/5 py-8 first:border-t-0 first:pt-0 last:pb-0'>
+    <div
+      className={cn(
+        'flex items-center justify-between gap-8 border-t py-8 first:border-t-0 first:pt-0 last:pb-0',
+        isDark ? 'border-white/5' : 'border-black/5'
+      )}
+    >
       <div className='flex flex-col gap-3'>
-        <Text as='caption' className='text-gray-500'>
+        <Text as='caption' className='font-extralight opacity-50'>
           {label}
         </Text>
         <StatValue
           value={value}
           started={started}
           animated={animated}
-          className='text-5xl font-bold'
+          className={cn('text-5xl font-bold', valueClassName)}
         />
       </div>
 
       {description && (
-        <Text as='p' className='text-right whitespace-pre-line text-white'>
+        <Text as='p' className='text-right font-extralight whitespace-pre-line'>
           {description}
         </Text>
       )}
@@ -94,15 +104,21 @@ function SplitItem({
   description,
   started,
   animated,
+  valueClassName,
 }: ItemInnerProps) {
   return (
     <div className='flex flex-1 flex-col items-center text-center'>
-      <StatValue value={value} started={started} animated={animated} />
-      <Text as='p' className='font-light text-gray-400'>
+      <StatValue
+        value={value}
+        started={started}
+        animated={animated}
+        className={valueClassName}
+      />
+      <Text as='p' className='font-light opacity-70'>
         {label}
       </Text>
       {description && (
-        <Text as='p' className='mt-1 whitespace-pre-line text-gray-500'>
+        <Text as='p' className='mt-1 whitespace-pre-line opacity-60'>
           {description}
         </Text>
       )}
@@ -115,12 +131,18 @@ export default function StatSection({
   items,
   theme,
   className,
+  valueClassName,
   animated = true,
   layout = 'stack',
 }: StatSectionProps) {
-  const { ref, started } = useVisible(0.3)
+  const { ref, started } = useVisible(0.1)
   const isSplit = layout === 'split'
   const Item = isSplit ? SplitItem : StackItem
+  const isDark =
+    theme === 'dark' ||
+    theme === 'sky' ||
+    theme === 'orange' ||
+    theme === 'pink'
 
   return (
     <div
@@ -137,6 +159,8 @@ export default function StatSection({
           {...item}
           started={started}
           animated={animated}
+          valueClassName={valueClassName}
+          isDark={isDark}
         />
       ))}
     </div>

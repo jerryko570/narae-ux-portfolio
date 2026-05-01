@@ -9,12 +9,13 @@ export default function CuriProblemSection() {
   const problemMetrics = curi.sections.problemMetrics
 
   return (
-    <Section className='bg-gray-900'>
+    <Section className='bg-pink-500'>
       {/* BEHAVIOR INSIGHT */}
-      <FadeIn delay={0.1}>
+      <FadeIn delay={0.2}>
         <SectionHeader
           {...problemMetrics}
           titleSize='h4'
+          badgeTheme='whitePink'
           className='whitespace-pre-line text-white'
         />
       </FadeIn>
@@ -23,7 +24,9 @@ export default function CuriProblemSection() {
         <AppReviewSection
           className='mt-10'
           data={curi.feedbackData}
-          theme='dark'
+          theme='white'
+          valueClassName='text-pink-500'
+          barClassName='bg-pink-500'
         />
       </FadeIn>
     </Section>

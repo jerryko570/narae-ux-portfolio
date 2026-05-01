@@ -6,14 +6,6 @@ export const curiSections: Record<string, SectionData> = {
     badge: '문제 정의',
     title: '학생은 답을 찾으러 왔지만, \n찾기도 전에 포기했다',
     align: 'center',
-    metrics: {
-      description: '941건 서포터즈 데이터에서 발견한 패턴',
-      items: [
-        { value: '45초', label: '평균 체류 시간', insight: '' },
-        { value: '60%', label: '1주 내 이탈률', insight: '' },
-        { value: '15%', label: '기록 전환율', insight: '' },
-      ],
-    },
   },
 
   userInsight: {
@@ -37,11 +29,11 @@ export const curiSections: Record<string, SectionData> = {
     },
   },
 
-  // 문저 정의 타이틀
+  // 문제 정의 타이틀
   feedbackAnalysis: {
     type: 'research',
     badge: '리서치',
-    title: '숫자로 확인한 진짜 사용 목적',
+    title: '학생 절반 이상이 \n튜터를 가장 먼저 찾는다',
     align: 'left',
     description: '',
   },
@@ -56,7 +48,7 @@ export const curiSections: Record<string, SectionData> = {
   uxStrategy: {
     type: 'research',
     badge: '개선 방향',
-    title: '두 퍼널을 바꿔 \n경험을 다시 설계한다',
+    title: '튜터에게 가장 빠르게\n닿을 수 있는 구조로',
     align: 'left',
   },
 
@@ -64,7 +56,7 @@ export const curiSections: Record<string, SectionData> = {
   solution: {
     type: 'solution',
     badge: '개선 과정',
-    title: '세 단계로 바꾼 사용자 경험',
+    title: '두 단계로 바꾼\n사용자 경험',
     description: '',
     align: 'center',
   },
@@ -72,16 +64,9 @@ export const curiSections: Record<string, SectionData> = {
   resultSection: {
     type: 'result',
     badge: '회고',
-    title: '구조를 바꾸자 사람이 \n기록하기 시작했다',
-    description: '',
+    title: '흐름을 줄이자 \n학생이 질문하기 시작했다',
+    description:
+      '학생이 질문을 안 한 게 아니라, 질문하기까지 너무 많은 단계를 거쳐야 했다. \n문제는 기능이 아니라 진입 흐름이었다. 설문을 통해 튜터 직접 질문 니즈(50.1%)를 확인하고, 4단계 진입 흐름을 2단계로 압축했다. \n학생이 모르는 순간, 가장 빠르게 튜터에게 닿을 수 있는 구조를 만드는 것이 핵심이었다.',
     align: 'center',
-  },
-
-  retrospectiveSection: {
-    type: 'retrospective',
-    badge: 'SMOLS',
-    title: '진입 구조를 바꾸자, \n기록이 2배 늘었다.',
-    description: '작은 흐름 하나가 지표를 움직인다는 걸 배웠다.',
-    align: 'left',
   },
 }

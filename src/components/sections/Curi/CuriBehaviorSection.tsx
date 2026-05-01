@@ -11,23 +11,32 @@ export default function CuriBehaviorSection() {
   const { userBehavior } = curi
 
   return (
-    <Section className='bg-gray-900' noTopPadding>
+    <Section className='bg-gray-100'>
       <FadeIn delay={0.1}>
         <SectionHeader
           {...curi.sections.feedbackAnalysis}
           titleSize='h4'
-          className='text-white'
+          className='text-gray-900'
           align='center'
+          badgeTheme='pink'
         />
       </FadeIn>
 
       <div className='mt-10 flex flex-col gap-8'>
         <FadeIn delay={0.25}>
-          <HorizontalCardList items={userBehavior.methodology} theme='dark' />
+          <HorizontalCardList
+            items={userBehavior.methodology}
+            theme='white'
+            className='bg-white'
+          />
         </FadeIn>
 
         <FadeIn delay={0.4}>
-          <ChartInsightSection {...userBehavior.firstActionCard} theme='dark' />
+          <ChartInsightSection
+            {...userBehavior.firstActionCard}
+            theme='white'
+            className='bg-white'
+          />
         </FadeIn>
       </div>
     </Section>

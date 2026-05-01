@@ -52,11 +52,12 @@ export type ComparisonPoint = {
 }
 
 export type UxPrincipleType = {
-  id: string
+  id?: string
+  icon?: string
   numbering: string
-  quote: string
+  quote?: string
   title: string
-  keywords: string[]
+  keywords?: string[]
   asIsImages: ImageConfig[]
   toBeImages: ImageConfig[]
   asIsPoints: ComparisonPoint[]
