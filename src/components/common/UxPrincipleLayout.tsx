@@ -9,18 +9,21 @@ import FadeIn from '../ui/FadeIn'
 import type {
   UxPrincipleType,
   ImageConfig,
+  ComparisonPoint,
 } from '@/data/types/common/uxPrinciple.types'
 
 type Theme = 'orange' | 'pink'
+type Layout = 'compare' | 'single'
 
 type Props = {
   uxPrinciple: UxPrincipleType
   theme?: Theme
+  layout?: Layout
+  singleBadgeLabel?: string
   sectionHeader?: {
     badge?: string
     title?: string
   }
-  /** 패널 외부에서 스타일 제어용 (배경/링/패딩 등) */
   beforePanelClassName?: string
   afterPanelClassName?: string
 }
@@ -38,19 +41,17 @@ const themeStyles = {
   },
 } as const
 
-type Point = {
-  highlight?: string
-  text: string
-}
-
 export default function UxPrincipleLayout({
   uxPrinciple,
   theme = 'orange',
+  layout = 'compare',
+  singleBadgeLabel = 'RELEASED',
   sectionHeader,
   beforePanelClassName = '',
   afterPanelClassName = '',
 }: Props) {
   const styles = themeStyles[theme]
+  const isSingle = layout === 'single'
 
   return (
     <Section className='mx-auto w-full max-w-7xl' inner='0'>
@@ -98,53 +99,68 @@ export default function UxPrincipleLayout({
         </div>
       </FadeIn>
 
-      {/* 구역 3: AS-IS / TO-BE 2패널 */}
-      <div className='relative grid grid-cols-2 items-stretch gap-8'>
+      {/* 구역 3: 패널 영역 */}
+      {isSingle ? (
+        // 1단: TO-BE 단독
         <FadeIn delay={0.1} duration={0.7}>
-          <ComparisonPanel
-            variant='before'
-            images={uxPrinciple.asIsImages}
-            points={uxPrinciple.asIsPoints}
-            styles={styles}
-            className={beforePanelClassName}
-          />
-        </FadeIn>
-
-        <FadeIn delay={0.5} duration={0.7}>
           <ComparisonPanel
             variant='after'
             images={uxPrinciple.toBeImages}
             points={uxPrinciple.toBePoints}
             styles={styles}
             className={afterPanelClassName}
+            badgeLabel={singleBadgeLabel}
           />
         </FadeIn>
+      ) : (
+        // 2단: AS-IS / TO-BE 비교
+        <div className='relative grid grid-cols-2 items-stretch gap-8'>
+          <FadeIn delay={0.1} duration={0.7}>
+            <ComparisonPanel
+              variant='before'
+              images={uxPrinciple.asIsImages}
+              points={uxPrinciple.asIsPoints}
+              styles={styles}
+              className={beforePanelClassName}
+            />
+          </FadeIn>
 
-        {/* 가운데 화살표 */}
-        <FadeIn
-          delay={0.5}
-          duration={0.7}
-          y={0}
-          className='pointer-events-none absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2'
-        >
-          <div className='flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg ring-1 ring-gray-100'>
-            <svg
-              width='30'
-              height='24'
-              viewBox='0 0 24 24'
-              fill='none'
-              stroke='currentColor'
-              strokeWidth='2.5'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              className={styles.accent}
-            >
-              <path d='M5 12h14' />
-              <path d='m12 5 7 7-7 7' />
-            </svg>
-          </div>
-        </FadeIn>
-      </div>
+          <FadeIn delay={0.5} duration={0.7}>
+            <ComparisonPanel
+              variant='after'
+              images={uxPrinciple.toBeImages}
+              points={uxPrinciple.toBePoints}
+              styles={styles}
+              className={afterPanelClassName}
+            />
+          </FadeIn>
+
+          {/* 가운데 화살표 */}
+          <FadeIn
+            delay={0.5}
+            duration={0.7}
+            y={0}
+            className='pointer-events-none absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2'
+          >
+            <div className='flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg ring-1 ring-gray-100'>
+              <svg
+                width='30'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                className={styles.accent}
+              >
+                <path d='M5 12h14' />
+                <path d='m12 5 7 7-7 7' />
+              </svg>
+            </div>
+          </FadeIn>
+        </div>
+      )}
     </Section>
   )
 }
@@ -156,20 +172,24 @@ function ComparisonPanel({
   points,
   styles,
   className = '',
+  badgeLabel,
 }: {
   variant: 'before' | 'after'
   images: ImageConfig[]
-  points: Point[]
+  points: ComparisonPoint[]
   styles: (typeof themeStyles)[Theme]
   className?: string
+  /** 뱃지 라벨 오버라이드. 미지정 시 variant 기준으로 자동 설정 */
+  badgeLabel?: string
 }) {
   const isBefore = variant === 'before'
+  const label = badgeLabel ?? (isBefore ? 'AS-IS' : 'TO-BE')
 
   return (
     <div className={`flex h-full flex-col ${className}`}>
       <div className='mb-6 flex items-center justify-between'>
         <Badge
-          label={isBefore ? 'AS-IS' : 'TO-BE'}
+          label={label}
           theme={isBefore ? 'outlineDark' : styles.badgeTheme}
           size='sm'
           className='w-fit'
@@ -183,7 +203,7 @@ function ComparisonPanel({
             src={image.src}
             width={image.imageWidth}
             height={image.imageHeight}
-            alt={`${isBefore ? 'AS-IS' : 'TO-BE'}-${i + 1}`}
+            alt={`${label}-${i + 1}`}
             className='h-full w-auto max-w-70 object-contain'
             quality={100}
             unoptimized

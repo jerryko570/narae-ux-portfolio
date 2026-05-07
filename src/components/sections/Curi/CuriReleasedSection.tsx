@@ -3,11 +3,11 @@
 import UxPrincipleLayout from '@/components/common/UxPrincipleLayout'
 import { curi } from '@/data/projects'
 
-export default function CuriSolutionSection() {
+export default function CuriReleasedSection() {
   return (
-    <div className='bg-white pt-16 pb-16'>
+    <div className='bg-white pb-16'>
       <UxPrincipleLayout
-        uxPrinciple={curi.uxPrinciples[1]}
+        uxPrinciple={curi.uxPrinciples[2]}
         theme='pink'
         beforePanelClassName='rounded-3xl bg-white px-8 py-8 ring-1 ring-gray-200'
         afterPanelClassName='rounded-3xl bg-pink-50 px-8 py-8 ring-1 ring-pink-200'
