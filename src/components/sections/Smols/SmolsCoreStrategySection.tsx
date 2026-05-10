@@ -27,7 +27,7 @@ export default function SmolsCoreStrategySection() {
               description={item.description}
               theme='dark'
               badgeTheme='dark'
-              className='transition-all duration-300 hover:-translate-y-1 hover:bg-gray-700'
+              className='transition-all duration-300 hover:-translate-y-1 hover:bg-gray-800'
             />
           </FadeIn>
         ))}

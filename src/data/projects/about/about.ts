@@ -30,19 +30,22 @@ export const aboutStrengths = [
   {
     number: '1',
     title: '구현을 이해하고 설계합니다',
-    description: '구조를 이해하고 재사용 가능한 UI를\n설계합니다.',
+    description:
+      '2025-26 코드잇 프론트엔드 부트캠프 수료. \n본 사이트와 나래봇을 React/Next.js로 직접 빌드했고, 디자인이 코드로 이어지는 흐름을 \n이해합니다.',
     badgeTheme: 'blue',
   },
   {
     number: '2',
     title: '데이터로 문제를 정의합니다',
-    description: 'VOC 964건 분석으로\n사용자 흐름을 개선합니다.',
+    description:
+      '스몰스 리뷰 941건을 분석해 기록 전환율을 15%에서 32%로 끌어올렸고, 큐리에서는 \n사용자 패턴을 바탕으로 질문 단계를 \n4단계에서 2단계로 압축했습니다.',
     badgeTheme: 'blue',
   },
   {
     number: '3',
     title: '계속 확장하고 있습니다',
-    description: '컴포넌트 구현부터 API까지,\n이해의 폭을 넓혀갑니다.',
+    description:
+      ' 진저나인·플랫비에서 색·타이포·간격 규칙을 \n 정리해왔고, 이 사이트는 그 규칙을 Tailwind로 옮겨 디자인과 코드가 어긋나지 않도록 \n설계했습니다.',
     badgeTheme: 'blue',
   },
 ] as const
@@ -50,12 +53,12 @@ export const aboutStrengths = [
 // ─── 블로그 자동화 파이프라인 ─────────────────────────────────
 export const aboutBlog = {
   badge: 'AUTOMATION',
-  title: '✏️ 3일마다 쌓이는 학습 파이프라인',
+  title: '✏️ 1일마다 쌓이는 학습 파이프라인',
   description:
-    '디자인·개발·AI는 매일 새로운 게 쏟아집니다.\n3일마다 최신 소식을 자동 수집하고\n블로그로 기록되도록 구축했습니다.',
+    '디자인·개발·AI는 매일 새로운 게 쏟아집니다.\n1일마다 최신 소식을 자동 수집하고\n블로그로 기록되도록 구축했습니다.',
   cta: '깃 블로그 구경가기',
   features: [
-    { label: 'GitHub Actions', desc: '3일마다 자동 실행' },
+    { label: 'GitHub Actions', desc: '1일마다 자동 실행' },
     { label: 'RSS Feed', desc: '최신 소식 자동 수집' },
     { label: 'Jekyll', desc: '마크다운 → 정적 사이트' },
     { label: 'Chirpy Theme', desc: '기술 블로그 템플릿' },

@@ -29,7 +29,7 @@ export default function SmolsResultSection() {
               title={item.title}
               description={item.description}
               theme='dark'
-              className='transition-all duration-300 hover:-translate-y-1 hover:bg-gray-700'
+              className='transition-all duration-300 hover:-translate-y-1 hover:bg-gray-800'
               valueClassName='text-orange-500'
             />
           </FadeIn>
