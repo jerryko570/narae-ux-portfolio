@@ -12,6 +12,7 @@ type SectionHeaderProps = {
   align?: 'left' | 'center' | 'right'
   titleSize?: 'display' | 'h1' | 'h2' | 'h3' | 'h4'
   badgeTheme?: VariantProps<typeof BadgeVariants>['theme']
+  decorateTitle?: boolean
   className?: string
 }
 
@@ -23,6 +24,7 @@ export default function SectionHeader({
   align = 'center',
   titleSize = 'h2',
   badgeTheme = 'orange',
+  decorateTitle = false,
   className,
 }: SectionHeaderProps) {
   const textAlign =
@@ -34,7 +36,13 @@ export default function SectionHeader({
         <Badge label={badge} size='sm' theme={badgeTheme} className='mb-4' />
       )}
       {title && (
-        <Text as={titleSize} className='break-keep whitespace-pre-line'>
+        <Text
+          as={titleSize}
+          className={cn(
+            'break-keep whitespace-pre-line',
+            decorateTitle && 'before:content-["{"] after:content-["}"]'
+          )}
+        >
           {title}
         </Text>
       )}

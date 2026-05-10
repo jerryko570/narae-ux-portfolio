@@ -9,7 +9,7 @@ export default function CuriProblemSection() {
   const problemMetrics = curi.sections.problemMetrics
 
   return (
-    <Section className='bg-pink-500'>
+    <Section className='bg-gray-800'>
       {/* BEHAVIOR INSIGHT */}
       <FadeIn delay={0.2}>
         <SectionHeader

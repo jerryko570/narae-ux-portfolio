@@ -13,7 +13,7 @@ export const smolsHeros: HeroData[] = [
       { label: 'ROLE', values: ['UX Research ', '/ UI Design'] },
       { label: 'DURATION', values: ['2022.05 -', '2024.08'] },
       { label: 'TOOLS', values: ['Figma ', '/ Principle'] },
-      { label: 'TEAM', values: ['Designer 1인'] },
+      { label: 'TEAM', values: ['PM / iOS / Android / BE 각 1명'] },
     ],
   },
 ]

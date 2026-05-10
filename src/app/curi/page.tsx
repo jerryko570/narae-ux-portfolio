@@ -7,6 +7,7 @@ import CuriSolutionSection from '@/components/sections/Curi/CuriSolutionSection'
 import CuriResultSection from '@/components/sections/Curi/CuriResultSection'
 import CuriFeedSection from '@/components/sections/Curi/CuriFeedSection'
 import { curi } from '@/data/projects'
+import CuriReleasedSection from '@/components/sections/Curi/CuriReleasedSection'
 
 export default function CuriPage() {
   return (
@@ -19,7 +20,7 @@ export default function CuriPage() {
       <CuriCoreStrategySection />
       <CuriFeedSection />
       <CuriSolutionSection />
-
+      <CuriReleasedSection />
       <CuriResultSection />
     </div>
   )

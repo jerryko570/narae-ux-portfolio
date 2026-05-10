@@ -5,7 +5,7 @@ export const smolsResult: ProductResult = {
     {
       value: '15% → 32%',
       title: '기록 전환율',
-      description: ['기록 진입 구조 개선 후'],
+      description: ['기록 진입 구조 개선 후 1개월 측정'],
     },
     {
       value: '941건',

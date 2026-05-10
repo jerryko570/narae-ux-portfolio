@@ -24,3 +24,8 @@ export type UxPrincipleType = {
   asIsPoints: Point[]
   toBePoints: Point[]
 }
+
+export type ComparisonPoint = {
+  text: string
+  highlight?: string
+}
