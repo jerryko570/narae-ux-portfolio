@@ -32,7 +32,7 @@ export default function HeroSection({
     <div className='relative min-w-100 overflow-hidden'>
       {/* 이미지 */}
       <FadeIn delay={1} duration={0.8}>
-        <HeroImage src={image} />
+        <HeroImage src={image} priority />
       </FadeIn>
 
       <Section className='w-full bg-pink-500'>
