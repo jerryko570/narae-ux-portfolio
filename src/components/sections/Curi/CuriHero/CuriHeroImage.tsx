@@ -7,6 +7,7 @@ type HeroImageProps = {
   imageWidth?: string
   top?: number
   right?: number
+  priority?: boolean
 }
 
 export default function HeroImage({
@@ -14,6 +15,7 @@ export default function HeroImage({
   imageWidth = '800px',
   right = -30,
   top = 10,
+  priority = false,
 }: HeroImageProps) {
   return (
     <div
@@ -30,6 +32,7 @@ export default function HeroImage({
         width={600}
         height={508}
         className='w-full'
+        priority={priority}
       />
     </div>
   )

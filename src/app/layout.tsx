@@ -18,7 +18,7 @@ export default function RootLayout({
       <body style={{ fontFamily: 'Pretendard, sans-serif' }}>
         <NavigationProvider>
           <Header />
-          {children}
+          <main>{children}</main>
         </NavigationProvider>
       </body>
     </html>
