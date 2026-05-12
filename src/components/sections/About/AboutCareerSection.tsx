@@ -37,7 +37,7 @@ export default function AboutCareerSection() {
 
           <FadeIn delay={0.1}>
             <div className='mb-14'>
-              <Text as='body' className='mb-4 font-extralight text-gray-900'>
+              <Text as='body' className='mb-4 font-light text-gray-900'>
                 Education
               </Text>
               <ul className='flex flex-col gap-4'>
@@ -60,7 +60,7 @@ export default function AboutCareerSection() {
 
           <FadeIn delay={0.2}>
             <div>
-              <Text as='body' className='-mb-4 font-extralight text-gray-900'>
+              <Text as='body' className='-mb-4 font-light text-gray-900'>
                 Experience
               </Text>
               <ul className='flex flex-col gap-4'>
@@ -136,7 +136,7 @@ export default function AboutCareerSection() {
             {techStack.categories.map((category, i) => (
               <FadeIn key={category.title} delay={0.4 + i * 0.15}>
                 <div className='grid grid-cols-[100px_1fr] items-start gap-16'>
-                  <Text as='body' className='font-extralight text-gray-900'>
+                  <Text as='body' className='font-light text-gray-900'>
                     {category.title}
                   </Text>
                   <div className='pt-2'>

@@ -78,7 +78,7 @@ export const aboutCareer = {
       kind: 'item',
       year: '2020-2022',
       company: '플랫비',
-      description: '사용자용 서비스의 UX와 브랜드 경험 개선',
+      description: 'CURI UX 개편과 스카이탭 신규 출시',
     },
     {
       kind: 'item',
