@@ -28,7 +28,7 @@ export async function streamChat({
 }: StreamRequest) {
   return client.messages.stream({
     model: MODEL,
-    max_tokens: 1024,
+    max_tokens: 400,
     system: [
       {
         type: 'text',
