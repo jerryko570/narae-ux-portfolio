@@ -91,7 +91,7 @@ export default function UxPrincipleLayout({
               >
                 {uxPrinciple.numbering}
               </Text>
-              <Text as='h6' className='font-extralight whitespace-pre-line'>
+              <Text as='h6' className='font-regular whitespace-pre-line'>
                 {uxPrinciple.title}
               </Text>
             </div>

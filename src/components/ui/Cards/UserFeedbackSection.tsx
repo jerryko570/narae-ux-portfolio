@@ -63,7 +63,7 @@ export default function AppReviewSection({
               </Text>
             </div>
           </div>
-          <Text as='h6' className='font-extralight whitespace-pre-line'>
+          <Text as='h6' className='font-medium whitespace-pre-line'>
             {rightTop.description}
           </Text>
         </div>

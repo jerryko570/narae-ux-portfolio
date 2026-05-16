@@ -20,12 +20,12 @@ export default function HorizontalFeatureCard({
     <div className={cn('flex items-center gap-6', className)}>
       <Text as='h3'>{emoji}</Text>
       <div className='flex flex-col gap-1'>
-        <Text as='body' className='font-extralight whitespace-pre-line'>
+        <Text as='body' className='font-medium whitespace-pre-line'>
           {title}
         </Text>
         <Text
           as='caption'
-          className='pt-2 font-extralight whitespace-pre-line opacity-60'
+          className='font-regular pt-2 whitespace-pre-line opacity-60'
         >
           {description}
         </Text>

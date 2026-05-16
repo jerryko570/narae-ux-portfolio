@@ -4,7 +4,7 @@ export const contactLinks: ContactLink[] = [
   {
     label: 'email',
     value: 'jerry.narae@gmail.com',
-    href: 'mailto:your-email@gmail.com',
+    href: 'mailto:jerry.narae@gmail.com',
   },
   {
     label: 'github',

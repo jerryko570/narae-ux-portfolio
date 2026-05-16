@@ -77,7 +77,7 @@ function StackItem({
       )}
     >
       <div className='flex flex-col gap-3'>
-        <Text as='caption' className='font-extralight opacity-50'>
+        <Text as='caption' className='font-light opacity-50'>
           {label}
         </Text>
         <StatValue
@@ -89,7 +89,7 @@ function StackItem({
       </div>
 
       {description && (
-        <Text as='p' className='text-right font-extralight whitespace-pre-line'>
+        <Text as='p' className='text-right font-light whitespace-pre-line'>
           {description}
         </Text>
       )}

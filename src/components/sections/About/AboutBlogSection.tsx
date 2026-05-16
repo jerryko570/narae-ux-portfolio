@@ -72,7 +72,7 @@ export default async function AboutBlogSection() {
                   </Text>
                   <Text
                     as='caption'
-                    className='block pt-2 font-extralight text-gray-400'
+                    className='block pt-2 font-light text-gray-400'
                   >
                     {post.categories[0] || post.tags[0] || 'Blog'} · {post.date}
                   </Text>
