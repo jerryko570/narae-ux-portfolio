@@ -5,6 +5,7 @@
 import { useState } from 'react'
 import { SectionId } from './type'
 import { NavigationContext } from './NavigationContext'
+import ChatModal from '@/components/chat/ChatModal'
 
 export default function NavigationProvider({
   children,
@@ -21,6 +22,7 @@ export default function NavigationProvider({
       value={{ activeMenu, setActiveMenu, isChatOpen, setIsChatOpen }}
     >
       {children}
+      <ChatModal />
     </NavigationContext.Provider>
   )
 }
