@@ -1,6 +1,6 @@
+import ReactMarkdown from 'react-markdown'
 import { cn } from '@/lib/cn'
-import Text from '@/components/ui/Text/Text'
-import type { ChatMessage } from '@/data/types/naraebot.ts'
+import type { ChatMessage } from '@/data/types/naraebot'
 
 interface Props {
   message: ChatMessage
@@ -17,7 +17,7 @@ export default function MessageBubble({ message }: Props) {
       {/* 채팅 버블 디자인 */}
       <div
         className={cn(
-          'max-w-[80%] rounded-sm px-5 py-3',
+          'max-w-[80%] rounded-sm px-5 py-3 text-sm',
           isUser ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-900'
         )}
       >
@@ -25,9 +25,34 @@ export default function MessageBubble({ message }: Props) {
         {isPending ? (
           <TypingDots />
         ) : (
-          <Text as='p' className='text-sm'>
+          <ReactMarkdown
+            components={{
+              // 링크: 새 탭으로 열기 + 밑줄 스타일
+              a: (props) => (
+                <a
+                  href={props.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className={cn(
+                    'font-medium underline underline-offset-2',
+                    isUser
+                      ? 'text-blue-300 hover:text-blue-200'
+                      : 'text-blue-600 hover:text-blue-800'
+                  )}
+                >
+                  {props.children}
+                </a>
+              ),
+              // 문단: 줄바꿈 간격
+              p: (props) => (
+                <p className='mb-2 leading-relaxed last:mb-0'>
+                  {props.children}
+                </p>
+              ),
+            }}
+          >
             {message.content}
-          </Text>
+          </ReactMarkdown>
         )}
       </div>
     </div>
