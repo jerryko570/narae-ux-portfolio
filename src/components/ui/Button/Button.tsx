@@ -7,6 +7,7 @@ type ButtonProps = {
   label: string
   className?: string
   onClick?: () => void
+  disabled?: boolean
   href?: string
 } & VariantProps<typeof buttonVariants>
 
@@ -17,6 +18,7 @@ export default function Button({
   variant,
   width,
   onClick,
+  disabled,
   href,
 }: ButtonProps) {
   if (href) {
@@ -34,6 +36,7 @@ export default function Button({
     <button
       type='button'
       onClick={onClick}
+      disabled={disabled}
       className={cn(buttonVariants({ size, variant, width }), className)}
     >
       {label}

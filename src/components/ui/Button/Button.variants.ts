@@ -9,8 +9,9 @@ export const buttonVariants = cva(
         outline:
           'border border-orange-500 bg-transparent text-orange-500 hover:bg-orange-50',
         ghost: 'bg-gray-100 hover:bg-gray-200',
-        secondary: 'bg-gray-900 text-white',
+        secondary: 'bg-gray-900 text-white hover:bg-gray-800',
         white: 'border border-gray-200 bg-white text-gray-900 hover:bg-gray-50',
+        blue: 'bg-blue-500 text-white hover:bg-blue-600',
       },
       size: {
         lg: 'h-12 px-6 text-lg font-semibold',
