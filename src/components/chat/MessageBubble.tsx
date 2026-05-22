@@ -49,6 +49,16 @@ export default function MessageBubble({ message }: Props) {
                   {props.children}
                 </p>
               ),
+              // 불릿 리스트 (JD 분석 응답용)
+              ul: (props) => (
+                <ul className='my-2 ml-4 list-disc space-y-1'>
+                  {props.children}
+                </ul>
+              ),
+              // 리스트 항목
+              li: (props) => (
+                <li className='leading-relaxed'>{props.children}</li>
+              ),
             }}
           >
             {message.content}
