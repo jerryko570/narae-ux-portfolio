@@ -18,7 +18,7 @@ export default function ChatModal() {
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [input, setInput] = useState('')
   const [isStreaming, setIsStreaming] = useState(false) // 봇이 답변 생성 중인지
-  const messagesEndRef = useAutoScroll(messages)
+  const messagesEndRef = useAutoScroll(messages, isChatOpen)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
   const close = () => setIsChatOpen(false)
