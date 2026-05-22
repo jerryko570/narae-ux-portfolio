@@ -5,14 +5,13 @@ import { getOrCreateConversation, saveMessagePair } from '@/lib/supabase'
 import { isJdInput } from '@/lib/jd-detector'
 import crypto from 'crypto'
 
-export const runtime = 'nodejs' // edge가 아닌 nodejs runtime (fs 접근 위해)
+export const runtime = 'nodejs'
 export const maxDuration = 30
 
 export async function POST(req: NextRequest) {
   try {
     const { messages, sessionId, persona } = await req.json()
 
-    // 입력 검증
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return Response.json({ error: 'Invalid messages' }, { status: 400 })
     }
@@ -24,7 +23,6 @@ export async function POST(req: NextRequest) {
     const isJd = isJdInput(userMessage)
     const startTime = Date.now()
 
-    // IP 해시 (개인정보 보호)
     const ip = req.headers.get('x-forwarded-for') || 'unknown'
     const ipHash = crypto
       .createHash('sha256')
@@ -32,18 +30,18 @@ export async function POST(req: NextRequest) {
       .digest('hex')
       .slice(0, 16)
 
-    // 대화 세션 ID 조회/생성 (백그라운드로 시작)
     const convIdPromise = getOrCreateConversation({
       sessionId,
       persona,
       ipHash,
       userAgent: req.headers.get('user-agent') || undefined,
+    }).catch((err) => {
+      console.error('Conversation create failed:', err)
+      return null
     })
 
-    // 프롬프트 로드 (메모리 캐시)
     const prompts = await loadAllPrompts()
 
-    // Claude 스트리밍 호출
     const stream = await streamChat({
       systemPrompt: prompts.systemPrompt,
       knowledgeBase: prompts.knowledgeBase,
@@ -51,7 +49,6 @@ export async function POST(req: NextRequest) {
       messages,
     })
 
-    // SSE 응답 스트림 생성
     const encoder = new TextEncoder()
     const readable = new ReadableStream({
       async start(controller) {
@@ -62,7 +59,6 @@ export async function POST(req: NextRequest) {
 
         try {
           for await (const event of stream) {
-            // 텍스트 청크 전송
             if (
               event.type === 'content_block_delta' &&
               event.delta.type === 'text_delta'
@@ -73,7 +69,6 @@ export async function POST(req: NextRequest) {
                 encoder.encode(`data: ${JSON.stringify({ chunk })}\n\n`)
               )
             }
-            // 토큰 사용량
             if (event.type === 'message_start' && event.message?.usage) {
               inputTokens = event.message.usage.input_tokens || 0
               cacheReadTokens = event.message.usage.cache_read_input_tokens || 0
@@ -83,7 +78,6 @@ export async function POST(req: NextRequest) {
             }
           }
 
-          // 응답 완료 신호
           const latencyMs = Date.now() - startTime
           const cost = calculateCost(inputTokens, cacheReadTokens, outputTokens)
 
@@ -94,10 +88,10 @@ export async function POST(req: NextRequest) {
           )
           controller.close()
 
-          // 비동기 저장 (fire-and-forget, 실패해도 사용자엔 영향 X)
           convIdPromise
-            .then((conversationId) =>
-              saveMessagePair({
+            .then((conversationId) => {
+              if (!conversationId) return
+              return saveMessagePair({
                 conversationId,
                 userMessage,
                 assistantMessage: fullResponse,
@@ -108,7 +102,7 @@ export async function POST(req: NextRequest) {
                 costUsd: cost,
                 latencyMs,
               })
-            )
+            })
             .catch((err) => console.error('Supabase save failed:', err))
         } catch (error) {
           console.error('Stream error:', error)
