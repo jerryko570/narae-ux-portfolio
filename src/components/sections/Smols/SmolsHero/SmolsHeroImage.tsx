@@ -12,14 +12,14 @@ type HeroImageProps = {
 
 export default function HeroImage({
   src,
-  imageWidth = '560px',
-  right = 0,
-  top = 140,
+  imageWidth = '650px',
+  right = -200,
+  top = 30,
   priority = false,
 }: HeroImageProps) {
   return (
     <div
-      className='absolute'
+      className='pointer-events-none absolute z-0'
       style={{
         top: `${top}px`,
         right: `${right}px`,
