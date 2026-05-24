@@ -23,12 +23,6 @@ export default function AboutCareerSection() {
               <Text as='h4' className='font-bold'>
                 {aboutCareer.title}
               </Text>
-              <Badge
-                label='🤖 어떤 경력이 궁금하세요?'
-                theme='dark'
-                size='sm'
-                animation='float'
-              />
             </div>
             <Text as='p' className='mb-10 text-gray-900'>
               {aboutCareer.description}
@@ -120,12 +114,6 @@ export default function AboutCareerSection() {
               <Text as='h4' className='mb-4 font-bold'>
                 {techStack.title}
               </Text>
-              <Badge
-                label='🤖 어떤 기술을 쓰는지 궁금하세요?'
-                theme='dark'
-                size='sm'
-                animation='float'
-              />
             </div>
             <Text as='p' className='mb-10 text-gray-900'>
               {techStack.description}

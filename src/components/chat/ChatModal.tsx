@@ -9,6 +9,7 @@ import { useChat } from './useChat'
 import Text from '@/components/ui/Text/Text'
 import MessageList from './MessageList'
 import InputBox from './InputBox'
+import TypingIndicator from '../ui/Cards/TypingIndicator'
 
 export default function ChatModal() {
   const { isChatOpen, setIsChatOpen } = useNavigation()
@@ -64,6 +65,7 @@ export default function ChatModal() {
                 <Text as='h3' className='text-2xl font-medium text-white'>
                   <span id='chat-modal-title'>나래봇</span>
                 </Text>
+                <TypingIndicator />
               </button>
               <button
                 onClick={close}
