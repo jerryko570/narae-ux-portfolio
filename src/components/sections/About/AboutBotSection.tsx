@@ -1,10 +1,15 @@
+'use client'
+
 import Section from '@/components/ui/Section'
 import Text from '@/components/ui/Text/Text'
 import Button from '@/components/ui/Button/Button'
 import FadeIn from '@/components/ui/FadeIn'
+import { useNavigation } from '@/context/navigation'
 import { aboutBot } from '@/data/projects/about'
 
 export default function AboutBotSection() {
+  const { setIsChatOpen } = useNavigation()
+
   return (
     <Section className='bg-gray-900'>
       <div className='flex items-center justify-between gap-16'>
@@ -25,6 +30,7 @@ export default function AboutBotSection() {
                 label={aboutBot.cta}
                 size='lg'
                 className='hover:bg-gray-200'
+                onClick={() => setIsChatOpen(true)}
               />
             </div>
           </div>
@@ -34,7 +40,7 @@ export default function AboutBotSection() {
         <div className='grid w-142 grid-cols-2 gap-4'>
           {aboutBot.features.map((feature, i) => (
             <FadeIn key={feature.label} delay={0.2 + i * 0.1}>
-              <div className='h rounded-xl bg-gray-800 p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-gray-700'>
+              <div className='h-full rounded-xl bg-gray-800 p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-gray-700'>
                 <Text as='body' className='mb-1 block font-light text-white'>
                   {feature.label}
                 </Text>

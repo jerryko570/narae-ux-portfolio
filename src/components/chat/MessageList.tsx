@@ -42,7 +42,7 @@ export default function MessageList({ messages, messagesEndRef }: Props) {
 
   if (!hasMessages) {
     return (
-      <div className='flex h-full items-center justify-center'>
+      <div className='flex min-h-full flex-col items-center justify-center'>
         <div className='flex w-full flex-col items-center gap-4'>
           <div className='pt-2 text-center'>
             <Text as='h1' className='font-bold text-gray-900'>
