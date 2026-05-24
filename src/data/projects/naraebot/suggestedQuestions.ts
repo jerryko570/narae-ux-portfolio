@@ -1,4 +1,5 @@
 export const suggestedQuestions = [
-  'AI를 어느정도 다루나요?',
-  'UI/UX디자인 장점',
+  '한 줄로 소개해줘요',
+  '강점과 약점은?',
+  'AI는 어떻게 활용해요?',
 ]
