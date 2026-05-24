@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useRef } from 'react'
 import Image from 'next/image'
+import { useState, useRef } from 'react'
 import { useNavigation } from '@/context/navigation'
 import { useEscapeKey } from '@/hooks/useEscapeKey'
 import { useLockBodyScroll } from '@/hooks/useLockBodyScroll'
@@ -129,7 +129,7 @@ export default function ChatModal() {
 
   return (
     <div
-      className='fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4'
+      className='fixed inset-0 z-50 flex items-center justify-center bg-black/5 px-4'
       onClick={close}
       role='dialog'
       aria-modal='true'
@@ -142,17 +142,9 @@ export default function ChatModal() {
         {/* 헤더 */}
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-4'>
-            <Image
-              src='/images/profile.png'
-              alt='나래봇 아바타'
-              width={40}
-              height={40}
-              className='rounded-full'
-            />
-            <Text as='h2' className='text-lg font-medium text-white'>
-              <span id='chat-modal-title'>
-                저에 대해 궁금한 점을 물어보세요
-              </span>
+            <Text as='h2'> 🤖</Text>
+            <Text as='h3' className='text-2xl font-medium text-white'>
+              <span id='chat-modal-title'>나래봇</span>
             </Text>
           </div>
           <button
@@ -160,14 +152,18 @@ export default function ChatModal() {
             className='text-white hover:opacity-70'
             aria-label='나래봇 닫기'
           >
-            <Text as='p' className='cursor-pointer text-sm font-medium'>
-              X 닫기
-            </Text>
+            <Image
+              src='/icons/close_btn.svg'
+              alt=''
+              width={44}
+              height={44}
+              className='cursor-pointer'
+            />
           </button>
         </div>
 
         {/* 채팅 영역 */}
-        <div className='mt-6 flex h-120 flex-col overflow-hidden bg-white'>
+        <div className='mt-6 flex h-120 flex-col overflow-hidden rounded-md bg-white'>
           <div className='flex-1 overflow-y-auto p-8'>
             <MessageList messages={messages} messagesEndRef={messagesEndRef} />
           </div>

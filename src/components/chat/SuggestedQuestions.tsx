@@ -8,18 +8,17 @@ interface Props {
 
 export default function SuggestedQuestions({ onSelect }: Props) {
   return (
-    <div className='mt-5 flex flex-wrap items-center gap-3'>
+    <div className='mt-8 flex flex-wrap items-center gap-4'>
       <Text as='p' className='font-medium text-white'>
-        추천질문
+        이나래가 궁금하다면?
       </Text>
       {suggestedQuestions.map((question) => (
         <Button
           key={question}
           label={question}
-          size='sm'
-          variant='white'
+          size='md'
+          variant='outlineWhite'
           onClick={() => onSelect(question)}
-          className='hover:bg-gray-200'
         />
       ))}
     </div>
