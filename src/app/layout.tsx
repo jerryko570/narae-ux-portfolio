@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Header from '@/components/layout/Header'
 import './globals.css'
+import PostHogInit from '@/components/PostHogInit'
 import { NavigationProvider } from '@/context/navigation'
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <body style={{ fontFamily: 'Pretendard, sans-serif' }}>
+        <PostHogInit />
         <NavigationProvider>
           <Header />
           <main>{children}</main>

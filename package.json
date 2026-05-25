@@ -30,6 +30,7 @@
     "next": "16.1.6",
     "papaparse": "^5.5.3",
     "postcss": "^8.5.8",
+    "posthog-js": "^1.376.0",
     "react": "19.2.3",
     "react-countup": "^6.5.3",
     "react-dom": "19.2.3",
