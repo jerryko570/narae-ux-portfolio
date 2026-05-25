@@ -12,11 +12,12 @@ import InputBox from './InputBox'
 import TypingIndicator from '../ui/Cards/TypingIndicator'
 
 export default function ChatModal() {
+  // 창을 열고 닫는 스위치 준비함
   const { isChatOpen, setIsChatOpen } = useNavigation()
   const close = () => setIsChatOpen(false)
 
-  useEscapeKey(close, isChatOpen)
-  useLockBodyScroll(isChatOpen)
+  useEscapeKey(close, isChatOpen) // 키보드의 ESC를 누르면 창이 닫힘
+  useLockBodyScroll(isChatOpen) // 모달 실행 시 뒤쪽 화면이 같이 스크롤 되지 않게 붙잡아둠
 
   const {
     messages,
