@@ -1,5 +1,6 @@
 'use client'
 
+import posthog from 'posthog-js'
 import { useState, useRef } from 'react'
 import { useAutoScroll } from '@/hooks/useAutoScroll'
 import type { ChatMessage } from '@/data/types/naraebot'
@@ -22,6 +23,7 @@ export function useChat(isActive: boolean) {
   const handleSend = async () => {
     if (!input.trim() || isStreaming) return
 
+    posthog.capture('naraebot_message_sent')
     const userMsg: ChatMessage = { role: 'user', content: input }
     const newMessages = [...messages, userMsg]
     setMessages(newMessages)
