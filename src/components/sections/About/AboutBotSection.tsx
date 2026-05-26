@@ -1,5 +1,6 @@
 'use client'
 
+import posthog from 'posthog-js'
 import Section from '@/components/ui/Section'
 import Text from '@/components/ui/Text/Text'
 import Button from '@/components/ui/Button/Button'
@@ -30,7 +31,10 @@ export default function AboutBotSection() {
                 label={aboutBot.cta}
                 size='lg'
                 className='hover:bg-gray-200'
-                onClick={() => setIsChatOpen(true)}
+                onClick={() => {
+                  posthog.capture('naraebot_opened', { source: 'about_button' })
+                  setIsChatOpen(true)
+                }}
               />
             </div>
           </div>

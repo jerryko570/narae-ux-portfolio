@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Text from '../ui/Text/Text'
 import Button from '../ui/Button/Button'
 import Image from 'next/image'
+import posthog from 'posthog-js'
 import { useNavigation } from '@/context/navigation'
 import { usePathname } from 'next/navigation'
 
@@ -37,7 +38,15 @@ export default function Header({ variant, sticky }: HeaderProps) {
         <div className='flex items-center gap-8'>
           <div className='flex items-center gap-8'>
             {navLinks.map(({ href, label, activeColor }) => (
-              <Link key={href} href={href}>
+              <Link
+                key={href}
+                href={href}
+                onClick={() =>
+                  posthog.capture('project_clicked', {
+                    project: label.toLowerCase(),
+                  })
+                }
+              >
                 <Text
                   as='p'
                   className={cn(
@@ -73,7 +82,10 @@ export default function Header({ variant, sticky }: HeaderProps) {
             size='lg'
             variant='secondary'
             label='🤖 나래봇'
-            onClick={() => setIsChatOpen(true)}
+            onClick={() => {
+              posthog.capture('naraebot_opened', { source: 'header' })
+              setIsChatOpen(true)
+            }}
           />
         </div>
       </div>
