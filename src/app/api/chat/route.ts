@@ -19,8 +19,8 @@ export async function POST(req: NextRequest) {
       return Response.json({ error: 'Missing sessionId' }, { status: 400 })
     }
 
-    // ✅ 맨 끝을 무조건 집지 말고, 진짜 마지막 user 메시지를 찾는다
-    const lastUser = [...messages].reverse().find((m) => m.role === 'user')
+    // findLast로 마지막 user 메시지를 바로 찾는다 (배열 복사/뒤집기 불필요)
+    const lastUser = messages.findLast((m) => m.role === 'user')
     const userMessage = lastUser?.content ?? ''
 
     const isJd = isJdInput(userMessage)
@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
             )
           )
 
-          // ✅ close() 전에 저장을 await로 끝낸다 (서버리스 조기종료 방지)
+          // close() 전에 저장을 await로 끝낸다 (서버리스 조기종료 방지)
           try {
             const conversationId = await convIdPromise
             if (conversationId) {
