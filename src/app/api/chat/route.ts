@@ -19,7 +19,10 @@ export async function POST(req: NextRequest) {
       return Response.json({ error: 'Missing sessionId' }, { status: 400 })
     }
 
-    const userMessage = messages[messages.length - 1].content
+    // findLast로 마지막 user 메시지를 바로 찾는다 (배열 복사/뒤집기 불필요)
+    const lastUser = messages.findLast((m) => m.role === 'user')
+    const userMessage = lastUser?.content ?? ''
+
     const isJd = isJdInput(userMessage)
     const startTime = Date.now()
 
@@ -86,12 +89,12 @@ export async function POST(req: NextRequest) {
               `data: ${JSON.stringify({ done: true, latencyMs })}\n\n`
             )
           )
-          controller.close()
 
-          convIdPromise
-            .then((conversationId) => {
-              if (!conversationId) return
-              return saveMessagePair({
+          // close() 전에 저장을 await로 끝낸다 (서버리스 조기종료 방지)
+          try {
+            const conversationId = await convIdPromise
+            if (conversationId) {
+              await saveMessagePair({
                 conversationId,
                 userMessage,
                 assistantMessage: fullResponse,
@@ -102,8 +105,12 @@ export async function POST(req: NextRequest) {
                 costUsd: cost,
                 latencyMs,
               })
-            })
-            .catch((err) => console.error('Supabase save failed:', err))
+            }
+          } catch (err) {
+            console.error('Supabase save failed:', err)
+          }
+
+          controller.close()
         } catch (error) {
           console.error('Stream error:', error)
           controller.enqueue(
