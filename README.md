@@ -61,15 +61,3 @@ ux-portfolio/
 | 🐛Fix      | 버그 수정       |
 | 📝Docs     | 문서 작업       |
 
-## 시작하기
-
-```bash
-npm install
-npm run dev
-```
-
-## 링크
-
-- 🌐 [배포 사이트](https://narae-ux-portfolio.vercel.app)
-- 📁 [GitHub](https://github.com/jerryko570/narae-ux-portfolio)
-- ✉️ email.narae@gmail.com
